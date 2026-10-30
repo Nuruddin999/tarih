@@ -3,3 +3,17 @@
 @media(max-width:760px){.person{grid-template-columns:1fr;gap:20px}.person__dates{padding:18px 0 0;border-left:0;border-top:1px solid var(--border)}}
 @media(max-width:480px){.chronology{width:calc(100% - 28px)}.site-header{padding-block:18px}.site-header__caption{display:none}.intro{padding-top:40px}.timeline{padding-left:22px}.timeline-period__marker{left:-22px}.period__summary{padding:20px 16px}.period__content{padding:0 12px 12px}.period__heading{gap:10px}.person{padding:18px 14px}.person__name{font-size:21px}.person__dates{gap:12px}.historical-date__hijri{font-size:21px}.historical-date--large .historical-date__hijri{font-size:30px}.site-footer{padding-left:22px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Residence and source metadata in biography cards. */
+.person__info { min-width: 0; }
+.person__categories { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 12px; }
+.person__categories li { color: #4c614d; background: #edf0e6; border-radius: 5px; padding: 5px 8px; font-size: 11px; font-weight: 700; line-height: 1.4; }
+.person__location { display: flex; flex-direction: column; gap: 5px; margin: 16px 0 0; font-size: 14px; font-weight: 600; line-height: 1.6; }
+.person__location-label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .6px; font-weight: 400; }
+.person__sources { margin-top: 14px; font-size: 12px; line-height: 1.6; color: var(--muted); }
+.person__sources summary { cursor: pointer; width: fit-content; padding-block: 9px; }
+.person__sources p { margin-block: 6px; }
+.person__sources ul { margin: 6px 0 0; padding-left: 18px; }
+.person__sources a { overflow-wrap: anywhere; text-underline-offset: 3px; }
+.person--featured .person__location-label, .person--featured .person__sources { color: #d8dfd4; }
+.historical-date__hijri { overflow-wrap: anywhere; }
