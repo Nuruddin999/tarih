@@ -685,3 +685,75 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 .person--featured .person__contemporary-note, .person--featured .person__contemporary-overlap {
     color: #d8dfd4;
 }
+
+/* Desktop: keep controls beside the chronology. */
+.chronology-sidebar, .chronology-results {
+    min-width: 0;
+}
+
+@media (min-width: 1024px) {
+    .chronology {
+        width: min(100% - 64px, 1440px);
+    }
+
+    .intro {
+        padding-block: 32px 24px;
+    }
+
+    .intro h1 {
+        font-size: 48px;
+    }
+
+    .chronology-layout {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        align-items: start;
+        gap: 28px;
+    }
+
+    .chronology-sidebar {
+        position: sticky;
+        top: 24px;
+        max-height: calc(100dvh - 48px);
+        overflow-y: auto;
+    }
+
+    .chronology-sidebar .explorer,
+    .chronology-sidebar .contemporaries {
+        padding: 18px;
+        margin-bottom: 16px;
+    }
+
+    .chronology-sidebar .filter-buttons {
+        flex-direction: column;
+    }
+
+    .chronology-sidebar .filter-buttons button {
+        text-align: left;
+    }
+
+    .chronology-sidebar .filter-status {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .chronology-sidebar .contemporaries h2 {
+        font-size: 24px;
+    }
+
+    .chronology-sidebar .contemporary-list .person,
+    .chronology-results .person {
+        grid-template-columns: 1fr;
+    }
+
+    .chronology-sidebar .person__dates,
+    .chronology-results .person__dates {
+        padding: 18px 0 0;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+    }
+
+    .chronology-results .period-navigation {
+        margin-bottom: 24px;
+    }
+}
