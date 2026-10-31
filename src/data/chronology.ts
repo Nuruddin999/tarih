@@ -212,7 +212,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanafi"
+      "hanafi",
+      "muhaddith"
     ],
     "description": "Имам, к которому восходит ханафитский мазхаб. Куфа."
   },
@@ -232,7 +233,8 @@ export const people: Record<string, Person> = {
       "Медина"
     ],
     "categories": [
-      "maliki"
+      "maliki",
+      "muhaddith"
     ],
     "description": "Имам, к которому восходит маликитский мазхаб. Медина. Автор «Аль-Муватта»."
   },
@@ -255,7 +257,8 @@ export const people: Record<string, Person> = {
       "Фустат"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "muhaddith"
     ],
     "description": "Имам, к которому восходит шафиитский мазхаб. Автор «Ар-Рисаля» и «Аль-Умм»."
   },
@@ -275,7 +278,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Имам, к которому восходит ханбалитский мазхаб. Багдад. Составитель «Аль-Муснад»."
   },
@@ -295,7 +299,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "muhaddith"
+      "muhaddith",
+      "shafii"
     ],
     "description": "Багдадский мухаддис и критик хадисов. Автор «Ас-Сунан» и «Аль-Иляль». Застал установление власти Буидов в Багдаде в 334 г. х."
   },
@@ -315,7 +320,9 @@ export const people: Record<string, Person> = {
       "Исфахан"
     ],
     "categories": [
-      "muhaddith"
+      "muhaddith",
+      "shafii",
+      "historian"
     ],
     "description": "Мухаддис из Исфахана. Автор «Хильят аль-аулия ва табакат аль-асфия»."
   },
@@ -468,7 +475,8 @@ export const people: Record<string, Person> = {
       "Казвин"
     ],
     "categories": [
-      "muhaddith"
+      "muhaddith",
+      "historian"
     ],
     "description": "Автор «Сунан Ибн Маджа».",
     "sources": [
@@ -520,7 +528,8 @@ export const people: Record<string, Person> = {
       "Нишапур"
     ],
     "categories": [
-      "muhaddith"
+      "muhaddith",
+      "shafii"
     ],
     "description": "Автор «Сахих Ибн Хузайма».",
     "sources": [
@@ -576,7 +585,8 @@ export const people: Record<string, Person> = {
       "Нишапур"
     ],
     "categories": [
-      "muhaddith"
+      "muhaddith",
+      "shafii"
     ],
     "description": "Автор «Ас-Сунан аль-кубра» и «Даляиль ан-нубувва».",
     "sources": [
@@ -603,7 +613,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanafi"
+      "hanafi",
+      "muhaddith"
     ],
     "description": "Ученик Абу Ханифы, главный судья. Автор «Аль-Харадж».",
     "sources": [
@@ -631,7 +642,8 @@ export const people: Record<string, Person> = {
       "Ракка"
     ],
     "categories": [
-      "hanafi"
+      "hanafi",
+      "muhaddith"
     ],
     "description": "Ученик Абу Ханифы и Абу Юсуфа. Автор «Аль-Асл».",
     "sources": [
@@ -658,7 +670,8 @@ export const people: Record<string, Person> = {
       "Фустат"
     ],
     "categories": [
-      "hanafi"
+      "hanafi",
+      "muhaddith"
     ],
     "description": "Автор «Шарх маани аль-асар».",
     "sources": [
@@ -976,7 +989,9 @@ export const people: Record<string, Person> = {
       "Шатива"
     ],
     "categories": [
-      "maliki"
+      "maliki",
+      "muhaddith",
+      "historian"
     ],
     "description": "Автор «Ат-Тамхид», «Аль-Истизкар» и «Аль-Истииаб».",
     "sources": [
@@ -1004,7 +1019,8 @@ export const people: Record<string, Person> = {
       "Альмерия"
     ],
     "categories": [
-      "maliki"
+      "maliki",
+      "muhaddith"
     ],
     "description": "Автор «Аль-Мунтака», комментария к «Аль-Муватта».",
     "sources": [
@@ -1058,7 +1074,9 @@ export const people: Record<string, Person> = {
       "Марракеш"
     ],
     "categories": [
-      "maliki"
+      "maliki",
+      "muhaddith",
+      "historian"
     ],
     "description": "Автор «Аш-Шифа» и «Тартиб аль-мадарик».",
     "sources": [
@@ -1165,7 +1183,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "historian"
     ],
     "description": "Преподаватель Низамии. Автор «Аль-Мухаззаб».",
     "sources": [
@@ -1248,7 +1267,9 @@ export const people: Record<string, Person> = {
       "Казвин"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "muhaddith",
+      "historian"
     ],
     "description": "Один из двух шейхов мазхаба. Автор «Аль-Азиз шарх аль-Ваджиз».",
     "sources": [
@@ -1276,7 +1297,8 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "muhaddith"
     ],
     "description": "Автор «Минхадж ат-талибин», «Аль-Маджму» и «Рияд ас-салихин».",
     "sources": [
@@ -1303,7 +1325,9 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "historian",
+      "muhaddith"
     ],
     "description": "Автор «Табакат аш-шафиийя аль-кубра» и «Джам аль-джавами».",
     "sources": [
@@ -1329,7 +1353,8 @@ export const people: Record<string, Person> = {
       "Каир"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "muhaddith"
     ],
     "description": "Автор «Асна аль-маталиб» и «Фатх аль-Ваххаб».",
     "sources": [
@@ -1357,7 +1382,9 @@ export const people: Record<string, Person> = {
       "Мекка"
     ],
     "categories": [
-      "shafii"
+      "shafii",
+      "muhaddith",
+      "historian"
     ],
     "description": "Автор «Тухфат аль-мухтадж».",
     "sources": [
@@ -1409,7 +1436,9 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith",
+      "historian"
     ],
     "description": "Собирал и систематизировал ответы имама Ахмада. Автор «Ас-Сунна».",
     "sources": [
@@ -1514,7 +1543,9 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith",
+      "historian"
     ],
     "description": "Автор «Аль-Мунтазам», «Зад аль-масир» и «Сайд аль-хатыр».",
     "sources": [
@@ -1568,7 +1599,8 @@ export const people: Record<string, Person> = {
       "Харран"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Дед Такиюддина ибн Таймийи. Автор «Аль-Мухаррар» и «Аль-Мунтака».",
     "sources": [
@@ -1597,7 +1629,8 @@ export const people: Record<string, Person> = {
       "Александрия"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Факих и автор трудов по тафсиру, усуль аль-фикх и другим наукам.",
     "sources": [
@@ -1623,7 +1656,8 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Автор «Зад аль-маад» и «Илям аль-муваккиин».",
     "sources": [
@@ -1649,7 +1683,8 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Автор «Аль-Инсаф» и «Ат-Танких аль-мушби».",
     "sources": [
@@ -1676,7 +1711,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith"
     ],
     "description": "Один из ранних авторов сиры Посланника Аллаха ﷺ.",
     "sources": [
@@ -1731,7 +1767,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith"
     ],
     "description": "Автор «Тарих ар-русуль ва-ль-мулюк» и «Джами аль-баян».",
     "sources": [
@@ -1786,7 +1823,8 @@ export const people: Record<string, Person> = {
       "Мосул"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith"
     ],
     "description": "Автор «Аль-Камиль фи-т-тарих» и «Усд аль-габа».",
     "sources": [
@@ -1812,7 +1850,9 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith",
+      "shafii"
     ],
     "description": "Автор «Тарих аль-ислам» и «Сияр алям ан-нубаля».",
     "sources": [
@@ -1838,7 +1878,9 @@ export const people: Record<string, Person> = {
       "Дамаск"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith",
+      "shafii"
     ],
     "description": "Автор «Аль-Бидая ва-н-нихая» и тафсира Корана.",
     "sources": [
@@ -1868,7 +1910,8 @@ export const people: Record<string, Person> = {
       "Каир"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "maliki"
     ],
     "description": "Автор «Китаб аль-Ибар» и его «Мукаддимы».",
     "sources": [
@@ -1921,7 +1964,9 @@ export const people: Record<string, Person> = {
       "Каир"
     ],
     "categories": [
-      "historian"
+      "historian",
+      "muhaddith",
+      "shafii"
     ],
     "description": "Автор «Тарих аль-хуляфа» и «Хусн аль-мухадара».",
     "sources": [
