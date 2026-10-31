@@ -275,7 +275,8 @@ export const people: Record<string, Person> = {
       "Багдад"
     ],
     "categories": [
-      "hanbali"
+      "hanbali",
+      "muhaddith"
     ],
     "description": "Имам, к которому восходит ханбалитский мазхаб. Багдад. Составитель «Аль-Муснад»."
   },
