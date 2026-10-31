@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { people, periods, categoryLabels } from "@/data/chronology";
 import type { PersonCategory } from "@/types/chronology";
 import { formatYear, overlap, yearRange } from "@/lib/contemporaries";
@@ -13,6 +13,32 @@ export function ChronologyExplorer() {
   const [category, setCategory] = useState<PersonCategory | "all">("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
+  const [isFiltering, setIsFiltering] = useState(false);
+  const resultsRef = useRef<HTMLDivElement>(null);
+  const filterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (filterTimer.current !== null) clearTimeout(filterTimer.current);
+  }, []);
+
+  function changeCategory(next: PersonCategory | "all", resetQuery = false) {
+    if (filterTimer.current !== null) clearTimeout(filterTimer.current);
+    setCategory(next);
+    if (resetQuery) setQuery("");
+    setIsFiltering(true);
+
+    filterTimer.current = setTimeout(() => {
+      setIsFiltering(false);
+      filterTimer.current = null;
+      resultsRef.current?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
+        block: "start",
+      });
+    }, 250);
+  }
+
   const normalized = query.trim().toLocaleLowerCase("ru").replaceAll("ё", "е");
   const matches = (key: string) => {
     const person = people[key];
@@ -34,12 +60,12 @@ export function ChronologyExplorer() {
   return <>
     <section className="explorer" aria-label="Фильтры хронологии">
       <div className="filter-buttons" aria-label="Направление и мазхаб">
-        <button type="button" aria-pressed={category === "all"} onClick={() => setCategory("all")}>Все</button>
-        {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => setCategory(key)}>{categoryLabels[key]}</button>)}
+        <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
+        {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
       </div>
       <label className="explorer-label" htmlFor="person-search">Поиск по имени или городу</label>
       <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, аш-Шафии или Багдад" />
-      <div className="filter-status"><span role="status">Найдено личностей: {count}</span><button type="button" onClick={() => { setCategory("all"); setQuery(""); }}>Сбросить фильтры</button></div>
+      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
     <section className="contemporaries" aria-labelledby="contemporaries-title">
@@ -65,6 +91,13 @@ export function ChronologyExplorer() {
       </>}
     </section>
     
+    <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
+      <p role="status">
+        {isFiltering
+          ? "Обновляем список…"
+          : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}`}
+      </p>
+    </div>
     <nav className="period-navigation" aria-label="Переход к периоду">{visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}</nav>
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
