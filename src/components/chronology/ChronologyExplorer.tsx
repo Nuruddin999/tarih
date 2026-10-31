@@ -6,6 +6,7 @@ import type { PersonCategory } from "@/types/chronology";
 import { formatYear, overlap, yearRange } from "@/lib/contemporaries";
 import { PeriodSection } from "./PeriodSection";
 import { PersonCard } from "./PersonCard";
+import { MobileFilters } from "./MobileFilters";
 
 const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b[1].name, "ru"));
 
@@ -14,6 +15,15 @@ export function ChronologyExplorer() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
+  const [comparisonOpen, setComparisonOpen] = useState(false);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1024px)");
+    const update = () => setComparisonOpen(desktop.matches);
+    update();
+    desktop.addEventListener("change", update);
+    return () => desktop.removeEventListener("change", update);
+  }, []);
   const resultsRef = useRef<HTMLDivElement>(null);
   const filterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -21,7 +31,7 @@ export function ChronologyExplorer() {
     if (filterTimer.current !== null) clearTimeout(filterTimer.current);
   }, []);
 
-  function changeCategory(next: PersonCategory | "all", resetQuery = false) {
+  function changeCategory(next: PersonCategory | "all", resetQuery = false, scrollToResults = true) {
     if (filterTimer.current !== null) clearTimeout(filterTimer.current);
     setCategory(next);
     if (resetQuery) setQuery("");
@@ -30,6 +40,7 @@ export function ChronologyExplorer() {
     filterTimer.current = setTimeout(() => {
       setIsFiltering(false);
       filterTimer.current = null;
+      if (!scrollToResults) return;
       if (window.matchMedia("(min-width: 1024px)").matches) return;
       resultsRef.current?.scrollIntoView({
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -41,10 +52,10 @@ export function ChronologyExplorer() {
   }
 
   const normalized = query.trim().toLocaleLowerCase("ru").replaceAll("ё", "е");
-  const matches = (key: string) => {
+  const matches = (key: string, filter: PersonCategory | "all" = category, search = normalized) => {
     const person = people[key];
-    return person && (category === "all" || person.categories?.includes(category)) &&
-      `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(normalized);
+    return person && (filter === "all" || person.categories?.includes(filter)) &&
+      `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
   const visiblePeriods = periods.map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId)) }))
@@ -59,6 +70,9 @@ export function ChronologyExplorer() {
   const unknownCount = everyone.filter(([key, p]) => key !== selected && matches(key) && (!yearRange(p.birth.hijri) || !yearRange(p.death.hijri))).length;
   
   return <div className="chronology-layout">
+    <MobileFilters category={category} query={query} onQueryChange={setQuery}
+      getCount={(filter, clearSearch) => everyone.filter(([key]) => matches(key, filter, clearSearch ? "" : normalized)).length}
+      onApply={(filter, clearSearch) => changeCategory(filter, clearSearch, false)} />
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
     <h3 className="sidebar-block-title desktop-only">Учёные</h3>
@@ -79,6 +93,9 @@ export function ChronologyExplorer() {
       </nav>
     </section>
 
+    <details className="comparison-toggle" open={comparisonOpen}
+      onToggle={event => setComparisonOpen(event.currentTarget.open)}>
+    <summary>Найти современников</summary>
     <section className="contemporaries" aria-labelledby="contemporaries-title">
       <h2 id="contemporaries-title">Кто жил одновременно?</h2>
       <p>Выбери личность, чтобы увидеть её современников из нашей хронологии.</p>
@@ -102,6 +119,7 @@ export function ChronologyExplorer() {
       </>}
     </section>
     
+    </details>
     </aside>
     <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
@@ -111,7 +129,10 @@ export function ChronologyExplorer() {
           : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}`}
       </p>
     </div>
+    <details className="mobile-epochs">
+    <summary>Эпохи</summary>
     <nav className="period-navigation mobile-period-navigation" aria-label="Переход к периоду">{visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}</nav>
+    </details>
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
