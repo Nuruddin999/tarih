@@ -61,8 +61,8 @@ export function ChronologyExplorer() {
   return <div className="chronology-layout">
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
+    <h3 className="sidebar-block-title desktop-only">Учёные</h3>
     <section className="explorer" aria-label="Фильтры хронологии">
-      <h3 className="sidebar-block-title desktop-only">Учёные</h3>
       <div className="filter-buttons" aria-label="Направление и мазхаб">
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
         {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
@@ -72,8 +72,8 @@ export function ChronologyExplorer() {
       <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
+    <h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
     <section className="sidebar-periods desktop-only" aria-labelledby="sidebar-periods-title">
-      <h3 id="sidebar-periods-title" className="sidebar-block-title">Эпохи</h3>
       <nav className="period-navigation" aria-label="Переход к периоду">
         {visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}
       </nav>
