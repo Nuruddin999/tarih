@@ -30,6 +30,7 @@ export function ChronologyExplorer() {
     filterTimer.current = setTimeout(() => {
       setIsFiltering(false);
       filterTimer.current = null;
+      if (window.matchMedia("(min-width: 1024px)").matches) return;
       resultsRef.current?.scrollIntoView({
         behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
           ? "instant"
@@ -57,7 +58,8 @@ export function ChronologyExplorer() {
   }).sort((a, b) => a.years.start - b.years.start || a.years.end - b.years.end) : [];
   const unknownCount = everyone.filter(([key, p]) => key !== selected && matches(key) && (!yearRange(p.birth.hijri) || !yearRange(p.death.hijri))).length;
   
-  return <>
+  return <div className="chronology-layout">
+    <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <section className="explorer" aria-label="Фильтры хронологии">
       <div className="filter-buttons" aria-label="Направление и мазхаб">
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
@@ -91,6 +93,8 @@ export function ChronologyExplorer() {
       </>}
     </section>
     
+    </aside>
+    <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
       <p role="status">
         {isFiltering
@@ -101,5 +105,6 @@ export function ChronologyExplorer() {
     <nav className="period-navigation" aria-label="Переход к периоду">{visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}</nav>
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
-  </>;
+    </div>
+  </div>;
 }
