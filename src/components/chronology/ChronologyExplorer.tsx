@@ -15,6 +15,24 @@ export function ChronologyExplorer() {
   const [selected, setSelected] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
   const [pendingPeriod, setPendingPeriod] = useState<string | null>(null);
+  const comparisonDialogRef = useRef<HTMLDialogElement>(null);
+  const [isComparisonOpen, setIsComparisonOpen] = useState(false);
+
+  useEffect(() => {
+    if (!isComparisonOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const mobile = window.matchMedia("(max-width: 1023px)");
+    const closeOnMobile = () => {
+      if (mobile.matches) comparisonDialogRef.current?.close();
+    };
+    mobile.addEventListener("change", closeOnMobile);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      mobile.removeEventListener("change", closeOnMobile);
+    };
+  }, [isComparisonOpen]);
+
   const resultsRef = useRef<HTMLDivElement>(null);
   const filterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -95,8 +113,11 @@ export function ChronologyExplorer() {
       </nav>
     </section>
 
-    <ComparisonPanel idPrefix="desktop" category={category} query={query}
-      selected={selected} onSelect={setSelected} />
+    <h3 className="sidebar-block-title desktop-only">Кто жил одновременно?</h3>
+    <button type="button" className="comparison-launch desktop-only" aria-haspopup="dialog"
+      onClick={() => { comparisonDialogRef.current?.showModal(); setIsComparisonOpen(true); }}>
+      Найти современников
+    </button>
     </aside>
     <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
@@ -110,5 +131,19 @@ export function ChronologyExplorer() {
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
+    <dialog ref={comparisonDialogRef} className="comparison-dialog" aria-labelledby="comparison-dialog-title"
+      onClose={() => setIsComparisonOpen(false)}
+      onClick={event => { if (event.target === event.currentTarget) comparisonDialogRef.current?.close(); }}>
+      <div className="comparison-dialog__panel">
+        <header className="comparison-dialog__header">
+          <h2 id="comparison-dialog-title">Кто жил одновременно?</h2>
+          <button type="button" aria-label="Закрыть сравнение" onClick={() => comparisonDialogRef.current?.close()}>✕</button>
+        </header>
+        <div className="comparison-dialog__body">
+          <ComparisonPanel idPrefix="desktop" category={category} query={query}
+            selected={selected} onSelect={setSelected} />
+        </div>
+      </div>
+    </dialog>
   </div>;
 }
