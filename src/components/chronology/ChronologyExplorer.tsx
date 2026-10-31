@@ -2,19 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import { people, periods, categoryLabels } from "@/data/chronology";
-import type { PersonActivity, PersonMadhhab } from "@/types/chronology";
+import type { PersonCategory } from "@/types/chronology";
 import { formatYear, overlap, yearRange } from "@/lib/contemporaries";
 import { PeriodSection } from "./PeriodSection";
 import { PersonCard } from "./PersonCard";
 
 const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b[1].name, "ru"));
 
-const activityOptions: PersonActivity[] = ["muhaddith", "historian"];
-const madhhabOptions: PersonMadhhab[] = ["hanafi", "maliki", "shafii", "hanbali"];
-
 export function ChronologyExplorer() {
-  const [activity, setActivity] = useState<PersonActivity | "all">("all");
-  const [madhhab, setMadhhab] = useState<PersonMadhhab | "all">("all");
+  const [category, setCategory] = useState<PersonCategory | "all">("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
@@ -25,8 +21,10 @@ export function ChronologyExplorer() {
     if (filterTimer.current !== null) clearTimeout(filterTimer.current);
   }, []);
 
-  function showFilterFeedback() {
+  function changeCategory(next: PersonCategory | "all", resetQuery = false) {
     if (filterTimer.current !== null) clearTimeout(filterTimer.current);
+    setCategory(next);
+    if (resetQuery) setQuery("");
     setIsFiltering(true);
 
     filterTimer.current = setTimeout(() => {
@@ -45,8 +43,7 @@ export function ChronologyExplorer() {
   const normalized = query.trim().toLocaleLowerCase("ru").replaceAll("ё", "е");
   const matches = (key: string) => {
     const person = people[key];
-    return person && (activity === "all" || person.categories?.includes(activity)) &&
-      (madhhab === "all" || person.categories?.includes(madhhab)) &&
+    return person && (category === "all" || person.categories?.includes(category)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(normalized);
   };
   const visiblePeriods = periods.map(period => ({ ...period, groups: period.groups
@@ -64,26 +61,15 @@ export function ChronologyExplorer() {
   return <div className="chronology-layout">
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
-    <h3 id="activity-title" className="sidebar-block-title">Область деятельности</h3>
-    <section className="explorer" aria-labelledby="activity-title">
-      <div className="filter-buttons" role="group" aria-labelledby="activity-title">
-        <button type="button" aria-pressed={activity === "all"} onClick={() => { setActivity("all"); showFilterFeedback(); }}>Все области</button>
-        {activityOptions.map(key => <button type="button" key={key} aria-pressed={activity === key} onClick={() => { setActivity(key); showFilterFeedback(); }}>{categoryLabels[key]}</button>)}
+    <h3 className="sidebar-block-title desktop-only">Учёные</h3>
+    <section className="explorer" aria-label="Фильтры хронологии">
+      <div className="filter-buttons" aria-label="Направление и мазхаб">
+        <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
+        {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
       </div>
-    </section>
-
-    <h3 id="madhhab-title" className="sidebar-block-title">Мазхаб</h3>
-    <section className="explorer" aria-labelledby="madhhab-title">
-      <div className="filter-buttons" role="group" aria-labelledby="madhhab-title">
-        <button type="button" aria-pressed={madhhab === "all"} onClick={() => { setMadhhab("all"); showFilterFeedback(); }}>Все мазхабы</button>
-        {madhhabOptions.map(key => <button type="button" key={key} aria-pressed={madhhab === key} onClick={() => { setMadhhab(key); showFilterFeedback(); }}>{categoryLabels[key]}</button>)}
-      </div>
-    </section>
-
-    <section className="explorer" aria-label="Поиск и сброс фильтров">
       <label className="explorer-label" htmlFor="person-search">Поиск по имени или городу</label>
       <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, аш-Шафии или Багдад" />
-      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => { setActivity("all"); setMadhhab("all"); setQuery(""); showFilterFeedback(); }}>Сбросить фильтры</button></div>
+      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
     <h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
@@ -122,7 +108,7 @@ export function ChronologyExplorer() {
       <p role="status">
         {isFiltering
           ? "Обновляем список…"
-          : `${[activity === "all" ? null : categoryLabels[activity], madhhab === "all" ? null : categoryLabels[madhhab]].filter(Boolean).join(" · ") || "Все личности"} · найдено: ${count}`}
+          : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}`}
       </p>
     </div>
     <nav className="period-navigation mobile-period-navigation" aria-label="Переход к периоду">{visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}</nav>
