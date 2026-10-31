@@ -3,13 +3,15 @@ export type HistoricalDate = {
   gregorian: string;
 };
 
-export type PersonCategory =
-  | "muhaddith"
+export type PersonActivity = "muhaddith" | "historian";
+
+export type PersonMadhhab =
   | "hanafi"
   | "maliki"
   | "shafii"
-  | "hanbali"
-  | "historian";
+  | "hanbali";
+
+export type PersonCategory = PersonActivity | PersonMadhhab;
 
 export type Person = {
   id: string;
