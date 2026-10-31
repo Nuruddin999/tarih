@@ -1026,3 +1026,55 @@ button:focus-visible, input:focus-visible, select:focus-visible {
     border-left: 0;
     border-top: 1px solid var(--border);
 }
+
+/* Desktop comparison uses the viewport instead of the sidebar width. */
+.comparison-launch {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font: inherit;
+    font-size: 14px;
+    text-align: left;
+    color: var(--ink);
+    background: var(--surface);
+    cursor: pointer;
+}
+.comparison-launch:hover { background: var(--period-background); }
+.comparison-dialog {
+    width: min(100% - 64px, 1040px);
+    max-width: none;
+    max-height: calc(100dvh - 64px);
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--ink);
+    background: var(--surface);
+}
+.comparison-dialog::backdrop { background: rgb(15 30 24 / 55%); }
+.comparison-dialog__panel { display: flex; flex-direction: column; max-height: calc(100dvh - 66px); }
+.comparison-dialog__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+}
+.comparison-dialog__header h2 { margin: 0; font-family: Georgia, serif; font-size: 30px; font-weight: 400; }
+.comparison-dialog__header button {
+    min-width: 44px;
+    min-height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--ink);
+    background: var(--background);
+    font: inherit;
+    cursor: pointer;
+}
+.comparison-dialog__body { padding: 24px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.comparison-dialog .sidebar-block-title { display: none; }
+.comparison-dialog .contemporaries { padding: 0; margin: 0; border: 0; background: transparent; }
+.comparison-dialog .contemporary-list { max-height: none; overflow: visible; }
