@@ -757,3 +757,47 @@ button:focus-visible, input:focus-visible, select:focus-visible {
         margin-bottom: 24px;
     }
 }
+
+.desktop-only {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .sidebar-title {
+        margin: 0 0 18px;
+        font-family: Georgia, serif;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .sidebar-block-title {
+        margin: 0 0 14px;
+        font-size: 16px;
+    }
+
+    .sidebar-periods {
+        padding: 18px;
+        margin-bottom: 16px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+    }
+
+    .sidebar-periods .period-navigation {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .sidebar-periods .period-navigation a {
+        border-radius: 10px;
+        line-height: 1.5;
+    }
+
+    .mobile-period-navigation {
+        display: none;
+    }
+}
