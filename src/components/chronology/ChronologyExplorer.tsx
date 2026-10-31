@@ -3,9 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { people, periods, categoryLabels } from "@/data/chronology";
 import type { PersonCategory } from "@/types/chronology";
-import { formatYear, overlap, yearRange } from "@/lib/contemporaries";
 import { PeriodSection } from "./PeriodSection";
-import { PersonCard } from "./PersonCard";
+import { ComparisonPanel } from "./ComparisonPanel";
 import { MobileFilters } from "./MobileFilters";
 
 const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b[1].name, "ru"));
@@ -15,15 +14,7 @@ export function ChronologyExplorer() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
-  const [comparisonOpen, setComparisonOpen] = useState(false);
-
-  useEffect(() => {
-    const desktop = window.matchMedia("(min-width: 1024px)");
-    const update = () => setComparisonOpen(desktop.matches);
-    update();
-    desktop.addEventListener("change", update);
-    return () => desktop.removeEventListener("change", update);
-  }, []);
+  const [pendingPeriod, setPendingPeriod] = useState<string | null>(null);
   const resultsRef = useRef<HTMLDivElement>(null);
   const filterTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -57,22 +48,33 @@ export function ChronologyExplorer() {
     return person && (filter === "all" || person.categories?.includes(filter)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
-  const visiblePeriods = periods.map(period => ({ ...period, groups: period.groups
-      .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId)) }))
+  const filterPeriods = (filter = category, search = normalized) => periods.map(period => ({ ...period, groups: period.groups
+      .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
       .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0);
+  const visiblePeriods = filterPeriods();
   const count = new Set(visiblePeriods.flatMap(p => p.groups.flatMap(g => g.people.map(e => e.personId)))).size;
-  const chosen = people[selected];
-  const contemporaries = chosen ? everyone.flatMap(([key, person]) => {
-    if (key === selected || !matches(key)) return [];
-    const years = overlap(chosen, person);
-    return years ? [{ key, person, years }] : [];
-  }).sort((a, b) => a.years.start - b.years.start || a.years.end - b.years.end) : [];
-  const unknownCount = everyone.filter(([key, p]) => key !== selected && matches(key) && (!yearRange(p.birth.hijri) || !yearRange(p.death.hijri))).length;
+  useEffect(() => {
+    if (!pendingPeriod) return;
+    const target = document.getElementById(pendingPeriod);
+    if (target) {
+      target.querySelector("details")?.setAttribute("open", "");
+      target.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+        block: "start",
+      });
+    }
+    setPendingPeriod(null);
+  }, [pendingPeriod, category, query]);
   
   return <div className="chronology-layout">
-    <MobileFilters category={category} query={query} onQueryChange={setQuery}
-      getCount={(filter, clearSearch) => everyone.filter(([key]) => matches(key, filter, clearSearch ? "" : normalized)).length}
-      onApply={(filter, clearSearch) => changeCategory(filter, clearSearch, false)} />
+    <MobileFilters category={category} query={query} selected={selected} onQueryChange={setQuery}
+      getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
+      onApply={(filter, search, person, periodId) => {
+        changeCategory(filter, false, false);
+        setQuery(search);
+        setSelected(person);
+        if (periodId) setPendingPeriod(periodId);
+      }} />
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
     <h3 className="sidebar-block-title desktop-only">Учёные</h3>
@@ -93,33 +95,8 @@ export function ChronologyExplorer() {
       </nav>
     </section>
 
-    <details className="comparison-toggle" open={comparisonOpen}
-      onToggle={event => setComparisonOpen(event.currentTarget.open)}>
-    <summary>Найти современников</summary>
-    <section className="contemporaries" aria-labelledby="contemporaries-title">
-      <h2 id="contemporaries-title">Кто жил одновременно?</h2>
-      <p>Выбери личность, чтобы увидеть её современников из нашей хронологии.</p>
-      <label className="explorer-label" htmlFor="contemporary-person">С кем сравнить годы жизни</label>
-      <select id="contemporary-person" value={selected} onChange={e => setSelected(e.target.value)}>
-        <option value="">Выбрать личность</option>
-        {everyone.map(([key, person]) => <option value={key} key={key}>{person.name}</option>)}
-      </select>
-      {chosen && <>
-          <p className="comparison-lifespan"><strong>{chosen.name}</strong><br />{chosen.birth.hijri} — {chosen.death.hijri}</p>
-          <p className="comparison-note">Сравнение по годам хиджры. Совпадение годов не означает личную встречу. Приблизительные даты и диапазоны дают возможное пересечение; совпадение одного года требует уточнения по месяцам. Фильтры выше применяются и к этому списку.</p>
-        {!yearRange(chosen.birth.hijri) || !yearRange(chosen.death.hijri) ? <p role="status">Для сравнения недостаточно данных о годах жизни этой личности.</p> : <>
-          <p role="status">Современников с учётом фильтров: {contemporaries.length}</p>
-          <div className="contemporary-list">{contemporaries.map(({ key, person, years }) => <div key={key}>
-            <p className="overlap-label">Возможное пересечение: {formatYear(years.start)}{years.start !== years.end && ` — ${formatYear(years.end)}`}</p>
-            <PersonCard person={person} />
-          </div>)}</div>
-          {contemporaries.length === 0 && <p>Совпадений нет. Попробуй сбросить фильтры или выбрать другую личность.</p>}
-          {unknownCount > 0 && <p className="comparison-note">Не включены личности с неполными датами: {unknownCount}.</p>}
-        </>}
-      </>}
-    </section>
-    
-    </details>
+    <ComparisonPanel idPrefix="desktop" category={category} query={query}
+      selected={selected} onSelect={setSelected} />
     </aside>
     <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
@@ -129,10 +106,7 @@ export function ChronologyExplorer() {
           : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}`}
       </p>
     </div>
-    <details className="mobile-epochs">
-    <summary>Эпохи</summary>
-    <nav className="period-navigation mobile-period-navigation" aria-label="Переход к периоду">{visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}</nav>
-    </details>
+
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
