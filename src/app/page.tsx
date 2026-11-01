@@ -1,3 +1,4 @@
+import { people, periods } from "@/data/chronology";
 import { ChronologyExplorer } from "@/components/chronology/ChronologyExplorer";
 
 export default function HomePage() {
@@ -5,10 +6,10 @@ export default function HomePage() {
     <main className="chronology">
       <header className="site-header">
         <a href="#" className="brand">
-          <span className="brand__symbol" aria-hidden="true">۞</span>
+          <span className="brand__symbol" aria-hidden="true">◷</span>
           <span>Люди и эпохи</span>
         </a>
-        <span className="site-header__caption">Исторический атлас</span>
+        <nav className="header-nav" aria-label="Основная навигация"><a href="#atlas">Хронология</a><a href="#about">О проекте</a><a href="#dates">Как читать даты</a></nav>
       </header>
 
       <section className="intro" aria-labelledby="intro-title">
@@ -17,19 +18,21 @@ export default function HomePage() {
           <h1 id="intro-title">Исламская хронология</h1>
         </div>
         <div className="intro__about">
-          <p className="intro__description">
-            Кто жил у истоков ислама, кто пришёл после и какие эпохи связывают этих людей?
-            Этот сайт — наглядный путеводитель по исламской истории: от пророка Мухаммада ﷺ
-            и его сподвижников — людей, которые встречали его и следовали его учению, —
-            до учёных и правителей следующих поколений.
+          <p id="about" className="intro__description">
+            Люди, которые формировали исламскую историю. От пророка Мухаммада ﷺ
+            и его сподвижников до учёных и правителей следующих поколений.
           </p>
           <p className="intro__guide">
-            Изучайте исторические периоды, ищите людей по имени или роду деятельности,
-            смотрите годы их жизни и узнавайте, кто был чьим современником.
-            Для знакомства с сайтом не нужны специальные знания.
+            Находите личности, исследуйте эпохи и узнавайте, кто жил в одно время.
+            Начать можно с любого имени — специальные знания не нужны.
           </p>
         </div>
-        <p className="intro__legend">
+        <div className="atlas-stats" aria-label="Об атласе">
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">♙</span><div><strong>{Object.keys(people).length}</strong><small>Личностей в атласе</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">◷</span><div><strong>{periods.length}</strong><small>Исторических эпох</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">↔</span><div><strong>2</strong><small>Календаря рядом</small></div></div>
+        </div>
+        <p id="dates" className="intro__legend">
           <span>Как читать даты</span>
           Основная шкала — по хиджре: исламское летоисчисление ведётся от переселения
           пророка Мухаммада ﷺ из Мекки в Медину в 622 году. «До х.» означает «до хиджры».
@@ -37,7 +40,7 @@ export default function HomePage() {
         </p>
       </section>
 
-      <ChronologyExplorer />
+      <div id="atlas"><ChronologyExplorer /></div>
       <footer className="site-footer">
         «Ок.» обозначает приблизительную дату. Григорианские годы указаны для сопоставления.
         Даты предварительные и требуют сверки с источниками.
