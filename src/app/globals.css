@@ -1,12 +1,12 @@
 :root {
-    --background: #f5f1e8;
-    --surface: #fffdf8;
-    --period-background: #ebe6da;
-    --ink: #213e34;
-    --muted: #65675e;
-    --accent: #896a34;
-    --border: #d9d2c2;
-    --green: #244b3d
+    --background: #f4f5f7;
+    --surface: #ffffff;
+    --period-background: #ffffff;
+    --ink: #171a21;
+    --muted: #687381;
+    --accent: #1689df;
+    --border: #e6e9ee;
+    --green: #1689df
 }
 
 * {
@@ -92,7 +92,7 @@ a:focus-visible, summary:focus-visible {
 
 h1 {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: inherit;
     font-size: clamp(42px, 7vw, 76px);
     font-weight: 400;
     line-height: 1.04;
@@ -174,7 +174,7 @@ h1 {
     bottom: 36px;
     left: 7px;
     width: 1px;
-    background: #b8a77f
+    background: #dce7f2
 }
 
 .timeline-period {
@@ -220,7 +220,7 @@ h1 {
 
 .period__heading h2 {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: inherit;
     font-size: clamp(24px, 3vw, 32px);
     font-weight: 400;
     line-height: 1.25
@@ -259,7 +259,7 @@ h1 {
 
 .person-group__title {
     margin: 0 0 14px;
-    color: #6f5a32;
+    color: #687381;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -279,13 +279,13 @@ h1 {
     gap: 12px 20px;
     padding: 16px 18px;
     background: var(--surface);
-    border: 1px solid #e0dacd;
+    border: 1px solid #e6e9ee;
     border-radius: 14px
 }
 
 .person__name {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: inherit;
     font-size: 22px;
     font-weight: 400;
     line-height: 1.35;
@@ -355,15 +355,15 @@ h1 {
 .person--featured {
     background: var(--green);
     border-color: var(--green);
-    color: #fff9ed
+    color: #172b40
 }
 
 .person--featured .person__honorific, .person--featured .historical-date__label, .person--featured .historical-date__gregorian {
-    color: #d8dfd4
+    color: #526b80
 }
 
 .person--featured .person__dates {
-    border-color: #577165
+    border-color: #d5e9fb
 }
 
 .site-footer {
@@ -473,8 +473,8 @@ h1 {
 }
 
 .person__categories li {
-    color: #4c614d;
-    background: #edf0e6;
+    color: #1976bb;
+    background: #edf6fd;
     border-radius: 5px;
     padding: 3px 7px;
     font-size: 11px;
@@ -529,7 +529,7 @@ h1 {
 }
 
 .person--featured .person__location-label, .person--featured .person__sources {
-    color: #d8dfd4;
+    color: #526b80;
 }
 
 .historical-date__hijri {
@@ -600,7 +600,7 @@ h1 {
 }
 
 .contemporaries h2 {
-    font-family: Georgia, serif;
+    font-family: inherit;
     font-size: clamp(25px, 4vw, 34px);
     font-weight: 400;
     margin: 0 0 12px;
@@ -709,11 +709,11 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 }
 
 .person--featured .person__contemporaries, .person--featured .person__contemporary-list li {
-    border-color: #577165;
+    border-color: #d5e9fb;
 }
 
 .person--featured .person__contemporary-note, .person--featured .person__contemporary-overlap {
-    color: #d8dfd4;
+    color: #526b80;
 }
 
 /* Desktop: keep controls beside the chronology. */
@@ -797,7 +797,7 @@ button:focus-visible, input:focus-visible, select:focus-visible {
 
     .sidebar-title {
         margin: 0 0 18px;
-        font-family: Georgia, serif;
+        font-family: inherit;
         font-size: 30px;
         font-weight: 400;
     }
@@ -1025,4 +1025,94 @@ button:focus-visible, input:focus-visible, select:focus-visible {
     padding-left: 0;
     border-left: 0;
     border-top: 1px solid var(--border);
+}
+
+/* Gram-inspired interface: neutral surfaces, blue actions and compact typography. */
+:root { --shadow: 0 2px 5px rgb(21 38 62 / 3%), 0 8px 24px rgb(21 38 62 / 3%); }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.chronology { width: min(100% - 48px, 1240px); }
+.site-header { min-height: 76px; padding-block: 16px; border-bottom: 1px solid var(--border); }
+.brand { text-transform: none; letter-spacing: -.5px; font-size: 19px; gap: 10px; }
+.brand__symbol { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: var(--accent); color: white; font-size: 23px; }
+.header-nav { display: flex; align-items: center; gap: 24px; font-size: 14px; color: var(--muted); }
+.header-nav a { text-decoration: none; padding-block: 10px; }
+.header-nav a:hover { color: var(--accent); }
+.intro { display: block; text-align: center; padding: 52px 0 30px; }
+.eyebrow { letter-spacing: .3px; text-transform: none; font-size: 13px; margin-bottom: 12px; }
+.intro h1 { font-size: clamp(32px, 4vw, 48px); font-weight: 700; letter-spacing: -1.6px; line-height: 1.15; }
+.intro__description { max-width: 740px; margin: 16px auto 0; font-size: 16px; line-height: 1.65; color: var(--muted); }
+.intro__guide { font-size: 14px; line-height: 1.6; margin: 10px auto 0; max-width: 720px; }
+.atlas-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0 0; text-align: left; }
+.atlas-stat { display: flex; align-items: center; gap: 14px; background: white; border: 1px solid rgb(230 233 238 / 60%); border-radius: 20px; padding: 20px; box-shadow: var(--shadow); }
+.atlas-stat__icon { display: grid; place-items: center; width: 42px; height: 42px; flex-shrink: 0; background: #eaf5ff; color: #1689df; border-radius: 13px; font-size: 21px; }
+.atlas-stat:nth-child(2) .atlas-stat__icon { background: #f0ecff; color: #7b61d8; }
+.atlas-stat:nth-child(3) .atlas-stat__icon { background: #e8f8ef; color: #279462; }
+.atlas-stat strong { display: block; font-size: 23px; letter-spacing: -.5px; }
+.atlas-stat small { display: block; color: var(--muted); font-size: 13px; margin-top: 4px; }
+.intro__legend { text-align: left; background: #edf4fa; border: 0; border-radius: 12px; padding: 14px 18px; margin-top: 18px; font-size: 12px; }
+.chronology-layout { gap: 24px; }
+.sidebar-title { font-size: 20px; font-weight: 650; margin-bottom: 18px; }
+.sidebar-block-title { font-size: 13px; color: var(--muted); }
+.explorer, .contemporaries, .sidebar-periods { border-color: transparent; box-shadow: var(--shadow); border-radius: 18px; }
+.filter-buttons { gap: 5px; }
+.filter-buttons button { background: transparent; border-color: transparent; border-radius: 10px; font-size: 13px; }
+.filter-buttons button:hover { background: #eef6fd; }
+.filter-buttons button[aria-pressed="true"] { background: #e7f3ff; border-color: transparent; color: #0876ca; font-weight: 600; }
+.filter-status button { border: 0; background: transparent; padding: 0; color: var(--accent); text-align: left; }
+.explorer input, .contemporaries select { background: #f6f7f9; border-color: #e6e9ee; }
+.period-navigation a { background: transparent; border-color: transparent; padding: 8px 10px; }
+.period-navigation a:hover { background: #eef6fd; border-color: transparent; color: var(--accent); }
+.timeline { padding-left: 0; }
+.timeline::before, .timeline-period__marker { display: none; }
+.period { border: 1px solid #e9ecf0; border-radius: 20px; box-shadow: var(--shadow); }
+.period__summary { padding: 24px; }
+.period__summary > .historical-date { flex-direction: row; align-items: baseline; gap: 12px; }
+.historical-date--large .historical-date__hijri { font-size: 18px; letter-spacing: -.4px; color: var(--accent); font-weight: 650; }
+.historical-date--large .historical-date__gregorian { font-size: 13px; }
+.period__heading { margin-top: 12px; }
+.period__heading h2 { font-size: 24px; font-weight: 650; letter-spacing: -.6px; }
+.period__heading p { font-size: 13px; margin-top: 8px; }
+.period__toggle { width: 32px; height: 32px; background: #f4f6f8; border: 0; color: var(--muted); }
+.period__content { padding: 0 24px 24px; }
+.person-group__title { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
+.person-group__list { gap: 10px; }
+.person { border-color: #edf0f3; border-radius: 12px; padding: 16px; transition: border-color 150ms ease; }
+.person:hover { border-color: #c4dff4; }
+.person__name { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
+.person__honorific { font-size: 12px; }
+.person__description { color: var(--muted); }
+.person__location { font-size: 12px; font-weight: 500; }
+.person__location-label { text-transform: none; letter-spacing: 0; }
+.historical-date__label { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.historical-date__hijri { font-size: 20px; font-weight: 600; }
+.person__contemporaries > summary { font-size: 12px; font-weight: 500; color: var(--accent); }
+.person__contemporary-count { background: #edf5fc; padding: 1px 6px; border-radius: 5px; }
+.person--featured { background: #f0f8ff; border-color: #d5e9fb; }
+.contemporaries h2, .chronology-sidebar .contemporaries h2 { font-size: 19px; font-weight: 600; letter-spacing: -.4px; }
+.contemporaries > p { font-size: 13px; color: var(--muted); }
+.site-footer { padding: 6px 0 32px; max-width: 800px; }
+@media (min-width: 1024px) { .chronology-layout { grid-template-columns: 260px minmax(0, 1fr); } }
+@media (max-width: 760px) {
+ .chronology { width: calc(100% - 28px); }
+ .site-header { min-height: 64px; }
+ .brand { font-size: 17px; }
+ .header-nav { gap: 14px; font-size: 12px; }
+ .header-nav a:last-child { display: none; }
+ .intro { padding-top: 30px; }
+ .intro__description { font-size: 14px; }
+ .intro__guide { font-size: 13px; }
+ .atlas-stats { gap: 8px; margin-top: 22px; }
+ .atlas-stat { padding: 14px 10px; border-radius: 14px; gap: 8px; flex-direction: column; align-items: flex-start; }
+ .atlas-stat__icon { width: 30px; height: 30px; font-size: 16px; border-radius: 9px; }
+ .atlas-stat strong { font-size: 20px; }
+ .atlas-stat small { font-size: 11px; }
+ .intro__legend { padding: 12px; font-size: 12px; }
+ .period__summary { padding: 18px 16px; }
+ .period__heading h2 { font-size: 21px; }
+ .period__content { padding: 0 12px 12px; }
+ .person { padding: 14px; }
+ .person__name { font-size: 18px; }
+ .historical-date__hijri { font-size: 19px; }
+ .mobile-filter-toolbar__row input { border-radius: 24px; padding-inline: 18px; }
+ .mobile-filter-toolbar__row button { background: var(--accent); border-color: var(--accent); color: white; border-radius: 24px; }
 }
