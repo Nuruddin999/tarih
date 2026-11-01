@@ -1116,3 +1116,30 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-s
  .mobile-filter-toolbar__row input { border-radius: 24px; padding-inline: 18px; }
  .mobile-filter-toolbar__row button { background: var(--accent); border-color: var(--accent); color: white; border-radius: 24px; }
 }
+
+/* Mobile surfaces need separation even on low-contrast phone displays. */
+@media (max-width: 1023px) {
+ :root {
+  --background: #eceef1;
+  --border: #d3d8df;
+  --shadow: 0 2px 4px rgb(23 34 51 / 7%), 0 6px 18px rgb(23 34 51 / 6%);
+ }
+ .period, .atlas-stat, .mobile-epochs, .comparison-toggle {
+  border: 1px solid #d3d8df;
+  box-shadow: var(--shadow);
+ }
+ .person {
+  background: #fff;
+  border-color: #d0d6de;
+  box-shadow: 0 2px 3px rgb(23 34 51 / 5%), 0 4px 10px rgb(23 34 51 / 4%);
+ }
+ .person--featured {
+  background: #edf6ff;
+  border-color: #afcfe9;
+ }
+ .person-group__list { gap: 12px; }
+ .mobile-filter-toolbar__row input {
+  border-color: #cbd2db;
+  box-shadow: 0 2px 5px rgb(23 34 51 / 5%);
+ }
+}
