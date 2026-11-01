@@ -1117,14 +1117,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-s
  .mobile-filter-toolbar__row button { background: var(--accent); border-color: var(--accent); color: white; border-radius: 24px; }
 }
 
-/* Mobile surfaces need separation even on low-contrast phone displays. */
+/* Mobile surfaces: open epoch sections and distinct biography cards. */
 @media (max-width: 1023px) {
  :root {
   --background: #eceef1;
   --border: #d3d8df;
   --shadow: 0 2px 4px rgb(23 34 51 / 7%), 0 6px 18px rgb(23 34 51 / 6%);
  }
- .period, .atlas-stat, .mobile-epochs, .comparison-toggle {
+ .atlas-stat, .mobile-epochs, .comparison-toggle {
   border: 1px solid #d3d8df;
   box-shadow: var(--shadow);
  }
@@ -1137,6 +1137,17 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-s
   background: #edf6ff;
   border-color: #afcfe9;
  }
+ .period {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+ }
+ .period__summary { padding: 20px 4px 18px; }
+ .period__content { padding: 0 0 8px; }
+ .timeline-period { margin-bottom: 32px; }
+ .period__toggle { background: #e0e4e9; }
  .person-group__list { gap: 12px; }
  .mobile-filter-toolbar__row input {
   border-color: #cbd2db;
