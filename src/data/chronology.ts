@@ -8,7 +8,8 @@ export const categoryLabels: Record<PersonCategory, string> = {
   "maliki": "Маликитский мазхаб",
   "shafii": "Шафиитский мазхаб",
   "hanbali": "Ханбалитский мазхаб",
-  "historian": "Историк"
+  "historian": "Историк",
+  "mufassir": "Муфассир"
 };
 
 export const people: Record<string, Person> = {
@@ -27,6 +28,16 @@ export const people: Record<string, Person> = {
     "cities": [
       "Мекка",
       "Медина"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Первый разъяснитель Корана для общины: объяснял сподвижникам смысл откровения. Его объяснения — основа пророческого тафсира (Коран, 16:44).",
+    "sources": [
+      {
+        "title": "Islamweb · Разъяснение Корана Пророком ﷺ",
+        "url": "https://islamweb.net/ar/fatwa/50196/"
+      }
     ]
   },
   "abuBakr": {
@@ -1768,7 +1779,8 @@ export const people: Record<string, Person> = {
     ],
     "categories": [
       "historian",
-      "muhaddith"
+      "muhaddith",
+      "mufassir"
     ],
     "description": "Автор «Тарих ар-русуль ва-ль-мулюк» и «Джами аль-баян».",
     "sources": [
@@ -1880,7 +1892,8 @@ export const people: Record<string, Person> = {
     "categories": [
       "historian",
       "muhaddith",
-      "shafii"
+      "shafii",
+      "mufassir"
     ],
     "description": "Автор «Аль-Бидая ва-н-нихая» и тафсира Корана.",
     "sources": [
@@ -1966,19 +1979,229 @@ export const people: Record<string, Person> = {
     "categories": [
       "historian",
       "muhaddith",
-      "shafii"
+      "shafii",
+      "mufassir"
     ],
-    "description": "Автор «Тарих аль-хуляфа» и «Хусн аль-мухадара».",
+    "description": "Автор «Тарих аль-хуляфа» и «Хусн аль-мухадара». Автор «Ад-Дурр аль-мансур» по толкованию Корана.",
     "sources": [
       {
         "title": "الجلال السيوطي - المكتبة الشاملة",
         "url": "https://shamela.ws/author/7"
       }
     ]
+  },
+  "ubayy": {
+    "id": "ubayy",
+    "name": "Убайй ибн Кааб",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "Точный год неизвестен",
+      "gregorian": "Точный год неизвестен"
+    },
+    "death": {
+      "hijri": "22 г. х.",
+      "gregorian": "ок. 643 г."
+    },
+    "cities": [
+      "Медина"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Сподвижник, знаток чтения и толкования Корана. Один из учителей Ибн Аббаса.",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Убайй ибн Кааб",
+        "url": "https://www.islamweb.net/ar/library/content/60/96/"
+      }
+    ],
+    "dateNote": "Выбран 22 г. х., к которому склоняется аз-Захаби. Приводятся также 19, 30 и 32 г. х.; год рождения не установлен."
+  },
+  "ibnMasud": {
+    "id": "ibnMasud",
+    "name": "Абдуллах ибн Масуд",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "Точный год неизвестен",
+      "gregorian": "Точный год неизвестен"
+    },
+    "death": {
+      "hijri": "32 г. х.",
+      "gregorian": "ок. 652–653 гг."
+    },
+    "cities": [
+      "Мекка",
+      "Медина",
+      "Куфа"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Сподвижник, один из известных толкователей Корана. Передавал знание ученикам в Куфе.",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Абдуллах ибн Масуд",
+        "url": "https://www.islamweb.net/ar/library/content/60/102/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Абдуллах ибн Масуд · кончина",
+        "url": "https://www.islamweb.net/ar/library/content/60/108/"
+      }
+    ],
+    "dateNote": "Выбран 32 г. х.; встречается также 33 г. х. Точный год рождения не установлен."
+  },
+  "ibnAbbas": {
+    "id": "ibnAbbas",
+    "name": "Абдуллах ибн Аббас",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "3 до х.",
+      "gregorian": "ок. 619 г."
+    },
+    "death": {
+      "hijri": "68 г. х.",
+      "gregorian": "ок. 687–688 гг."
+    },
+    "cities": [
+      "Мекка",
+      "Медина",
+      "Таиф"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Сподвижник, известный как «Толкователь Корана». У него учились Муджахид и Саид ибн Джубайр.",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Абдуллах ибн Аббас",
+        "url": "https://www.islamweb.net/ar/library/content/60/345/"
+      },
+      {
+        "title": "Islamweb · Кончина Ибн Аббаса",
+        "url": "https://www.islamweb.net/ar/library/content/200/18354/"
+      }
+    ]
+  },
+  "mujahid": {
+    "id": "mujahid",
+    "name": "Муджахид ибн Джабр",
+    "honorific": "Да помилует его Аллах",
+    "birth": {
+      "hijri": "ок. 21 г. х.",
+      "gregorian": "ок. 641–642 гг."
+    },
+    "death": {
+      "hijri": "104 г. х.",
+      "gregorian": "ок. 722 г."
+    },
+    "cities": [
+      "Мекка"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Табиин, ученик Ибн Аббаса. Подробно изучал у него смысл аятов; один из ведущих толкователей своего поколения.",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Муджахид ибн Джабр",
+        "url": "https://www.islamweb.net/ar/library/content/60/625/"
+      }
+    ],
+    "dateNote": "В «Сияр» приведены разные годы смерти, в том числе 102, 103 и 104 г. х. Рождение около 21 г. х. — оценка по возрасту 83 года при выбранной дате смерти."
+  },
+  "saidIbnJubayr": {
+    "id": "saidIbnJubayr",
+    "name": "Саид ибн Джубайр",
+    "honorific": "Да помилует его Аллах",
+    "birth": {
+      "hijri": "ок. 38–41 г. х.",
+      "gregorian": "ок. 658–662 гг."
+    },
+    "death": {
+      "hijri": "95 г. х.",
+      "gregorian": "ок. 714 г."
+    },
+    "cities": [
+      "Куфа",
+      "Мекка",
+      "Васит"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Табиин, ученик Ибн Аббаса, знаток Корана и его толкования. Передавал объяснения своего учителя.",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Саид ибн Джубайр",
+        "url": "https://www.islamweb.net/ar/library/content/60/567/"
+      },
+      {
+        "title": "Islamweb · Ахмад Фарид · Саид ибн Джубайр",
+        "url": "https://audio.islamweb.net/audio/index.php?audioid=204260&page=FullContent"
+      }
+    ],
+    "dateNote": "Год рождения спорный: около 38 г. х. по сообщению о возрасте 57 лет; также указывается время правления аль-Хасана (40–41 г. х.)."
+  },
+  "baghawi": {
+    "id": "baghawi",
+    "name": "Абу Мухаммад аль-Хусайн аль-Багави",
+    "honorific": "Да помилует его Аллах",
+    "birth": {
+      "hijri": "Точный год неизвестен",
+      "gregorian": "Точный год неизвестен"
+    },
+    "death": {
+      "hijri": "516 г. х.",
+      "gregorian": "1122 г."
+    },
+    "cities": [
+      "Марв ар-Руд"
+    ],
+    "categories": [
+      "mufassir",
+      "shafii",
+      "muhaddith"
+    ],
+    "description": "Муфассир и шафиитский факих. Автор тафсира «Маалим ат-танзиль» и «Шарх ас-сунна».",
+    "sources": [
+      {
+        "title": "Аз-Захаби · «Сияр алям ан-нубаля» · Аль-Багави",
+        "url": "https://www.islamweb.net/ar/library/content/60/4876/"
+      }
+    ],
+    "dateNote": "Точный год рождения не установлен в использованной биографии. Аз-Захаби сообщает, что он прожил более семидесяти лет."
+  },
+  "qurtubi": {
+    "id": "qurtubi",
+    "name": "Абу Абдуллах Мухаммад аль-Куртуби",
+    "honorific": "Да помилует его Аллах",
+    "birth": {
+      "hijri": "Точный год неизвестен",
+      "gregorian": "Точный год неизвестен"
+    },
+    "death": {
+      "hijri": "671 г. х.",
+      "gregorian": "1273 г."
+    },
+    "cities": [
+      "Кордова",
+      "Египет"
+    ],
+    "categories": [
+      "mufassir"
+    ],
+    "description": "Муфассир, автор «Аль-Джами ли-ахкам аль-Куран», известного как «Тафсир аль-Куртуби».",
+    "sources": [
+      {
+        "title": "Islamweb · Аль-Куртуби, автор тафсира",
+        "url": "https://islamweb.net/ar/fatwa/55136/"
+      }
+    ],
+    "dateNote": "В использованной биографии точный год рождения не указан."
   }
 };
 
-// Подборки известных представителей, без ранжирования. По 10 факихов сверх основателей.
+// Подборки известных представителей, без ранжирования. Муфассиры: 10 учёных, Пророк ﷺ отдельно.
 export const collections = {
   "muhaddith": [
     "bukhari",
@@ -2050,6 +2273,18 @@ export const collections = {
     "ibnKathir",
     "ibnKhaldun",
     "maqrizi",
+    "suyuti"
+  ],
+  "mufassir": [
+    "ubayy",
+    "ibnMasud",
+    "ibnAbbas",
+    "saidIbnJubayr",
+    "mujahid",
+    "tabari",
+    "baghawi",
+    "qurtubi",
+    "ibnKathir",
     "suyuti"
   ]
 };
@@ -2142,6 +2377,18 @@ export const periods: HistoricalPeriod[] = [
             "description": "Четвёртый халиф · правление 35–40 г. х."
           }
         ]
+      },
+      {
+        "id": "companion-mufassirs",
+        "title": "Толкователи Корана из сподвижников · по году смерти",
+        "people": [
+          {
+            "personId": "ubayy"
+          },
+          {
+            "personId": "ibnMasud"
+          }
+        ]
       }
     ]
   },
@@ -2158,6 +2405,15 @@ export const periods: HistoricalPeriod[] = [
         "id": "early-schools-scholars",
         "title": "Учёные и авторы · по году смерти",
         "people": [
+          {
+            "personId": "ibnAbbas"
+          },
+          {
+            "personId": "saidIbnJubayr"
+          },
+          {
+            "personId": "mujahid"
+          },
           {
             "personId": "abuHanifa"
           },
@@ -2330,6 +2586,9 @@ export const periods: HistoricalPeriod[] = [
             "personId": "ibnAqil"
           },
           {
+            "personId": "baghawi"
+          },
+          {
             "personId": "ibnRushd"
           },
           {
@@ -2376,6 +2635,9 @@ export const periods: HistoricalPeriod[] = [
         "id": "mamluk-era-scholars",
         "title": "Учёные и авторы · по году смерти",
         "people": [
+          {
+            "personId": "qurtubi"
+          },
           {
             "personId": "nawawi"
           },

@@ -107,6 +107,7 @@ export function ChronologyExplorer() {
       </p>
     </div>
 
+    {category === "mufassir" && <p>Тафсир — разъяснение смысла Корана. Пророк ﷺ первым разъяснял откровение общине; далее представлены десять известных муфассиров разных поколений, без ранжирования по достоинству.</p>}
     <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
     {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>

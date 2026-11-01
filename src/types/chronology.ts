@@ -9,7 +9,8 @@ export type PersonCategory =
   | "maliki"
   | "shafii"
   | "hanbali"
-  | "historian";
+  | "historian"
+  | "mufassir";
 
 export type Person = {
   id: string;
