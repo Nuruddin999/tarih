@@ -40,7 +40,34 @@ export const events: HistoricalEvent[] = [
     },
     "dateNote": "Датировка дана по аль-Мубаракфури; точный год обсуждается.",
     "sortOrder": 20,
-    "participants": [],
+    "participants": [
+      {
+        "personId": "abraha",
+        "role": "Возглавил поход к Каабе",
+        "sortOrder": 0,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Год слона",
+            "url": "https://shamela.ws/book/9820/40"
+          }
+        ]
+      },
+      {
+        "personId": "abdMuttalib",
+        "role": "Упомянут в повествовании о годе слона",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Год слона",
+            "url": "https://shamela.ws/book/9820/40"
+          }
+        ]
+      }
+    ],
     "sources": [
       {
         "title": "Сира Пророка ﷺ — серия уроков",
@@ -78,6 +105,58 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Рождение Пророка ﷺ, Халима и утрата матери и деда",
             "url": "https://shamela.ws/book/9820/43"
+          }
+        ]
+      },
+      {
+        "personId": "halima",
+        "role": "Кормилица Пророка ﷺ",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Рождение Пророка ﷺ, Халима и утрата матери и деда",
+            "url": "https://shamela.ws/book/9820/44"
+          }
+        ]
+      },
+      {
+        "personId": "amina",
+        "role": "Мать Пророка ﷺ",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Рождение Пророка ﷺ, Халима и утрата матери и деда",
+            "url": "https://shamela.ws/book/9820/46"
+          }
+        ]
+      },
+      {
+        "personId": "abdMuttalib",
+        "role": "Дед и опекун после смерти матери",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Рождение Пророка ﷺ, Халима и утрата матери и деда",
+            "url": "https://shamela.ws/book/9820/46"
+          }
+        ]
+      },
+      {
+        "personId": "abuTalib",
+        "role": "Принял опеку после смерти деда",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Рождение Пророка ﷺ, Халима и утрата матери и деда",
+            "url": "https://shamela.ws/book/9820/46"
           }
         ]
       }
@@ -120,6 +199,19 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/49"
           }
         ]
+      },
+      {
+        "personId": "khadija",
+        "role": "Супруга Пророка ﷺ",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Женитьба Пророка ﷺ на Хадидже",
+            "url": "https://shamela.ws/book/9820/49"
+          }
+        ]
       }
     ],
     "sources": [
@@ -159,6 +251,32 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Начало ниспослания откровения",
             "url": "https://shamela.ws/book/9820/54"
+          }
+        ]
+      },
+      {
+        "personId": "khadija",
+        "role": "Поддержала Пророка ﷺ после откровения",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Начало ниспослания откровения",
+            "url": "https://shamela.ws/book/9820/55"
+          }
+        ]
+      },
+      {
+        "personId": "waraqa",
+        "role": "Выслушал рассказ о явлении ангела",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Начало ниспослания откровения",
+            "url": "https://shamela.ws/book/9820/55"
           }
         ]
       }
@@ -224,6 +342,45 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/63"
           }
         ]
+      },
+      {
+        "personId": "khadija",
+        "role": "Одна из первых принявших ислам",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Призыв к Аллаху и его открытое провозглашение",
+            "url": "https://shamela.ws/book/9820/63"
+          }
+        ]
+      },
+      {
+        "personId": "zayd",
+        "role": "Один из первых мусульман",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Призыв к Аллаху и его открытое провозглашение",
+            "url": "https://shamela.ws/book/9820/63"
+          }
+        ]
+      },
+      {
+        "personId": "arqam",
+        "role": "Предоставил дом для собраний мусульман",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Призыв к Аллаху и его открытое провозглашение",
+            "url": "https://shamela.ws/book/9820/78"
+          }
+        ]
       }
     ],
     "sources": [
@@ -261,6 +418,19 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/69"
           }
         ]
+      },
+      {
+        "personId": "abuTalib",
+        "role": "Защищал племянника перед курайшитами",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Заговоры многобожников против Пророка ﷺ",
+            "url": "https://shamela.ws/book/9820/69"
+          }
+        ]
       }
     ],
     "sources": [
@@ -285,7 +455,138 @@ export const events: HistoricalEvent[] = [
     "periodId": "prophetic-era",
     "dateNote": "Тема не имеет одной даты; связи участников добавляются по конкретным эпизодам.",
     "sortOrder": 80,
-    "participants": [],
+    "participants": [
+      {
+        "personId": "muhammad",
+        "role": "Подвергался нападениям",
+        "sortOrder": 0,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/75"
+          }
+        ]
+      },
+      {
+        "personId": "abuBakr",
+        "role": "Выкупил и освободил Биляля",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      },
+      {
+        "personId": "uthman",
+        "role": "Подвергался притеснениям со стороны дяди",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/76"
+          }
+        ]
+      },
+      {
+        "personId": "bilal",
+        "role": "Перенёс пытки в Мекке",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/76"
+          }
+        ]
+      },
+      {
+        "personId": "musab",
+        "role": "Подвергался давлению со стороны матери",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/76"
+          }
+        ]
+      },
+      {
+        "personId": "ammar",
+        "role": "Подвергался пыткам",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      },
+      {
+        "personId": "yasir",
+        "role": "Погиб во время преследований",
+        "sortOrder": 60,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      },
+      {
+        "personId": "sumayya",
+        "role": "Погибла во время преследований",
+        "sortOrder": 70,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      },
+      {
+        "personId": "khabbab",
+        "role": "Подвергался пыткам",
+        "sortOrder": 80,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      },
+      {
+        "personId": "abuJahl",
+        "role": "Участвовал в преследованиях мусульман",
+        "sortOrder": 90,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Преследование Пророка ﷺ и верующих курайшитами",
+            "url": "https://shamela.ws/book/9820/77"
+          }
+        ]
+      }
+    ],
     "sources": [
       {
         "title": "Сира Пророка ﷺ — серия уроков",
@@ -325,6 +626,32 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/79"
           }
         ]
+      },
+      {
+        "personId": "ruqayya",
+        "role": "Переселилась вместе с Усманом",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Переселение в Эфиопию",
+            "url": "https://shamela.ws/book/9820/79"
+          }
+        ]
+      },
+      {
+        "personId": "jafar",
+        "role": "Выступал перед негусом от имени мусульман",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Переселение в Эфиопию",
+            "url": "https://shamela.ws/book/9820/82"
+          }
+        ]
       }
     ],
     "sources": [
@@ -360,6 +687,32 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Бойкот и год печали",
             "url": "https://shamela.ws/book/9820/95"
+          }
+        ]
+      },
+      {
+        "personId": "abuTalib",
+        "role": "Защищал Пророка ﷺ; его смерть — часть темы года печали",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Бойкот и год печали",
+            "url": "https://shamela.ws/book/9820/101"
+          }
+        ]
+      },
+      {
+        "personId": "khadija",
+        "role": "Её кончина — часть темы года печали",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Бойкот и год печали",
+            "url": "https://shamela.ws/book/9820/102"
           }
         ]
       }
@@ -403,6 +756,32 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Исра, мирадж и присяга при Акабе",
             "url": "https://shamela.ws/book/9820/122"
+          }
+        ]
+      },
+      {
+        "personId": "musab",
+        "role": "После присяги направлен учить жителей Ясриба",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Исра, мирадж и присяга при Акабе",
+            "url": "https://shamela.ws/book/9820/128"
+          }
+        ]
+      },
+      {
+        "personId": "saadMuadh",
+        "role": "Принял ислам во время миссии Мусаба",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Исра, мирадж и присяга при Акабе",
+            "url": "https://shamela.ws/book/9820/129"
           }
         ]
       }
@@ -475,6 +854,45 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Переселение в Медину",
             "url": "https://shamela.ws/book/9820/145"
+          }
+        ]
+      },
+      {
+        "personId": "asma",
+        "role": "Разговаривала с разыскивавшими Абу Бакра курайшитами",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Переселение в Медину",
+            "url": "https://shamela.ws/book/9820/148"
+          }
+        ]
+      },
+      {
+        "personId": "abdullahAbuBakr",
+        "role": "Приносил сведения к пещере Саур",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Переселение в Медину",
+            "url": "https://shamela.ws/book/9820/147"
+          }
+        ]
+      },
+      {
+        "personId": "amirFuhayra",
+        "role": "Помогал укрывавшимся в пещере",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Переселение в Медину",
+            "url": "https://shamela.ws/book/9820/147"
           }
         ]
       }
@@ -571,6 +989,32 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/176"
           }
         ]
+      },
+      {
+        "personId": "hamza",
+        "role": "Командовал отрядом к побережью",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Походы и отряды до Бадра",
+            "url": "https://shamela.ws/book/9820/175"
+          }
+        ]
+      },
+      {
+        "personId": "miqdad",
+        "role": "Присоединился к мусульманам во время похода к Рабигу",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Походы и отряды до Бадра",
+            "url": "https://shamela.ws/book/9820/175"
+          }
+        ]
       }
     ],
     "sources": [
@@ -625,6 +1069,71 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/181"
           }
         ]
+      },
+      {
+        "personId": "ali",
+        "role": "Знаменосец мухаджиров",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Великое сражение при Бадре",
+            "url": "https://shamela.ws/book/9820/182"
+          }
+        ]
+      },
+      {
+        "personId": "saadMuadh",
+        "role": "Знаменосец ансаров",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Великое сражение при Бадре",
+            "url": "https://shamela.ws/book/9820/182"
+          }
+        ]
+      },
+      {
+        "personId": "musab",
+        "role": "Нёс общее знамя войска",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Великое сражение при Бадре",
+            "url": "https://shamela.ws/book/9820/182"
+          }
+        ]
+      },
+      {
+        "personId": "miqdad",
+        "role": "Командовал левым крылом",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Великое сражение при Бадре",
+            "url": "https://shamela.ws/book/9820/182"
+          }
+        ]
+      },
+      {
+        "personId": "abuLubaba",
+        "role": "Назначен оставаться наместником в Медине; не участник боя",
+        "sortOrder": 60,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Великое сражение при Бадре",
+            "url": "https://shamela.ws/book/9820/182"
+          }
+        ]
       }
     ],
     "sources": [
@@ -652,7 +1161,73 @@ export const events: HistoricalEvent[] = [
       "gregorian": "624 г."
     },
     "sortOrder": 160,
-    "participants": [],
+    "participants": [
+      {
+        "personId": "muhammad",
+        "role": "Возглавил поход",
+        "sortOrder": 0,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Изгнание бану Кайнука",
+            "url": "https://shamela.ws/book/9820/213"
+          }
+        ]
+      },
+      {
+        "personId": "hamza",
+        "role": "Нёс знамя мусульман",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Изгнание бану Кайнука",
+            "url": "https://shamela.ws/book/9820/213"
+          }
+        ]
+      },
+      {
+        "personId": "abuLubaba",
+        "role": "Оставлен наместником в Медине",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Изгнание бану Кайнука",
+            "url": "https://shamela.ws/book/9820/212"
+          }
+        ]
+      },
+      {
+        "personId": "muhammadMaslama",
+        "role": "Собирал имущество после осады",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Изгнание бану Кайнука",
+            "url": "https://shamela.ws/book/9820/213"
+          }
+        ]
+      },
+      {
+        "personId": "abdullahUbayy",
+        "role": "Ходатайствовал за бану Кайнука",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Изгнание бану Кайнука",
+            "url": "https://shamela.ws/book/9820/213"
+          }
+        ]
+      }
+    ],
     "sources": [
       {
         "title": "Сира Пророка ﷺ — серия уроков",
@@ -689,6 +1264,32 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Сражение при Ухуде",
             "url": "https://shamela.ws/book/9820/225"
+          }
+        ]
+      },
+      {
+        "personId": "talha",
+        "role": "Защищал Пророка ﷺ",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Сражение при Ухуде",
+            "url": "https://shamela.ws/book/9820/239"
+          }
+        ]
+      },
+      {
+        "personId": "saad",
+        "role": "Защищал Пророка ﷺ",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Сражение при Ухуде",
+            "url": "https://shamela.ws/book/9820/239"
           }
         ]
       }
@@ -772,6 +1373,19 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/271"
           }
         ]
+      },
+      {
+        "personId": "salman",
+        "role": "Предложил вырыть ров",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Битва союзных племён — аль-Ахзаб",
+            "url": "https://shamela.ws/book/9820/271"
+          }
+        ]
       }
     ],
     "sources": [
@@ -823,6 +1437,71 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Поход против бану Курайза",
             "url": "https://shamela.ws/book/9820/281"
+          }
+        ]
+      },
+      {
+        "personId": "ummSalama",
+        "role": "В её доме Пророк ﷺ получил повеление выступить",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход против бану Курайза",
+            "url": "https://shamela.ws/book/9820/281"
+          }
+        ]
+      },
+      {
+        "personId": "abuLubaba",
+        "role": "Приходил к бану Курайза для беседы",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход против бану Курайза",
+            "url": "https://shamela.ws/book/9820/282"
+          }
+        ]
+      },
+      {
+        "personId": "zubayr",
+        "role": "Участвовал в наступлении к укреплениям",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход против бану Курайза",
+            "url": "https://shamela.ws/book/9820/282"
+          }
+        ]
+      },
+      {
+        "personId": "saadMuadh",
+        "role": "Избран для вынесения решения",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход против бану Курайза",
+            "url": "https://shamela.ws/book/9820/282"
+          }
+        ]
+      },
+      {
+        "personId": "muhammadMaslama",
+        "role": "Наблюдал за пленными после сдачи укреплений",
+        "sortOrder": 60,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход против бану Курайза",
+            "url": "https://shamela.ws/book/9820/282"
           }
         ]
       }
@@ -933,6 +1612,45 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/305"
           }
         ]
+      },
+      {
+        "personId": "ali",
+        "role": "Записал договор",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Худайбийский мир",
+            "url": "https://shamela.ws/book/9820/306"
+          }
+        ]
+      },
+      {
+        "personId": "ummSalama",
+        "role": "Дала совет после заключения мира",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Худайбийский мир",
+            "url": "https://shamela.ws/book/9820/307"
+          }
+        ]
+      },
+      {
+        "personId": "khalid",
+        "role": "До принятия ислама командовал противостоявшей мусульманам конницей",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Худайбийский мир",
+            "url": "https://shamela.ws/book/9820/302"
+          }
+        ]
       }
     ],
     "sources": [
@@ -987,6 +1705,32 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/331"
           }
         ]
+      },
+      {
+        "personId": "jafar",
+        "role": "Прибыл из Эфиопии во время взятия Хайбара",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Взятие Хайбара",
+            "url": "https://shamela.ws/book/9820/336"
+          }
+        ]
+      },
+      {
+        "personId": "abuMusa",
+        "role": "Прибыл с переселенцами; не участник штурма",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Взятие Хайбара",
+            "url": "https://shamela.ws/book/9820/336"
+          }
+        ]
       }
     ],
     "sources": [
@@ -1026,6 +1770,58 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Возмещённая умра и сражение при Муте",
             "url": "https://shamela.ws/book/9820/345"
+          }
+        ]
+      },
+      {
+        "personId": "zayd",
+        "role": "Первый назначенный командир при Муте",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Возмещённая умра и сражение при Муте",
+            "url": "https://shamela.ws/book/9820/348"
+          }
+        ]
+      },
+      {
+        "personId": "jafar",
+        "role": "Второй назначенный командир при Муте",
+        "sortOrder": 20,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Возмещённая умра и сражение при Муте",
+            "url": "https://shamela.ws/book/9820/348"
+          }
+        ]
+      },
+      {
+        "personId": "abdullahRawaha",
+        "role": "Третий назначенный командир при Муте",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Возмещённая умра и сражение при Муте",
+            "url": "https://shamela.ws/book/9820/348"
+          }
+        ]
+      },
+      {
+        "personId": "khalid",
+        "role": "Принял командование при Муте",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Возмещённая умра и сражение при Муте",
+            "url": "https://shamela.ws/book/9820/352"
           }
         ]
       }
@@ -1105,6 +1901,32 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/363"
           }
         ]
+      },
+      {
+        "personId": "khalid",
+        "role": "Командовал правым крылом",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Взятие Мекки",
+            "url": "https://shamela.ws/book/9820/363"
+          }
+        ]
+      },
+      {
+        "personId": "bilal",
+        "role": "Произнёс азан на Каабе",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Взятие Мекки",
+            "url": "https://shamela.ws/book/9820/365"
+          }
+        ]
       }
     ],
     "sources": [
@@ -1144,6 +1966,19 @@ export const events: HistoricalEvent[] = [
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Сражение при Хунайне",
             "url": "https://shamela.ws/book/9820/375"
+          }
+        ]
+      },
+      {
+        "personId": "abbas",
+        "role": "Призывал сподвижников вернуться к бою",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Сражение при Хунайне",
+            "url": "https://shamela.ws/book/9820/376"
           }
         ]
       }
@@ -1226,6 +2061,71 @@ export const events: HistoricalEvent[] = [
             "url": "https://shamela.ws/book/9820/390"
           }
         ]
+      },
+      {
+        "personId": "umar",
+        "role": "Пожертвовал средства на подготовку",
+        "sortOrder": 40,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход на Табук",
+            "url": "https://shamela.ws/book/9820/391"
+          }
+        ]
+      },
+      {
+        "personId": "talha",
+        "role": "Пожертвовал средства на подготовку",
+        "sortOrder": 50,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход на Табук",
+            "url": "https://shamela.ws/book/9820/391"
+          }
+        ]
+      },
+      {
+        "personId": "abbas",
+        "role": "Пожертвовал средства на подготовку",
+        "sortOrder": 60,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход на Табук",
+            "url": "https://shamela.ws/book/9820/391"
+          }
+        ]
+      },
+      {
+        "personId": "muhammadMaslama",
+        "role": "Помог со снаряжением; упомянут как возможный наместник в Медине",
+        "sortOrder": 70,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход на Табук",
+            "url": "https://shamela.ws/book/9820/391"
+          }
+        ]
+      },
+      {
+        "personId": "ali",
+        "role": "Оставлен при семье Пророка ﷺ в Медине, не участник похода",
+        "sortOrder": 80,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Поход на Табук",
+            "url": "https://shamela.ws/book/9820/391"
+          }
+        ]
       }
     ],
     "sources": [
@@ -1263,6 +2163,19 @@ export const events: HistoricalEvent[] = [
             "title": "Ар-Рахик аль-Махтум",
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Прощальное паломничество",
+            "url": "https://shamela.ws/book/9820/413"
+          }
+        ]
+      },
+      {
+        "personId": "aisha",
+        "role": "Сопровождала Пророка ﷺ в паломничестве",
+        "sortOrder": 10,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Прощальное паломничество",
             "url": "https://shamela.ws/book/9820/413"
           }
         ]
@@ -1330,6 +2243,19 @@ export const events: HistoricalEvent[] = [
             "title": "Ар-Рахик аль-Махтум",
             "author": "Сафи ар-Рахман аль-Мубаракфури",
             "chapter": "Эпизод: Кончина Пророка ﷺ",
+            "url": "https://shamela.ws/book/9820/424"
+          }
+        ]
+      },
+      {
+        "personId": "aisha",
+        "role": "Находилась рядом в последние минуты жизни",
+        "sortOrder": 30,
+        "sources": [
+          {
+            "title": "Ар-Рахик аль-Махтум",
+            "author": "Сафи ар-Рахман аль-Мубаракфури",
+            "chapter": "Кончина Пророка ﷺ",
             "url": "https://shamela.ws/book/9820/424"
           }
         ]
