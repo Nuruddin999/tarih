@@ -11,7 +11,6 @@ export const events: HistoricalEvent[] = [
     "title": "Арабы в эпоху джахилии",
     "description": "Общественная и религиозная жизнь Аравии до начала пророческой миссии.",
     "periodId": "prophetic-era",
-    "dateNote": "Вводная обзорная тема, а не единичное датированное событие.",
     "sortOrder": 10,
     "participants": [],
     "sources": [
@@ -91,7 +90,6 @@ export const events: HistoricalEvent[] = [
       "hijri": "ок. 53 до х.",
       "gregorian": "ок. 571 г."
     },
-    "dateNote": "Урок объединяет несколько событий детства. Дата начала — по версии автора книги; в карточке личности указан приблизительный 570 год. Конец — приблизительный ориентир по возрасту восьми лет, не точная дата.",
     "sortOrder": 30,
     "participants": [
       {
@@ -237,7 +235,6 @@ export const events: HistoricalEvent[] = [
       "hijri": "13 до х.",
       "gregorian": "610 г."
     },
-    "dateNote": "Год указан как ориентир; автор книги рассматривает разногласия о точном дне.",
     "sortOrder": 50,
     "participants": [
       {
@@ -300,7 +297,6 @@ export const events: HistoricalEvent[] = [
     "title": "Призыв к Аллаху и его открытое провозглашение",
     "description": "Первые последователи приняли ислам; за тайным призывом последовал открытый.",
     "periodId": "prophetic-era",
-    "dateNote": "Тема охватывает несколько лет мекканского периода.",
     "sortOrder": 60,
     "participants": [
       {
@@ -402,7 +398,6 @@ export const events: HistoricalEvent[] = [
     "title": "Заговоры многобожников против Пророка ﷺ",
     "description": "Курайшиты пытались остановить призыв, обращаясь к Абу Талибу и обсуждая меры против Пророка ﷺ.",
     "periodId": "prophetic-era",
-    "dateNote": "Обзор нескольких эпизодов противодействия в Мекке; не смешивать с заговором перед хиджрой.",
     "sortOrder": 70,
     "participants": [
       {
@@ -452,7 +447,6 @@ export const events: HistoricalEvent[] = [
     "title": "Преследование Пророка ﷺ и верующих курайшитами",
     "description": "Мекканские мусульмане столкнулись с насмешками, давлением и преследованиями.",
     "periodId": "prophetic-era",
-    "dateNote": "Тема не имеет одной даты; связи участников добавляются по конкретным эпизодам.",
     "sortOrder": 80,
     "participants": [
       {
@@ -610,7 +604,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "ок. 8 до х.",
       "gregorian": "ок. 615 г."
     },
-    "dateNote": "Начало — пятый год пророчества. Пророк ﷺ не переселялся в Эфиопию.",
+    "dateNote": "Пятый год пророческой миссии.",
     "sortOrder": 90,
     "participants": [
       {
@@ -673,7 +667,7 @@ export const events: HistoricalEvent[] = [
     "title": "Бойкот и год печали",
     "description": "Блокада бану Хашим и бану аль-Мутталиб; позднее — смерть Абу Талиба и Хадиджи.",
     "periodId": "prophetic-era",
-    "dateNote": "Объединённая тема: бойкот начался в седьмом году пророчества; год печали относится к десятому.",
+    "dateNote": "Бойкот начался в седьмом году пророчества; год печали относится к десятому.",
     "sortOrder": 100,
     "participants": [
       {
@@ -742,7 +736,7 @@ export const events: HistoricalEvent[] = [
     "title": "Исра, мирадж и присяга при Акабе",
     "description": "Ночное перенесение и вознесение; присяги жителей Ясриба перед переселением.",
     "periodId": "prophetic-era",
-    "dateNote": "Урок объединяет разные события. Точная дата исра и мираджа спорна; дата присяги не используется как дата вознесения.",
+    "dateNote": "Точная дата исра и мираджа неизвестна.",
     "sortOrder": 110,
     "participants": [
       {
@@ -960,7 +954,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "1 г. х.",
       "gregorian": "ок. 623 г."
     },
-    "dateNote": "Тема охватывает 1–2 гг. х.; григорианский год — приблизительный ориентир начала.",
+    "dateNote": "1–2 гг. х.",
     "sortOrder": 140,
     "participants": [
       {
@@ -1040,7 +1034,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "2 г. х.",
       "gregorian": "624 г."
     },
-    "dateNote": "Рамадан 2 г. х. Список участников пока содержит только проверенные связи с имеющимися карточками.",
+    "dateNote": "Рамадан 2 г. х.",
     "sortOrder": 150,
     "participants": [
       {
@@ -1317,7 +1311,6 @@ export const events: HistoricalEvent[] = [
       "hijri": "3 г. х.",
       "gregorian": "625 г."
     },
-    "dateNote": "В каталоге урок имеет краткое название; в расширенном оглавлении сюда также входят ар-Раджи, Бир-Мауна и бану ан-Надир. Здесь датирован только Хамра аль-Асад.",
     "sortOrder": 180,
     "participants": [
       {
@@ -1529,7 +1522,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "6 г. х.",
       "gregorian": "ок. 628 г."
     },
-    "dateNote": "Выбрана датировка аль-Мубаракфури: шаабан 6 г. х.; существуют другие датировки.",
+    "dateNote": "Шаабан 6 г. х.",
     "sortOrder": 210,
     "participants": [
       {
@@ -1676,7 +1669,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "7 г. х.",
       "gregorian": "628 г."
     },
-    "dateNote": "Аль-Мубаракфури относит начало похода к мухарраму 7 г. х.",
+    "dateNote": "Мухаррам 7 г. х.",
     "sortOrder": 230,
     "participants": [
       {
@@ -1756,7 +1749,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "7 г. х.",
       "gregorian": "629 г."
     },
-    "dateNote": "Это два события одного урока: умра — зуль-када 7 г. х., Мута — джумада аль-уля 8 г. х.",
+    "dateNote": "Умра — зуль-када 7 г. х.; битва при Муте — джумада аль-уля 8 г. х.",
     "sortOrder": 240,
     "participants": [
       {
@@ -2006,7 +1999,7 @@ export const events: HistoricalEvent[] = [
       "hijri": "9 г. х.",
       "gregorian": "630 г."
     },
-    "dateNote": "Раджаб 9 г. х. Название урока 27 сверено с официальным каналом: Табук, не Ярмук.",
+    "dateNote": "Раджаб 9 г. х.",
     "sortOrder": 270,
     "participants": [
       {
@@ -2204,7 +2197,6 @@ export const events: HistoricalEvent[] = [
       "hijri": "11 г. х.",
       "gregorian": "632 г."
     },
-    "dateNote": "Указан год; точный день не закрепляется как бесспорный.",
     "sortOrder": 290,
     "participants": [
       {
