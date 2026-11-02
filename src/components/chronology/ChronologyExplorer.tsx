@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { people, periods, categoryLabels } from "@/data/chronology";
+import { events } from "@/data/events";
 import type { PersonCategory } from "@/types/chronology";
 import { PeriodSection } from "./PeriodSection";
 import { ComparisonPanel } from "./ComparisonPanel";
@@ -48,9 +49,18 @@ export function ChronologyExplorer() {
     return person && (filter === "all" || person.categories?.includes(filter)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
+  const filterEvents = (filter = category, search = normalized) => events.filter(event => {
+    const eligible = filter === "all" || event.participants.some(entry => matches(entry.personId, filter, ""));
+    const text = [event.title, event.description ?? "", ...event.participants.flatMap(entry => {
+      const person = people[entry.personId];
+      return person ? [person.name, ...person.cities] : [];
+    })].join(" ").toLocaleLowerCase("ru").replaceAll("ё", "е");
+    return eligible && text.includes(search);
+  }).sort((a, b) => a.sortOrder - b.sortOrder);
+  const visibleEvents = filterEvents();
   const filterPeriods = (filter = category, search = normalized) => periods.map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
-      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0);
+      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
   const count = new Set(visiblePeriods.flatMap(p => p.groups.flatMap(g => g.people.map(e => e.personId)))).size;
   useEffect(() => {
@@ -83,8 +93,8 @@ export function ChronologyExplorer() {
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
         {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
       </div>
-      <label className="explorer-label" htmlFor="person-search">Поиск по имени или городу</label>
-      <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, аш-Шафии или Багдад" />
+      <label className="explorer-label" htmlFor="person-search">Поиск по имени, городу или событию</label>
+      <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, Бадр или Багдад" />
       <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
@@ -103,13 +113,13 @@ export function ChronologyExplorer() {
       <p role="status">
         {isFiltering
           ? "Обновляем список…"
-          : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}`}
+          : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}; событий: ${visibleEvents.length}`}
       </p>
     </div>
 
     {category === "mufassir" && <p>Тафсир — разъяснение смысла Корана. Пророк ﷺ первым разъяснял откровение общине; далее представлены десять известных муфассиров разных поколений, без ранжирования по достоинству.</p>}
-    <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} key={period.id} />)}</div>
-    {count === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
+    <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
+    {visiblePeriods.length === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
   </div>;
 }
