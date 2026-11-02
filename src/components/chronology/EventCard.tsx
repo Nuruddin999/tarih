@@ -25,19 +25,9 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
       {event.end && <DateLabel date={event.end} label="Окончание" />}
     </div> : <p className="event-card__undated">Дата не уточнена</p>}
     <details className="event-card__details">
-      <summary><h3>{event.title}</h3><span>Описание и источники</span></summary>
+      <summary><h3>{event.title}</h3><span>Подробнее</span></summary>
       {event.description && <p>{event.description}</p>}
       {event.dateNote && <p className="event-card__note">{event.dateNote}</p>}
-      <ul className="event-card__sources" aria-label="Источники события">
-        {event.sources.map((source, index) => <li key={index}>
-          {source.url ? <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a> : source.title}
-          {source.author && ` · ${source.author}`}
-          {source.chapter && ` · ${source.chapter}`}
-          {source.volume && ` · том ${source.volume}`}
-          {source.page && ` · с. ${source.page}`}
-          {source.timestamp && ` · ${source.timestamp}`}
-        </li>)}
-      </ul>
     </details>
     <div className="event-card__participants">
       <p className="event-card__label">Участники</p>
@@ -49,7 +39,6 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
         {participants.length > 5 && <button className="event-card__more" type="button" aria-expanded={expanded} aria-controls={listId} onClick={() => setExpanded(!expanded)}>
           {expanded ? "Свернуть участников" : `Все участники · ${participants.length}`}
         </button>}
-        <p className="event-card__note">Список участников дополняется по источникам.</p>
       </> : <p className="event-card__note">Связи с карточками участников пока не добавлены.</p>}
     </div>
     <dialog className="event-person-dialog" ref={dialogRef} aria-label={person ? `Личность: ${person.name}` : "Карточка личности"}
