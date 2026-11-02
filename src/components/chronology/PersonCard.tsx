@@ -21,11 +21,13 @@ export function PersonCard({ person, description, featured = false }: Props) {
   return (
     <article className={`person ${featured ? "person--featured" : ""}`}>
       <div className="person__info">
-        {person.categories && person.categories.length > 0 && (
-          <ul className="person__categories" aria-label="Области деятельности">
-            {person.categories.map((category) => (
+        {((person.categories?.length ?? 0) > 0 || person.isCompanion || person.isPromisedParadise) && (
+          <ul className="person__categories" aria-label="Категории и отличия личности">
+            {person.categories?.map((category) => (
               <li key={category}>{categoryLabels[category]}</li>
             ))}
+            {person.isCompanion && !person.categories?.length && <li>{person.gender === "female" ? "Сподвижница" : "Сподвижник"}</li>}
+            {person.isPromisedParadise && <li className="person__badge--paradise">10 обрадованных Раем</li>}
           </ul>
         )}
         
@@ -39,6 +41,7 @@ export function PersonCard({ person, description, featured = false }: Props) {
           </p>
         )}
         
+        {person.dateNote && <p className="person__date-note">{person.dateNote}</p>}
         {biography && <p className="person__description">{biography}</p>}
       
       
