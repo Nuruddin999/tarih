@@ -38,7 +38,6 @@ export const events: HistoricalEvent[] = [
       "hijri": "ок. 53 до х.",
       "gregorian": "ок. 571 г."
     },
-    "dateNote": "Датировка дана по аль-Мубаракфури; точный год обсуждается.",
     "sortOrder": 20,
     "participants": [
       {
