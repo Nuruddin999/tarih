@@ -53,6 +53,20 @@ try {
     assert.equal(rashidunEvents.find(e => e.id === `rashidun-${key}`).start, undefined, 'disputed date made exact');
   }
   assert.equal(rashidunEvents.at(-1).end.hijri, '41 г. х.');
+  // Regression: a known death year must not silently return to the default dash.
+  assert.equal(rashidunPeople.yazidAbuSufyan.death.hijri, '18 г. х.');
+  assert.ok(rashidunPeople.yazidAbuSufyan.sources.some(s => s.url.includes('/60/82/')));
+  assert.ok(rashidunPeople.yazidAbuSufyan.dateNote.includes('19'));
+  assert.equal(rashidunPeople.yazidAbuSufyan.birth.hijri, '—');
+  assert.equal(Object.values(rashidunPeople).filter(p => p.death.hijri !== '—').length, 30);
+  assert.equal(Object.values(rashidunPeople).filter(p => p.birth.hijri !== '—').length, 13);
+  for (const id of ['ribiAmir', 'qaqaa', 'asimAmr', 'busrArtat']) {
+    assert.equal(rashidunPeople[id].death.hijri, '—', `unverified death made exact: ${id}`);
+  }
+  for (const id of ['usama', 'zaydThabit', 'muawiya', 'shurahbil', 'iyadGhanm', 'abuHudhayfa', 'mughira', 'ubada']) {
+    assert.ok(rashidunPeople[id].birth.hijri.startsWith('ок.'), `inferred birth made exact: ${id}`);
+    assert.ok(rashidunPeople[id].dateNote.includes('рассчитано'), `inference not explained: ${id}`);
+  }
   console.log('Content OK: 50 events, 34 new people, 52 linked participants; prophetic events and ten badges preserved.');
 } finally {
   if (previous) require.extensions['.ts'] = previous;
