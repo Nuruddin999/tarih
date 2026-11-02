@@ -1,3 +1,4 @@
+import { rashidunPeople } from "./rashidun";
 import type { Person, HistoricalPeriod, PersonCategory } from "@/types/chronology";
 
 // Статичные данные. Даты до хиджры и спорные датировки отмечены отдельно.
@@ -13,6 +14,7 @@ export const categoryLabels: Record<PersonCategory, string> = {
 };
 
 export const people: Record<string, Person> = {
+  ...rashidunPeople,
   "muhammad": {
     "id": "muhammad",
     "name": "Мухаммад — Посланник Аллаха",
@@ -3487,9 +3489,9 @@ export const periods: HistoricalPeriod[] = [
   {
     "id": "rashidun",
     "title": "Период праведных халифов",
-    "description": "Четыре праведных халифа и годы их правления.",
+    "description": "Правление Абу Бакра, Умара, Усмана и Али: собрание Корана, завоевания и внутренние события. Завершение — примирение аль-Хасана с Муавией. По первому тому «Аль-Маусу‘а аль-муяссара».",
     "dates": {
-      "hijri": "11–40 г. х.",
+      "hijri": "11–41 г. х.",
       "gregorian": "632–661 гг."
     },
     "groups": [
@@ -3524,6 +3526,156 @@ export const periods: HistoricalPeriod[] = [
           },
           {
             "personId": "ibnMasud"
+          }
+        ]
+      },
+      {
+        "id": "rashidun-participants",
+        "title": "Участники событий и современники эпохи",
+        "people": [
+          {
+            "personId": "khalid"
+          },
+          {
+            "personId": "ikrima"
+          },
+          {
+            "personId": "usama"
+          },
+          {
+            "personId": "baraMalik"
+          },
+          {
+            "personId": "thabitQays"
+          },
+          {
+            "personId": "salimAbuHudhayfa"
+          },
+          {
+            "personId": "abuHudhayfa"
+          },
+          {
+            "personId": "musaylima"
+          },
+          {
+            "personId": "zaydThabit"
+          },
+          {
+            "personId": "iyadGhanm"
+          },
+          {
+            "personId": "muthanna"
+          },
+          {
+            "personId": "yazidAbuSufyan"
+          },
+          {
+            "personId": "shurahbil"
+          },
+          {
+            "personId": "abuUbayda"
+          },
+          {
+            "personId": "amrAs"
+          },
+          {
+            "personId": "aisha"
+          },
+          {
+            "personId": "abdurrahman"
+          },
+          {
+            "personId": "said"
+          },
+          {
+            "personId": "zubayr"
+          },
+          {
+            "personId": "miqdad"
+          },
+          {
+            "personId": "ubada"
+          },
+          {
+            "personId": "maslamaMukhallad"
+          },
+          {
+            "personId": "abuUbaydThaqafi"
+          },
+          {
+            "personId": "saad"
+          },
+          {
+            "personId": "rustam"
+          },
+          {
+            "personId": "ribiAmir"
+          },
+          {
+            "personId": "mughira"
+          },
+          {
+            "personId": "khalidUrfuta"
+          },
+          {
+            "personId": "qaqaa"
+          },
+          {
+            "personId": "khansa"
+          },
+          {
+            "personId": "asimAmr"
+          },
+          {
+            "personId": "salman"
+          },
+          {
+            "personId": "muhammadMaslama"
+          },
+          {
+            "personId": "numanMuqarrin"
+          },
+          {
+            "personId": "yazdegerd"
+          },
+          {
+            "personId": "abuMusa"
+          },
+          {
+            "personId": "ibnAbbas"
+          },
+          {
+            "personId": "muawiya"
+          },
+          {
+            "personId": "ummHaram"
+          },
+          {
+            "personId": "abdullahSaad"
+          },
+          {
+            "personId": "busrArtat"
+          },
+          {
+            "personId": "hudhayfa"
+          },
+          {
+            "personId": "hafsa"
+          },
+          {
+            "personId": "abdullahZubayr"
+          },
+          {
+            "personId": "hasanAli"
+          },
+          {
+            "personId": "husaynAli"
+          },
+          {
+            "personId": "talha"
+          },
+          {
+            "personId": "ammar"
           }
         ]
       }
