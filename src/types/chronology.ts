@@ -16,6 +16,10 @@ export type Person = {
   id: string;
   name: string;
   honorific: string;
+  isCompanion?: boolean;
+  gender?: "male" | "female";
+  /** Только десять сподвижников, перечисленных вместе в известном хадисе. */
+  isPromisedParadise?: boolean;
   birth: HistoricalDate;
   death: HistoricalDate;
   cities: string[];
