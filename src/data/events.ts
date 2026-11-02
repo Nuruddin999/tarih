@@ -1,3 +1,4 @@
+import { rashidunEvents } from "./rashidun";
 import type { HistoricalEvent } from "../types/chronology";
 
 // Названия тем — по серии Набиля Авади; содержание и связи — по аль-Мубаракфури.
@@ -6,6 +7,7 @@ import type { HistoricalEvent } from "../types/chronology";
 // Общие темы и спорные датировки намеренно не получают выдуманной точной даты.
 // См. docs/prophetic-events-sources.md.
 export const events: HistoricalEvent[] = [
+  ...rashidunEvents,
   {
     "id": "arabia-before-islam",
     "title": "Арабы в эпоху джахилии",
