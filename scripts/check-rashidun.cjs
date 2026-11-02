@@ -48,7 +48,7 @@ try {
     assert.ok(!person.isPromisedParadise, 'new people must not expand the established ten');
   }
   assert.equal(Object.values(people).filter(p => p.isPromisedParadise).length, 10);
-  assert.equal(events.filter(e => e.periodId === 'prophetic-era').length, 29);
+  assert.equal(events.filter(e => e.periodId === 'prophetic-era').length, 30);
   for (const key of ['yarmuk', 'camel', 'uthman-quran']) {
     assert.equal(rashidunEvents.find(e => e.id === `rashidun-${key}`).start, undefined, 'disputed date made exact');
   }
