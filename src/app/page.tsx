@@ -16,6 +16,10 @@ export default function HomePage() {
         <div className="intro__heading">
           <p className="eyebrow">Личности исламской истории</p>
           <h1 id="intro-title">Исламская хронология</h1>
+          <p className="intro__subtitle">
+            Изучая историю, мы узнаём судьбы народов и правителей, причины возвышения
+            и упадка государств, успехов и поражений.
+          </p>
         </div>
         <div className="intro__about">
           <p id="about" className="intro__description">
