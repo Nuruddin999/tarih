@@ -55,6 +55,14 @@ export const people: Record<string, Person> = {
     "cities": [
       "Мекка",
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "umar": {
@@ -72,6 +80,14 @@ export const people: Record<string, Person> = {
     "cities": [
       "Мекка",
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "uthman": {
@@ -89,6 +105,14 @@ export const people: Record<string, Person> = {
     "cities": [
       "Мекка",
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "ali": {
@@ -107,6 +131,14 @@ export const people: Record<string, Person> = {
       "Мекка",
       "Медина",
       "Куфа"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "talha": {
@@ -123,6 +155,14 @@ export const people: Record<string, Person> = {
     },
     "cities": [
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "zubayr": {
@@ -139,6 +179,14 @@ export const people: Record<string, Person> = {
     },
     "cities": [
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "abdurrahman": {
@@ -155,6 +203,14 @@ export const people: Record<string, Person> = {
     },
     "cities": [
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "saad": {
@@ -172,6 +228,14 @@ export const people: Record<string, Person> = {
     "cities": [
       "Медина",
       "Куфа"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "said": {
@@ -188,6 +252,14 @@ export const people: Record<string, Person> = {
     },
     "cities": [
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "abuUbayda": {
@@ -204,6 +276,14 @@ export const people: Record<string, Person> = {
     },
     "cities": [
       "Медина"
+    ],
+    "isCompanion": true,
+    "isPromisedParadise": true,
+    "sources": [
+      {
+        "title": "Islamweb · Десять обрадованных Раем",
+        "url": "https://www.islamweb.net/ar/fatwa/64321/"
+      }
     ]
   },
   "abuHanifa": {
@@ -2015,7 +2095,8 @@ export const people: Record<string, Person> = {
         "url": "https://www.islamweb.net/ar/library/content/60/96/"
       }
     ],
-    "dateNote": "Выбран 22 г. х., к которому склоняется аз-Захаби. Приводятся также 19, 30 и 32 г. х.; год рождения не установлен."
+    "dateNote": "Выбран 22 г. х., к которому склоняется аз-Захаби. Приводятся также 19, 30 и 32 г. х.; год рождения не установлен.",
+    "isCompanion": true
   },
   "ibnMasud": {
     "id": "ibnMasud",
@@ -2048,7 +2129,8 @@ export const people: Record<string, Person> = {
         "url": "https://www.islamweb.net/ar/library/content/60/108/"
       }
     ],
-    "dateNote": "Выбран 32 г. х.; встречается также 33 г. х. Точный год рождения не установлен."
+    "dateNote": "Выбран 32 г. х.; встречается также 33 г. х. Точный год рождения не установлен.",
+    "isCompanion": true
   },
   "ibnAbbas": {
     "id": "ibnAbbas",
@@ -2080,7 +2162,8 @@ export const people: Record<string, Person> = {
         "title": "Islamweb · Кончина Ибн Аббаса",
         "url": "https://www.islamweb.net/ar/library/content/200/18354/"
       }
-    ]
+    ],
+    "isCompanion": true
   },
   "mujahid": {
     "id": "mujahid",
@@ -2198,6 +2281,788 @@ export const people: Record<string, Person> = {
       }
     ],
     "dateNote": "В использованной биографии точный год рождения не указан."
+  },
+  "khadija": {
+    "id": "khadija",
+    "name": "Хадиджа бинт Хувайлид",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Первая супруга Пророка ﷺ, поддержавшая его при начале откровения.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Хадиджа бинт Хувайлид",
+        "url": "https://shamela.ws/book/9820/55"
+      }
+    ]
+  },
+  "ruqayya": {
+    "id": "ruqayya",
+    "name": "Рукайя бинт Мухаммад",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Дочь Пророка ﷺ; переселилась в Эфиопию вместе с Усманом.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Рукайя бинт Мухаммад",
+        "url": "https://shamela.ws/book/9820/79"
+      }
+    ]
+  },
+  "jafar": {
+    "id": "jafar",
+    "name": "Джафар ибн Абу Талиб",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Выступал от имени мусульман перед негусом; один из командиров при Муте.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Джафар ибн Абу Талиб",
+        "url": "https://shamela.ws/book/9820/82"
+      }
+    ]
+  },
+  "zayd": {
+    "id": "zayd",
+    "name": "Зайд ибн Хариса",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Один из первых мусульман; назначен первым командиром войска при Муте.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Зайд ибн Хариса",
+        "url": "https://shamela.ws/book/9820/348"
+      }
+    ]
+  },
+  "abdullahRawaha": {
+    "id": "abdullahRawaha",
+    "name": "Абдуллах ибн Раваха",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Один из назначенных командиров при Муте.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Раваха",
+        "url": "https://shamela.ws/book/9820/348"
+      }
+    ]
+  },
+  "khalid": {
+    "id": "khalid",
+    "name": "Халид ибн аль-Валид",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Принял командование мусульманским войском при Муте.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Халид ибн аль-Валид",
+        "url": "https://shamela.ws/book/9820/352"
+      }
+    ]
+  },
+  "hamza": {
+    "id": "hamza",
+    "name": "Хамза ибн Абд аль-Мутталиб",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Дядя Пророка ﷺ; возглавлял один из первых отрядов после хиджры.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Хамза ибн Абд аль-Мутталиб",
+        "url": "https://shamela.ws/book/9820/175"
+      }
+    ]
+  },
+  "salman": {
+    "id": "salman",
+    "name": "Сальман аль-Фариси",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Предложил вырыть ров для защиты Медины.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Сальман аль-Фариси",
+        "url": "https://shamela.ws/book/9820/271"
+      }
+    ]
+  },
+  "saadMuadh": {
+    "id": "saadMuadh",
+    "name": "Саад ибн Муаз",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Знаменосец ансаров при Бадре; выбран судьёй по делу бану Курайза.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Саад ибн Муаз",
+        "url": "https://shamela.ws/book/9820/282"
+      }
+    ]
+  },
+  "aisha": {
+    "id": "aisha",
+    "name": "Аиша бинт Абу Бакр",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Супруга Пророка ﷺ, упомянута в рассказах о прощальном хадже и его последних днях.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Аиша бинт Абу Бакр",
+        "url": "https://shamela.ws/book/9820/413"
+      }
+    ]
+  },
+  "ummSalama": {
+    "id": "ummSalama",
+    "name": "Умм Саляма",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Супруга Пророка ﷺ; дала совет после заключения Худайбийского мира.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Умм Саляма",
+        "url": "https://shamela.ws/book/9820/307"
+      }
+    ]
+  },
+  "bilal": {
+    "id": "bilal",
+    "name": "Биляль ибн Рабах",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Перенёс преследования в Мекке; произнёс азан на Каабе после взятия Мекки.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Биляль ибн Рабах",
+        "url": "https://shamela.ws/book/9820/365"
+      }
+    ]
+  },
+  "musab": {
+    "id": "musab",
+    "name": "Мусаб ибн Умайр",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Направлен обучать жителей Ясриба; знаменосец при Бадре.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Мусаб ибн Умайр",
+        "url": "https://shamela.ws/book/9820/128"
+      }
+    ]
+  },
+  "asma": {
+    "id": "asma",
+    "name": "Асма бинт Абу Бакр",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Упомянута в рассказе о розыске Пророка ﷺ и Абу Бакра во время хиджры.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Асма бинт Абу Бакр",
+        "url": "https://shamela.ws/book/9820/148"
+      }
+    ]
+  },
+  "abdullahAbuBakr": {
+    "id": "abdullahAbuBakr",
+    "name": "Абдуллах ибн Абу Бакр",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Приносил сведения укрывшимся в пещере Саур.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Абу Бакр",
+        "url": "https://shamela.ws/book/9820/147"
+      }
+    ]
+  },
+  "amirFuhayra": {
+    "id": "amirFuhayra",
+    "name": "Амир ибн Фухайра",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Помогал Пророку ﷺ и Абу Бакру во время пребывания в пещере.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Амир ибн Фухайра",
+        "url": "https://shamela.ws/book/9820/147"
+      }
+    ]
+  },
+  "ammar": {
+    "id": "ammar",
+    "name": "Аммар ибн Ясир",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Один из ранних мусульман, подвергавшихся преследованиям.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Аммар ибн Ясир",
+        "url": "https://shamela.ws/book/9820/77"
+      }
+    ]
+  },
+  "yasir": {
+    "id": "yasir",
+    "name": "Ясир",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Отец Аммара; погиб во время преследований ранних мусульман.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Ясир",
+        "url": "https://shamela.ws/book/9820/77"
+      }
+    ]
+  },
+  "sumayya": {
+    "id": "sumayya",
+    "name": "Сумайя",
+    "honorific": "Да будет доволен ею Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Мать Аммара; в книге названа первой мученицей ислама.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Сумайя",
+        "url": "https://shamela.ws/book/9820/77"
+      }
+    ]
+  },
+  "khabbab": {
+    "id": "khabbab",
+    "name": "Хаббаб ибн аль-Аратт",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Перенёс пытки за принятие ислама.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Хаббаб ибн аль-Аратт",
+        "url": "https://shamela.ws/book/9820/77"
+      }
+    ]
+  },
+  "arqam": {
+    "id": "arqam",
+    "name": "Аль-Аркам ибн Абу аль-Аркам",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "В его доме в Мекке собирались первые мусульмане.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Аль-Аркам ибн Абу аль-Аркам",
+        "url": "https://shamela.ws/book/9820/78"
+      }
+    ]
+  },
+  "abuLubaba": {
+    "id": "abuLubaba",
+    "name": "Абу Любаба ибн Абд аль-Мунзир",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Оставался наместником в Медине; общался с бану Курайза во время осады.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абу Любаба ибн Абд аль-Мунзир",
+        "url": "https://shamela.ws/book/9820/282"
+      }
+    ]
+  },
+  "miqdad": {
+    "id": "miqdad",
+    "name": "Аль-Микдад ибн Амр",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Командовал левым крылом мусульманского войска при Бадре.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Аль-Микдад ибн Амр",
+        "url": "https://shamela.ws/book/9820/182"
+      }
+    ]
+  },
+  "abbas": {
+    "id": "abbas",
+    "name": "Аль-Аббас ибн Абд аль-Мутталиб",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Дядя Пророка ﷺ; призывал сподвижников вернуться к бою при Хунайне.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Аль-Аббас ибн Абд аль-Мутталиб",
+        "url": "https://shamela.ws/book/9820/376"
+      }
+    ]
+  },
+  "abuMusa": {
+    "id": "abuMusa",
+    "name": "Абу Муса аль-Ашари",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Прибыл с переселенцами к Пророку ﷺ во время взятия Хайбара.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абу Муса аль-Ашари",
+        "url": "https://shamela.ws/book/9820/336"
+      }
+    ]
+  },
+  "muhammadMaslama": {
+    "id": "muhammadMaslama",
+    "name": "Мухаммад ибн Масляма",
+    "honorific": "Да будет доволен им Аллах",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Упомянут в событиях бану Кайнука и бану Курайза.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "isCompanion": true,
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Мухаммад ибн Масляма",
+        "url": "https://shamela.ws/book/9820/213"
+      }
+    ]
+  },
+  "halima": {
+    "id": "halima",
+    "name": "Халима ас-Садийя",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Кормилица Пророка ﷺ из бану Саад.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Халима ас-Садийя",
+        "url": "https://shamela.ws/book/9820/44"
+      }
+    ]
+  },
+  "amina": {
+    "id": "amina",
+    "name": "Амина бинт Вахб",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Мать Пророка ﷺ; умерла на обратном пути из Ясриба.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "gender": "female",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Амина бинт Вахб",
+        "url": "https://shamela.ws/book/9820/46"
+      }
+    ]
+  },
+  "abdMuttalib": {
+    "id": "abdMuttalib",
+    "name": "Абд аль-Мутталиб",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Дед Пророка ﷺ, заботившийся о нём в детстве.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абд аль-Мутталиб",
+        "url": "https://shamela.ws/book/9820/46"
+      }
+    ]
+  },
+  "abuTalib": {
+    "id": "abuTalib",
+    "name": "Абу Талиб",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Дядя и опекун Пророка ﷺ; защищал его в Мекке.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абу Талиб",
+        "url": "https://shamela.ws/book/9820/46"
+      }
+    ]
+  },
+  "abraha": {
+    "id": "abraha",
+    "name": "Абраха",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Возглавил поход с войском к Каабе в год слона.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абраха",
+        "url": "https://shamela.ws/book/9820/40"
+      }
+    ]
+  },
+  "waraqa": {
+    "id": "waraqa",
+    "name": "Варака ибн Науфаль",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Выслушал рассказ Пророка ﷺ о первом откровении.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Варака ибн Науфаль",
+        "url": "https://shamela.ws/book/9820/55"
+      }
+    ]
+  },
+  "abuJahl": {
+    "id": "abuJahl",
+    "name": "Абу Джахль",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Один из противников мусульман в Мекке, участвовал в преследованиях.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абу Джахль",
+        "url": "https://shamela.ws/book/9820/76"
+      }
+    ]
+  },
+  "abdullahUbayy": {
+    "id": "abdullahUbayy",
+    "name": "Абдуллах ибн Убайй ибн Салюль",
+    "honorific": "",
+    "birth": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "death": {
+      "hijri": "—",
+      "gregorian": "—"
+    },
+    "cities": [],
+    "description": "Вмешался в события бану Кайнука, добиваясь их освобождения.",
+    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "sources": [
+      {
+        "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Убайй ибн Салюль",
+        "url": "https://shamela.ws/book/9820/213"
+      }
+    ]
   }
 };
 
@@ -2342,6 +3207,114 @@ export const periods: HistoricalPeriod[] = [
           },
           {
             "personId": "abuUbayda"
+          }
+        ]
+      },
+      {
+        "id": "sira-participants",
+        "title": "Участники событий сиры",
+        "people": [
+          {
+            "personId": "khadija"
+          },
+          {
+            "personId": "ruqayya"
+          },
+          {
+            "personId": "jafar"
+          },
+          {
+            "personId": "zayd"
+          },
+          {
+            "personId": "abdullahRawaha"
+          },
+          {
+            "personId": "khalid"
+          },
+          {
+            "personId": "hamza"
+          },
+          {
+            "personId": "salman"
+          },
+          {
+            "personId": "saadMuadh"
+          },
+          {
+            "personId": "aisha"
+          },
+          {
+            "personId": "ummSalama"
+          },
+          {
+            "personId": "bilal"
+          },
+          {
+            "personId": "musab"
+          },
+          {
+            "personId": "asma"
+          },
+          {
+            "personId": "abdullahAbuBakr"
+          },
+          {
+            "personId": "amirFuhayra"
+          },
+          {
+            "personId": "ammar"
+          },
+          {
+            "personId": "yasir"
+          },
+          {
+            "personId": "sumayya"
+          },
+          {
+            "personId": "khabbab"
+          },
+          {
+            "personId": "arqam"
+          },
+          {
+            "personId": "abuLubaba"
+          },
+          {
+            "personId": "miqdad"
+          },
+          {
+            "personId": "abbas"
+          },
+          {
+            "personId": "abuMusa"
+          },
+          {
+            "personId": "muhammadMaslama"
+          },
+          {
+            "personId": "halima"
+          },
+          {
+            "personId": "amina"
+          },
+          {
+            "personId": "abdMuttalib"
+          },
+          {
+            "personId": "abuTalib"
+          },
+          {
+            "personId": "abraha"
+          },
+          {
+            "personId": "waraqa"
+          },
+          {
+            "personId": "abuJahl"
+          },
+          {
+            "personId": "abdullahUbayy"
           }
         ]
       }

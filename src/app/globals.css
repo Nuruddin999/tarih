@@ -1196,3 +1196,7 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
  .event-card { padding: 14px; }
  .event-person-dialog { padding: 12px; }
 }
+
+/* Distinction of the ten companions; separate from scholarly categories. */
+.person__categories .person__badge--paradise { color: #624000; background: linear-gradient(135deg, #fff0b0, #f3ce69); border: 1px solid #d5ac42; font-weight: 700; }
+.person__date-note { margin: 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
