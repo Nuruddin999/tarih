@@ -2287,22 +2287,30 @@ export const people: Record<string, Person> = {
     "name": "Хадиджа бинт Хувайлид",
     "honorific": "Да будет доволен ею Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 68 до х.",
+      "gregorian": "ок. 556"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 3 до х.",
+      "gregorian": "619"
     },
     "cities": [],
     "description": "Первая супруга Пророка ﷺ, поддержавшая его при начале откровения.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Смерть: рамадан десятого года пророчества; возраст 65 лет по «Рахик». Рождение вычислено приблизительно по этому возрасту.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Хадиджа бинт Хувайлид",
         "url": "https://shamela.ws/book/9820/55"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 15",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=15"
+      },
+      {
+        "title": "Даты жизни · Ар-Рахик аль-Махтум",
+        "url": "https://shamela.ws/book/9820/102"
       }
     ]
   },
@@ -2311,22 +2319,30 @@ export const people: Record<string, Person> = {
     "name": "Рукайя бинт Мухаммад",
     "honorific": "Да будет доволен ею Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 20 до х.",
+      "gregorian": "ок. 603"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "2",
+      "gregorian": "624"
     },
     "cities": [],
     "description": "Дочь Пророка ﷺ; переселилась в Эфиопию вместе с Усманом.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Рождение: Пророку ﷺ было 33 года; приблизительный пересчёт. Умерла во время Бадра.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Рукайя бинт Мухаммад",
         "url": "https://shamela.ws/book/9820/79"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 40",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=40"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=40"
       }
     ]
   },
@@ -2335,21 +2351,29 @@ export const people: Record<string, Person> = {
     "name": "Джафар ибн Абу Талиб",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 34 до х.",
+      "gregorian": "ок. 590"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "8",
+      "gregorian": "629"
     },
     "cities": [],
     "description": "Выступал от имени мусульман перед негусом; один из командиров при Муте.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Муте. Рождение приблизительно по сообщению о возрасте 41 год («Аль-Истиаб»).",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Джафар ибн Абу Талиб",
         "url": "https://shamela.ws/book/9820/82"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 54",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=54"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/1080/352/"
       }
     ]
   },
@@ -2358,21 +2382,29 @@ export const people: Record<string, Person> = {
     "name": "Зайд ибн Хариса",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 48 до х.",
+      "gregorian": "ок. 576"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "8",
+      "gregorian": "629"
     },
     "cities": [],
     "description": "Один из первых мусульман; назначен первым командиром войска при Муте.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Муте. Рождение приблизительно по возрасту 55 лет в «Сияр».",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Зайд ибн Хариса",
         "url": "https://shamela.ws/book/9820/348"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 54",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=54"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/45/"
       }
     ]
   },
@@ -2385,17 +2417,25 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "8",
+      "gregorian": "629"
     },
     "cities": [],
     "description": "Один из назначенных командиров при Муте.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Муте. Год рождения в проверенных разделах не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Раваха",
         "url": "https://shamela.ws/book/9820/348"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 55",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=55"
+      },
+      {
+        "title": "Даты жизни · Ар-Рахик аль-Махтум",
+        "url": "https://shamela.ws/book/9820/352"
       }
     ]
   },
@@ -2408,17 +2448,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "21",
+      "gregorian": "642"
     },
     "cities": [],
     "description": "Принял командование мусульманским войском при Муте.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Год смерти по «Сияр»; год рождения не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Халид ибн аль-Валид",
         "url": "https://shamela.ws/book/9820/352"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/92/"
       }
     ]
   },
@@ -2431,17 +2475,25 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "3",
+      "gregorian": "625"
     },
     "cities": [],
     "description": "Дядя Пророка ﷺ; возглавлял один из первых отрядов после хиджры.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Ухуде. Год рождения не фиксируем: сообщения о возрасте требуют отдельного сопоставления.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Хамза ибн Абд аль-Мутталиб",
         "url": "https://shamela.ws/book/9820/175"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 43",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=43"
+      },
+      {
+        "title": "Даты жизни · Ар-Рахик аль-Махтум",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=43"
       }
     ]
   },
@@ -2454,17 +2506,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "33–37",
+      "gregorian": "653–658"
     },
     "cities": [],
     "description": "Предложил вырыть ров для защиты Медины.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "В источниках приведены годы смерти 33, 36 и 37 х. Надёжный год рождения не установлен; сообщения о необычайном долголетии не использованы.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Сальман аль-Фариси",
         "url": "https://shamela.ws/book/9820/271"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/fatwa/56648/"
       }
     ]
   },
@@ -2473,21 +2529,25 @@ export const people: Record<string, Person> = {
     "name": "Саад ибн Муаз",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 33 до х.",
+      "gregorian": "ок. 591"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "5",
+      "gregorian": "627"
     },
     "cities": [],
     "description": "Знаменосец ансаров при Бадре; выбран судьёй по делу бану Курайза.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умер после похода против Бану Курайза. Рождение приблизительно по возрасту 37 лет в «Сияр».",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Саад ибн Муаз",
         "url": "https://shamela.ws/book/9820/282"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/69/"
       }
     ]
   },
@@ -2496,22 +2556,26 @@ export const people: Record<string, Person> = {
     "name": "Аиша бинт Абу Бакр",
     "honorific": "Да будет доволен ею Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 8 до х.",
+      "gregorian": "ок. 614"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "57–58",
+      "gregorian": "677–678"
     },
     "cities": [],
     "description": "Супруга Пророка ﷺ, упомянута в рассказах о прощальном хадже и его последних днях.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Годы смерти 57 или 58 х. Рождение приблизительно по сообщению о возрасте 18 лет при смерти Пророка ﷺ; без календарного нулевого года.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Аиша бинт Абу Бакр",
         "url": "https://shamela.ws/book/9820/413"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/150/"
       }
     ]
   },
@@ -2524,18 +2588,22 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "61",
+      "gregorian": "680–681"
     },
     "cities": [],
     "description": "Супруга Пророка ﷺ; дала совет после заключения Худайбийского мира.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "В «Сияр» предпочтён 61 х.; есть и другие датировки. Год рождения не установлен.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Умм Саляма",
         "url": "https://shamela.ws/book/9820/307"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/152/"
       }
     ]
   },
@@ -2548,17 +2616,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "18–20",
+      "gregorian": "639–641"
     },
     "cities": [],
     "description": "Перенёс преследования в Мекке; произнёс азан на Каабе после взятия Мекки.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Существуют сообщения о смерти в 18 или 20 х. Точный год рождения не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Биляль ибн Рабах",
         "url": "https://shamela.ws/book/9820/365"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/1089/83/"
       }
     ]
   },
@@ -2567,21 +2639,29 @@ export const people: Record<string, Person> = {
     "name": "Мусаб ибн Умайр",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 38 до х.",
+      "gregorian": "ок. 586"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "3",
+      "gregorian": "625"
     },
     "cities": [],
     "description": "Направлен обучать жителей Ясриба; знаменосец при Бадре.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Ухуде. Рождение приблизительно по сообщению о возрасте 40 лет в статье Islamweb.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Мусаб ибн Умайр",
         "url": "https://shamela.ws/book/9820/128"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 43",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=43"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/article/222949/"
       }
     ]
   },
@@ -2590,22 +2670,26 @@ export const people: Record<string, Person> = {
     "name": "Асма бинт Абу Бакр",
     "honorific": "Да будет доволен ею Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "27 до х.",
+      "gregorian": "ок. 595"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "73",
+      "gregorian": "692–693"
     },
     "cities": [],
     "description": "Упомянута в рассказе о розыске Пророка ﷺ и Абу Бакра во время хиджры.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Рождение за 27 лет до хиджры, смерть в 73 х. по сообщению «Маджма аз-заваид»; григорианский пересчёт приблизителен.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Асма бинт Абу Бакр",
         "url": "https://shamela.ws/book/9820/148"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/87/15521/"
       }
     ]
   },
@@ -2618,17 +2702,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "11",
+      "gregorian": "632–633"
     },
     "cities": [],
     "description": "Приносил сведения укрывшимся в пещере Саур.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умер в шаввале 11 х. по «Аль-Истиаб». Год рождения не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Абу Бакр",
         "url": "https://shamela.ws/book/9820/147"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/1080/1510/"
       }
     ]
   },
@@ -2641,17 +2729,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "4",
+      "gregorian": "625–626"
     },
     "cities": [],
     "description": "Помогал Пророку ﷺ и Абу Бакру во время пребывания в пещере.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Бир-Мауне; год рождения не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Амир ибн Фухайра",
         "url": "https://shamela.ws/book/9820/147"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/1080/1364/"
       }
     ]
   },
@@ -2660,21 +2752,25 @@ export const people: Record<string, Person> = {
     "name": "Аммар ибн Ясир",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 57 до х.",
+      "gregorian": "ок. 567"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "37",
+      "gregorian": "657"
     },
     "cities": [],
     "description": "Один из ранних мусульман, подвергавшихся преследованиям.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Сиффине. Рождение приблизительно по возрасту 93 года в «Сияр».",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Аммар ибн Ясир",
         "url": "https://shamela.ws/book/9820/77"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/99/"
       }
     ]
   },
@@ -2687,17 +2783,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "до хиджры",
+      "gregorian": "до 622"
     },
     "cities": [],
     "description": "Отец Аммара; погиб во время преследований ранних мусульман.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб от преследований в мекканский период. Точный год смерти и год рождения в проверенных разделах не установлены.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Ясир",
         "url": "https://shamela.ws/book/9820/77"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 18",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=18"
       }
     ]
   },
@@ -2710,18 +2810,22 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "до хиджры",
+      "gregorian": "до 622"
     },
     "cities": [],
     "description": "Мать Аммара; в книге названа первой мученицей ислама.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погибла от преследований в мекканский период. Точный год смерти и год рождения в проверенных разделах не установлены.",
     "isCompanion": true,
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Сумайя",
         "url": "https://shamela.ws/book/9820/77"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 18",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=18"
       }
     ]
   },
@@ -2730,21 +2834,25 @@ export const people: Record<string, Person> = {
     "name": "Хаббаб ибн аль-Аратт",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 37 до х.",
+      "gregorian": "ок. 587"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "37",
+      "gregorian": "657–658"
     },
     "cities": [],
     "description": "Перенёс пытки за принятие ислама.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Рождение приблизительно по сообщению в «Сияр» о возрасте 73 года при смерти.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Хаббаб ибн аль-Аратт",
         "url": "https://shamela.ws/book/9820/77"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/195/"
       }
     ]
   },
@@ -2753,21 +2861,25 @@ export const people: Record<string, Person> = {
     "name": "Аль-Аркам ибн Абу аль-Аркам",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 31 до х.",
+      "gregorian": "ок. 592"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "53",
+      "gregorian": "672–673"
     },
     "cities": [],
     "description": "В его доме в Мекке собирались первые мусульмане.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Принято сообщение «Сияр»: смерть в 53 х., возраст 83 года. Рождение приблизительно вычислено по возрасту.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Аль-Аркам ибн Абу аль-Аркам",
         "url": "https://shamela.ws/book/9820/78"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/230/"
       }
     ]
   },
@@ -2780,17 +2892,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 35–40",
+      "gregorian": "ок. 655–661"
     },
     "cities": [],
     "description": "Оставался наместником в Медине; общался с бану Курайза во время осады.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Сообщение относит смерть к началу правления Али после гибели Усмана; диапазон условный, точный год не установлен. Год рождения неизвестен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абу Любаба ибн Абд аль-Мунзир",
         "url": "https://shamela.ws/book/9820/282"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/fatwa/26990/"
       }
     ]
   },
@@ -2799,21 +2915,25 @@ export const people: Record<string, Person> = {
     "name": "Аль-Микдад ибн Амр",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 38 до х.",
+      "gregorian": "ок. 586"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "33",
+      "gregorian": "653–654"
     },
     "cities": [],
     "description": "Командовал левым крылом мусульманского войска при Бадре.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Рождение приблизительно по сообщению в «Сияр» о возрасте около 70 лет.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Аль-Микдад ибн Амр",
         "url": "https://shamela.ws/book/9820/182"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/95/"
       }
     ]
   },
@@ -2822,21 +2942,25 @@ export const people: Record<string, Person> = {
     "name": "Аль-Аббас ибн Абд аль-Мутталиб",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 56 до х.",
+      "gregorian": "ок. 568"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "32",
+      "gregorian": "652–653"
     },
     "cities": [],
     "description": "Дядя Пророка ﷺ; призывал сподвижников вернуться к бою при Хунайне.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Родился за три года до года Слона по «Сияр»; пересчёт зависит от датировки года Слона.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Аль-Аббас ибн Абд аль-Мутталиб",
         "url": "https://shamela.ws/book/9820/376"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/135/"
       }
     ]
   },
@@ -2849,17 +2973,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "44",
+      "gregorian": "664–665"
     },
     "cities": [],
     "description": "Прибыл с переселенцами к Пророку ﷺ во время взятия Хайбара.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Принято предпочтённое аз-Захаби сообщение о смерти в 44 х.; также приведены 42, 43, 52 и 53 х. Год рождения не установлен.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абу Муса аль-Ашари",
         "url": "https://shamela.ws/book/9820/336"
+      },
+      {
+        "title": "Даты жизни · Сияр а’лям ан-нубаля",
+        "url": "https://www.islamweb.net/ar/library/content/60/215/"
       }
     ]
   },
@@ -2868,21 +2996,25 @@ export const people: Record<string, Person> = {
     "name": "Мухаммад ибн Масляма",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 32 до х.",
+      "gregorian": "ок. 591"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "46",
+      "gregorian": "666–667"
     },
     "cities": [],
     "description": "Упомянут в событиях бану Кайнука и бану Курайза.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Принято сообщение «Аль-Мустадрак»: смерть в 46 х., возраст 77 лет. Рождение вычислено приблизительно.",
     "isCompanion": true,
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Мухаммад ибн Масляма",
         "url": "https://shamela.ws/book/9820/213"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/74/5716/"
       }
     ]
   },
@@ -2900,12 +3032,16 @@ export const people: Record<string, Person> = {
     },
     "cities": [],
     "description": "Кормилица Пророка ﷺ из бану Саад.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Годы рождения и смерти не установлены в проверенных разделах. Не подставляем неподтверждённый год смерти.",
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Халима ас-Садийя",
         "url": "https://shamela.ws/book/9820/44"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamstory.com/ar/artical/21940/"
       }
     ]
   },
@@ -2918,17 +3054,21 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 47 до х.",
+      "gregorian": "ок. 577"
     },
     "cities": [],
     "description": "Мать Пророка ﷺ; умерла на обратном пути из Ясриба.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умерла, когда Пророку ﷺ было шесть лет. Пересчёт приблизителен и следует датировке его рождения 571 годом в «Рахик». Год рождения не установлен.",
     "gender": "female",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Амина бинт Вахб",
         "url": "https://shamela.ws/book/9820/46"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 14",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=14"
       }
     ]
   },
@@ -2941,16 +3081,20 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 45 до х.",
+      "gregorian": "ок. 579"
     },
     "cities": [],
     "description": "Дед Пророка ﷺ, заботившийся о нём в детстве.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умер, когда Пророку ﷺ было восемь лет. Пересчёт приблизителен и следует датировке рождения Пророка 571 годом. Собственный год рождения не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абд аль-Мутталиб",
         "url": "https://shamela.ws/book/9820/46"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 14",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=14"
       }
     ]
   },
@@ -2963,16 +3107,24 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 3 до х.",
+      "gregorian": "619"
     },
     "cities": [],
     "description": "Дядя и опекун Пророка ﷺ; защищал его в Мекке.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умер в десятом году пророчества. Год рождения в проверенных разделах не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абу Талиб",
         "url": "https://shamela.ws/book/9820/46"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 22",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=22"
+      },
+      {
+        "title": "Даты жизни · Ар-Рахик аль-Махтум",
+        "url": "https://shamela.ws/book/9820/101"
       }
     ]
   },
@@ -2985,16 +3137,20 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 53 до х.",
+      "gregorian": "ок. 571"
     },
     "cities": [],
     "description": "Возглавил поход с войском к Каабе в год слона.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "«Рахик» связывает смерть с походом Слона, датированным 571 годом. Это датировка выбранного источника; год рождения не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абраха",
         "url": "https://shamela.ws/book/9820/40"
+      },
+      {
+        "title": "Аль-Мавсуа аль-муяссара · PDF, с. 13",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=13"
       }
     ]
   },
@@ -3007,12 +3163,12 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 13 до х.",
+      "gregorian": "ок. 610"
     },
     "cities": [],
     "description": "Выслушал рассказ Пророка ﷺ о первом откровении.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Умер вскоре после начала откровения по «Рахик». Григорианский год приблизителен; год рождения не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Варака ибн Науфаль",
@@ -3029,16 +3185,20 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "2",
+      "gregorian": "624"
     },
     "cities": [],
     "description": "Один из противников мусульман в Мекке, участвовал в преследованиях.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Погиб при Бадре. Год рождения в проверенных разделах не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абу Джахль",
         "url": "https://shamela.ws/book/9820/76"
+      },
+      {
+        "title": "Даты жизни · дополнительная сверка",
+        "url": "https://www.islamweb.net/ar/library/content/59/289/"
       }
     ]
   },
@@ -3051,16 +3211,20 @@ export const people: Record<string, Person> = {
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "9",
+      "gregorian": "630–631"
     },
     "cities": [],
     "description": "Вмешался в события бану Кайнука, добиваясь их освобождения.",
-    "dateNote": "Годы жизни в этой записи пока не уточнены.",
+    "dateNote": "Смерть после Табука в девятом году хиджры по «Рахик». Год рождения не установлен.",
     "sources": [
       {
         "title": "Ар-Рахик аль-Махтум · Абдуллах ибн Убайй ибн Салюль",
         "url": "https://shamela.ws/book/9820/213"
+      },
+      {
+        "title": "Даты жизни · Ар-Рахик аль-Махтум",
+        "url": "https://shamela.ws/book/9820/396"
       }
     ]
   }
