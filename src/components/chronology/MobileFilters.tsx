@@ -55,10 +55,10 @@ export function MobileFilters({ category, query, selected, onQueryChange, getPer
 
   return <>
     <div className="mobile-filter-toolbar">
-      <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени или городу</label>
+      <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени, городу или событию</label>
       <div className="mobile-filter-toolbar__row">
         <input id="mobile-person-search" type="search" value={query}
-          onChange={event => onQueryChange(event.target.value)} placeholder="Имя или город" />
+          onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />
         <button type="button" onClick={openFilters} aria-haspopup="dialog">
           Фильтры{category !== "all" && <span className="mobile-filter-badge" aria-label="1 активный фильтр">1</span>}
         </button>
