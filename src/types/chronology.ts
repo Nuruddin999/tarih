@@ -42,3 +42,38 @@ export type HistoricalPeriod = {
   dates: HistoricalDate;
   groups: PeriodGroup[];
 };
+
+/** Ссылка на книгу, главу или видеоурок; URL необязателен для печатных изданий. */
+export type EventSource = {
+  title: string;
+  author?: string;
+  volume?: string;
+  chapter?: string;
+  page?: string;
+  url?: string;
+  timestamp?: string;
+};
+
+/** Участие подтверждается источником, а не только совпадением времени жизни. */
+export type EventParticipant = {
+  personId: Person["id"];
+  role?: string;
+  /** Меньшее значение показывается первым. */
+  sortOrder: number;
+  sources: EventSource[];
+};
+
+export type HistoricalEvent = {
+  id: string;
+  title: string;
+  description?: string;
+  periodId: HistoricalPeriod["id"];
+  /** Начало события или его единственная дата. */
+  start?: HistoricalDate;
+  end?: HistoricalDate;
+  dateNote?: string;
+  /** Задаёт порядок даже для событий без установленной даты. */
+  sortOrder: number;
+  participants: EventParticipant[];
+  sources: EventSource[];
+};
