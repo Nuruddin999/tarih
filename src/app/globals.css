@@ -1168,17 +1168,21 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-s
 .event-card__dates .historical-date__gregorian { font-size: 12px; }
 .event-card__undated, .event-card__note, .period-empty { color: var(--muted); font-size: 12px; line-height: 1.6; }
 .event-card__undated { margin: 0 0 8px; }
-.event-card__details > summary { cursor: pointer; list-style: none; padding-block: 4px; }
-.event-card__details > summary::-webkit-details-marker { display: none; }
-.event-card__details h3 { margin: 0; font-size: 18px; line-height: 1.4; letter-spacing: -.3px; }
-.event-card__details > summary > span { display: block; margin-top: 5px; color: var(--accent); font-size: 12px; }
-.event-card__details > p { font-size: 13px; line-height: 1.65; }
-.event-card__participants { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
-.event-card__label { margin: 0 0 6px; font-size: 12px; font-weight: 600; }
-.event-card__participants > ul { list-style: none; margin: 0; padding: 0; }
-.event-card__participants li { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin-bottom: 5px; }
-.event-card__participants li button, .event-card__more { padding: 9px 0; min-height: 44px; font: inherit; font-size: 13px; text-align: left; color: #0876ca; background: transparent; border: 0; cursor: pointer; }
-.event-card__participants li span { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.event-card__heading { margin: 0; }
+.event-card__toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-height: 44px; padding: 4px 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px; text-align: left; cursor: pointer; }
+.event-card__toggle > span { min-width: 0; }
+.event-card__chevron { flex-shrink: 0; color: var(--muted); transition: transform 160ms ease; }
+.event-card__toggle[aria-expanded="true"] .event-card__chevron { transform: rotate(180deg); }
+.event-card__participants { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-top: 2px; }
+.event-card__label { margin: 0; font-size: 12px; font-weight: 600; }
+.event-card__participants > ul { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; min-width: 0; list-style: none; margin: 0; padding: 0; }
+.event-card__participants li { display: flex; align-items: baseline; min-width: 0; max-width: 100%; }
+.event-card__participants li + li::before { content: "·"; margin-right: 6px; color: var(--muted); }
+.event-card__participants li button { min-height: 32px; padding: 4px 0; border: 0; background: transparent; color: #0876ca; font: inherit; font-size: 13px; line-height: 1.5; text-align: left; overflow-wrap: anywhere; cursor: pointer; }
+.event-card__details { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px; }
+.event-card__details > p { margin: 0 0 8px; font-size: 13px; line-height: 1.65; }
+.event-card__roles > ul { margin: 8px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.65; }
+.event-card__roles li + li { margin-top: 6px; }
 .event-card__note { margin: 6px 0 0; }
 .event-person-dialog { width: min(800px, calc(100% - 24px)); max-height: calc(100dvh - 32px); padding: 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); color: var(--ink); overflow-y: auto; overscroll-behavior: contain; }
 .event-person-dialog::backdrop { background: rgb(23 34 51 / 55%); }

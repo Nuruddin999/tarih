@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { people } from "@/data/chronology";
 import type { HistoricalEvent, Person } from "@/types/chronology";
 import { DateLabel } from "./DateLabel";
@@ -12,8 +12,7 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const participants = [...event.participants].sort((a, b) => a.sortOrder - b.sortOrder)
     .filter(entry => people[entry.personId]);
-  const visible = expanded ? participants : participants.slice(0, 5);
-  const listId = `event-participants-${event.id}`;
+  const detailsId = useId();
 
   useEffect(() => {
     if (person && !dialogRef.current?.open) dialogRef.current?.showModal();
@@ -24,22 +23,31 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
       <DateLabel date={event.start} label={event.end ? "Начало" : undefined} />
       {event.end && <DateLabel date={event.end} label="Окончание" />}
     </div> : <p className="event-card__undated">Дата не уточнена</p>}
-    <details className="event-card__details">
-      <summary><h3>{event.title}</h3><span>Подробнее</span></summary>
+    <h3 className="event-card__heading">
+      <button className="event-card__toggle" type="button" aria-expanded={expanded} aria-controls={detailsId}
+        onClick={() => setExpanded(value => !value)}>
+        <span>{event.title}</span>
+        <svg className="event-card__chevron" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="m6 9 6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+    </h3>
+    {participants.length > 0 && <div className="event-card__participants">
+      <span className="event-card__label">Участники:</span>
+      <ul>{participants.map(entry => <li key={entry.personId}>
+        <button type="button" onClick={() => setPerson(people[entry.personId])}>{people[entry.personId].name}</button>
+      </li>)}</ul>
+    </div>}
+    <div className="event-card__details" id={detailsId} hidden={!expanded}>
       {event.description && <p>{event.description}</p>}
       {event.dateNote && <p className="event-card__note">{event.dateNote}</p>}
-    </details>
-    <div className="event-card__participants">
-      <p className="event-card__label">Участники</p>
-      {participants.length ? <>
-        <ul id={listId}>{visible.map(entry => <li key={entry.personId}>
-          <button type="button" onClick={() => setPerson(people[entry.personId])}>{people[entry.personId].name}</button>
-          {entry.role && <span>{entry.role}</span>}
+      {participants.some(entry => entry.role) && <div className="event-card__roles">
+        <p className="event-card__label">Роли участников</p>
+        <ul>{participants.filter(entry => entry.role).map(entry => <li key={entry.personId}>
+          <strong>{people[entry.personId].name}</strong> — {entry.role}
         </li>)}</ul>
-        {participants.length > 5 && <button className="event-card__more" type="button" aria-expanded={expanded} aria-controls={listId} onClick={() => setExpanded(!expanded)}>
-          {expanded ? "Свернуть участников" : `Все участники · ${participants.length}`}
-        </button>}
-      </> : <p className="event-card__note">Связи с карточками участников пока не добавлены.</p>}
+      </div>}
+      {!participants.length && <p className="event-card__note">Связи с карточками участников пока не добавлены.</p>}
     </div>
     <dialog className="event-person-dialog" ref={dialogRef} aria-label={person ? `Личность: ${person.name}` : "Карточка личности"}
       onClose={() => setPerson(null)} onClick={e => { if (e.target === e.currentTarget) dialogRef.current?.close(); }}>
