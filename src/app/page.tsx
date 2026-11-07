@@ -7,7 +7,7 @@ export default function HomePage() {
     <main className="chronology">
       <header className="site-header">
         <a href="#" className="brand">
-          <span className="brand__symbol" aria-hidden="true">◷</span>
+          <span className="brand__symbol brand__symbol--illustrated" aria-hidden="true"><Image src="/icons/brand.png" alt="" width={48} height={48} unoptimized /></span>
           <span>Люди и эпохи</span>
         </a>
         <nav className="header-nav" aria-label="Основная навигация"><a href="#atlas">Хронология</a><a href="#about">О проекте</a><a href="#dates">Как читать даты</a></nav>
@@ -31,7 +31,7 @@ export default function HomePage() {
         <div className="atlas-stats" aria-label="Об атласе">
           <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/personalities.png" alt="" width={64} height={64} unoptimized /></span><div><strong>{Object.keys(people).length}</strong><small>Личностей в атласе</small></div></div>
           <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/epochs.png" alt="" width={64} height={64} unoptimized /></span><div><strong>{periods.length}</strong><small>Исторических эпох</small></div></div>
-          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/calendars.png" alt="" width={64} height={64} unoptimized /></span><div><strong>2</strong><small>Календаря рядом</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/calendars.png" alt="" width={64} height={64} unoptimized /></span><div><strong>2 календаря</strong><small>Хиджра и григорианский</small></div></div>
         </div>
         <p id="dates" className="intro__legend">
           <span>Как читать даты</span>
