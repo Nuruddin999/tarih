@@ -1219,3 +1219,20 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
   line-height: 1.6;
   color: var(--ink);
 }
+
+/* Full-color illustrations replace the statistics glyphs and their tiles. */
+.atlas-stat .atlas-stat__icon {
+    width: 64px;
+    height: 64px;
+    background: transparent;
+    border-radius: 0;
+}
+.atlas-stat__icon img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+@media (max-width: 760px) {
+    .atlas-stat .atlas-stat__icon { width: 48px; height: 48px; }
+}

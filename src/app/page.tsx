@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { people, periods } from "@/data/chronology";
 import { ChronologyExplorer } from "@/components/chronology/ChronologyExplorer";
 
@@ -28,9 +29,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="atlas-stats" aria-label="Об атласе">
-          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">♙</span><div><strong>{Object.keys(people).length}</strong><small>Личностей в атласе</small></div></div>
-          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">◷</span><div><strong>{periods.length}</strong><small>Исторических эпох</small></div></div>
-          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true">↔</span><div><strong>2</strong><small>Календаря рядом</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/personalities.png" alt="" width={64} height={64} unoptimized /></span><div><strong>{Object.keys(people).length}</strong><small>Личностей в атласе</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/epochs.png" alt="" width={64} height={64} unoptimized /></span><div><strong>{periods.length}</strong><small>Исторических эпох</small></div></div>
+          <div className="atlas-stat"><span className="atlas-stat__icon" aria-hidden="true"><Image src="/icons/calendars.png" alt="" width={64} height={64} unoptimized /></span><div><strong>2</strong><small>Календаря рядом</small></div></div>
         </div>
         <p id="dates" className="intro__legend">
           <span>Как читать даты</span>
