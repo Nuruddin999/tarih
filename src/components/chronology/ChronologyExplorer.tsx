@@ -3,12 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import { people, periods, categoryLabels } from "@/data/chronology";
 import { events } from "@/data/events";
+import { uniquePeriodPeople } from "@/lib/uniquePeriodPeople";
 import type { PersonCategory } from "@/types/chronology";
 import { PeriodSection } from "./PeriodSection";
 import { ComparisonPanel } from "./ComparisonPanel";
 import { MobileFilters } from "./MobileFilters";
 
 const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b[1].name, "ru"));
+// Assign people before applying search/category filters, so their era stays stable.
+const periodsWithUniquePeople = uniquePeriodPeople(periods);
 
 export function ChronologyExplorer() {
   const [category, setCategory] = useState<PersonCategory | "all">("all");
@@ -58,7 +61,7 @@ export function ChronologyExplorer() {
     return eligible && text.includes(search);
   }).sort((a, b) => a.sortOrder - b.sortOrder);
   const visibleEvents = filterEvents();
-  const filterPeriods = (filter = category, search = normalized) => periods.map(period => ({ ...period, groups: period.groups
+  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
       .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
