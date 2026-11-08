@@ -89,6 +89,7 @@ export function ChronologyExplorer() {
         setSelected(person);
         if (periodId) setPendingPeriod(periodId);
       }} />
+    <MobilePeriodNavigation periods={visiblePeriods} />
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
     <h3 className="sidebar-block-title desktop-only">Учёные</h3>
@@ -113,7 +114,6 @@ export function ChronologyExplorer() {
       selected={selected} onSelect={setSelected} />
     </aside>
     <div className="chronology-results">
-    <MobilePeriodNavigation periods={visiblePeriods} />
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
       <p role="status">
         {isFiltering
