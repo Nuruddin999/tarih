@@ -1260,7 +1260,10 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
   .mobile-period-strip {
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 20;
+    min-width: 0;
+    width: 100%;
+    align-self: start;
     display: flex;
     gap: 8px;
     overflow-x: auto;
