@@ -8,6 +8,7 @@ import type { PersonCategory } from "@/types/chronology";
 import { PeriodSection } from "./PeriodSection";
 import { ComparisonPanel } from "./ComparisonPanel";
 import { MobileFilters } from "./MobileFilters";
+import { MobilePeriodNavigation } from "./MobilePeriodNavigation";
 
 const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b[1].name, "ru"));
 // Assign people before applying search/category filters, so their era stays stable.
@@ -112,6 +113,7 @@ export function ChronologyExplorer() {
       selected={selected} onSelect={setSelected} />
     </aside>
     <div className="chronology-results">
+    <MobilePeriodNavigation periods={visiblePeriods} />
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
       <p role="status">
         {isFiltering

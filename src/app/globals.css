@@ -1253,3 +1253,45 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 @media (max-width: 760px) {
     .brand__symbol.brand__symbol--illustrated { width: 40px; height: 40px; }
 }
+
+/* Keep mobile epoch navigation available while reading the timeline. */
+.mobile-period-strip { display: none; }
+@media (max-width: 1023px) {
+  .mobile-period-strip {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding: 12px 0;
+    margin-bottom: 8px;
+    background: var(--background);
+    box-shadow: 0 1px 0 var(--border);
+  }
+  .mobile-period-strip::-webkit-scrollbar { display: none; }
+  .mobile-period-strip a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 10px 16px;
+    border: 1px solid #bdc6d2;
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .mobile-period-strip a[aria-current="location"] {
+    color: #fff;
+    background: #0d74ff;
+    border-color: #0d74ff;
+  }
+  .mobile-period-strip a:focus-visible { outline-offset: -4px; }
+  .timeline-period { scroll-margin-top: 80px; }
+}
