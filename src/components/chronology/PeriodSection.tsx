@@ -8,12 +8,11 @@ import { DateLabel } from "./DateLabel";
 import { PersonCard } from "./PersonCard";
 import { EventCard } from "./EventCard";
 
-export function PeriodSection({ period, periodEvents = [], initialView }: {
-  initialView?: "events" | "people";
+export function PeriodSection({ period, periodEvents = [] }: {
   period: HistoricalPeriod;
   periodEvents?: HistoricalEvent[];
 }) {
-  const [view, setView] = useState<"events" | "people">(initialView ?? (periodEvents.length > 0 ? "events" : "people"));
+  const [view, setView] = useState<"events" | "people">(periodEvents.length > 0 ? "events" : "people");
   const peopleCount = new Set(period.groups.flatMap(group => group.people.map(entry => entry.personId))).size;
   const chronologicalPeople = period.id === "prophetic-era"
     ? [...new Map(period.groups.flatMap(group => group.people)
