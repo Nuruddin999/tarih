@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { people } from "@/data/chronology";
 import { yearRange } from "@/lib/contemporaries";
 import type { HistoricalEvent, HistoricalPeriod } from "@/types/chronology";
@@ -13,6 +13,13 @@ export function PeriodSection({ period, periodEvents = [] }: {
   periodEvents?: HistoricalEvent[];
 }) {
   const [view, setView] = useState<"events" | "people">(periodEvents.length > 0 ? "events" : "people");
+  const [linkStatus, setLinkStatus] = useState("");
+  useEffect(() => {
+    if (!linkStatus) return;
+    const timer = window.setTimeout(() => setLinkStatus(""), 3000);
+    return () => window.clearTimeout(timer);
+  }, [linkStatus]);
+
   const peopleCount = new Set(period.groups.flatMap(group => group.people.map(entry => entry.personId))).size;
   const chronologicalPeople = period.id === "prophetic-era"
     ? [...new Map(period.groups.flatMap(group => group.people)
@@ -32,7 +39,35 @@ export function PeriodSection({ period, periodEvents = [] }: {
       <summary className="period__summary">
         <DateLabel date={period.dates} large />
         <div className="period__heading">
-          <div><h2>{period.title}</h2><p>{period.description}</p></div>
+          <div className="period__heading-content">
+            <div className="period__title-row">
+              <h2><a href={`#${period.id}`} onClick={event => {
+                event.stopPropagation();
+                document.getElementById(period.id)?.querySelector("details")?.setAttribute("open", "");
+              }}>{period.title}</a></h2>
+              <button className="period__copy-link" type="button" aria-label={`Скопировать ссылку: ${period.title}`}
+                title="Скопировать ссылку на эпоху" onClick={async event => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  const url = new URL(window.location.href);
+                  url.search = "";
+                  url.hash = period.id;
+                  try {
+                    await navigator.clipboard.writeText(url.href);
+                    setLinkStatus("Ссылка скопирована");
+                  } catch {
+                    setLinkStatus("Для копирования используйте ссылку в названии эпохи");
+                  }
+                }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 3 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"
+                    transform="translate(1 1)" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+            <span className="period__link-status" role="status">{linkStatus}</span>
+            <p>{period.description}</p>
+          </div>
           <span className="period__toggle" aria-hidden="true">↓</span>
         </div>
       </summary>

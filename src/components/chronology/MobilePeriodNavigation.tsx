@@ -54,13 +54,9 @@ export function MobilePeriodNavigation({ periods }: { periods: PeriodLink[] }) {
   if (!periods.length) return null;
   return <nav ref={navigationRef} className="mobile-period-strip" aria-label="Переход к эпохе">
     {periods.map(period => <a key={period.id} href={`#${period.id}`} aria-current={activeId === period.id ? "location" : undefined}
-      onClick={event => {
-        event.preventDefault();
-        const section = document.getElementById(period.id);
-        if (!section) return;
-        section.querySelector("details")?.setAttribute("open", "");
-        const top = window.scrollY + section.getBoundingClientRect().top - (navigationRef.current?.offsetHeight ?? 68) - 12;
-        window.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+      onClick={() => {
+        // Preserve native anchor navigation: the URL can be shared and Back/Forward work.
+        document.getElementById(period.id)?.querySelector("details")?.setAttribute("open", "");
       }}>{period.title}</a>)}
   </nav>;
 }
