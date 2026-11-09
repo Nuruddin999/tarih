@@ -7,20 +7,32 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Язид ибн Муавия",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "26 г. х.",
+      "gregorian": "ок. 646–647 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "64 г. х.",
+      "gregorian": "ок. 683–684 гг."
     },
     "cities": [],
     "description": "Халиф Омейядов; правил после Муавии ибн Абу Суфьяна.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 26 г. х. по «Аль-Бидая ва-н-нихая»; встречаются также 25 и 27 г. х. Смерть: 64 г. х. по «Сияр».",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=182"
+      },
+      {
+        "title": "Ибн Касир · «Аль-Бидая ва-н-нихая» · Рождение Язида",
+        "url": "https://www.islamweb.net/ar/library/content/59/920/"
+      },
+      {
+        "title": "Islamweb · Даты жизни Язида ибн Муавии",
+        "url": "https://www.islamweb.net/ar/library/content/200/18297/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Язид ибн Муавия",
+        "url": "https://www.islamweb.net/ar/library/content/60/450/"
       }
     ]
   },
@@ -29,20 +41,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Укба ибн Нафи‘",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "1 до х.",
+      "gregorian": "ок. 621–622 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "63 г. х.",
+      "gregorian": "ок. 682–683 гг."
     },
     "cities": [],
     "description": "Военачальник в Ифрикии и Магрибе, основатель Кайруана.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 1 год до хиджры по биографической справке Islamweb. Гибель в 63 г. х. подтверждена в «Сияр».",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=212"
+      },
+      {
+        "title": "Islamweb · Укба ибн Нафи‘",
+        "url": "https://islamweb.net/ar/fatwa/19830/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Укба ибн Нафи‘",
+        "url": "https://www.islamweb.net/ar/library/content/60/435/"
       }
     ]
   },
@@ -51,20 +71,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Абу аль-Мухаджир ибн Динар",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "63 г. х.",
+      "gregorian": "ок. 682–683 гг."
     },
     "cities": [],
     "description": "Наместник Ифрикии; предшественник Укбы во время его второго назначения.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель вместе с Укбой в 63 г. х. — по рассказу о Тахуде. Год рождения в проверенном источнике не указан.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=213"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 212",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=214"
       }
     ]
   },
@@ -73,20 +97,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Кусайла",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "69 г. х.",
+      "gregorian": "ок. 688–689 гг."
     },
     "cities": [],
     "description": "Берберский предводитель, противник Укбы ибн Нафи‘ и Зухайра ибн Кайса.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель при Мамсе: 69 г. х. по «Аль-Камиль». Год рождения в проверенном рассказе не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=214"
+      },
+      {
+        "title": "Ибн аль-Асир · «Аль-Камиль» · Поход Зухайра и гибель Кусайлы",
+        "url": "https://www.islamweb.net/ar/library/content/126/610/"
       }
     ]
   },
@@ -95,20 +123,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Муавия ибн Язид — Муавия II",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 44 г. х.",
+      "gregorian": "ок. 664–665 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "64 г. х.",
+      "gregorian": "ок. 683–684 гг."
     },
     "cities": [],
     "description": "Сын Язида ибн Муавии; кратко занимал престол после отца.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение около 44 г. х. приблизительно рассчитано по возрасту 20 лет при смерти в 64 г. х. в «Сияр»; другие сообщения дают возраст 21 год. Это оценка, не прямо названный год рождения.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=185"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Муавия ибн Язид в биографии его отца",
+        "url": "https://www.islamweb.net/ar/library/content/60/450/"
+      },
+      {
+        "title": "Ибн Абд аль-Барр · «Аль-Исти‘аб» · Возраст Муавии II",
+        "url": "https://islamweb.org/ar/library/content/1080/2410/"
       }
     ]
   },
@@ -117,20 +153,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Сулейман ибн Сурад",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "65 г. х.",
+      "gregorian": "ок. 684–685 гг."
     },
     "cities": [],
     "description": "Возглавил движение кающихся — ат-таввабин.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель при Айн-аль-Варде: 65 г. х., предпочтённая версия; приводится также 67. Указан возраст 93 года, но отдельный год рождения не устанавливается.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=188"
+      },
+      {
+        "title": "Ибн Касир · «Аль-Бидая ва-н-нихая» · Айн-аль-Варда",
+        "url": "https://www.islamweb.net/ar/library/content/59/944/"
       }
     ]
   },
@@ -139,20 +179,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Марван ибн аль-Хакам",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "2 г. х.",
+      "gregorian": "ок. 623–624 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "65 г. х.",
+      "gregorian": "ок. 684–685 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, отец Абд аль-Малика.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 2 г. х. по биографическому разделу Islamweb. Смерть: 65 г. х. по «Сияр»; сообщения о возрасте расходятся.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=185"
+      },
+      {
+        "title": "Islamweb · Марван ибн аль-Хакам: рождение и смерть",
+        "url": "https://www.islamweb.net/ar/library/content/200/18320/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Марван ибн аль-Хакам",
+        "url": "https://www.islamweb.net/ar/library/content/60/398/"
       }
     ]
   },
@@ -161,20 +209,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Абд аль-Малик ибн Марван",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "26 г. х.",
+      "gregorian": "ок. 646–647 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "86 г. х.",
+      "gregorian": "ок. 705–706 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, восстановивший единство государства после междоусобиц.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 26 г. х. по «Сияр». Смерть: 86 г. х. по основной книге. Это годы жизни, а не период правления 65–86.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=185"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Абд аль-Малик ибн Марван",
+        "url": "https://www.islamweb.net/ar/library/content/60/539/"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 188",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=190"
       }
     ]
   },
@@ -183,20 +239,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Хаджжадж ибн Юсуф",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 40 г. х.",
+      "gregorian": "ок. 660–661 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "95 г. х.",
+      "gregorian": "ок. 713–714 гг."
     },
     "cities": [],
     "description": "Наместник Ирака, руководивший борьбой с восстаниями и восточными походами.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение около 40 г. х.: источники приводят 39, 40 и 41 г. х. Смерть в 95 г. х.; приближённость относится к рождению.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=187"
+      },
+      {
+        "title": "Islamweb · Аль-Хаджжадж: рождение и смерть",
+        "url": "https://www.islamweb.net/ar/library/content/200/18462/"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 191",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=193"
       }
     ]
   },
@@ -205,20 +269,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Мухтар ас-Сакафи",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "67 г. х.",
+      "gregorian": "ок. 686–687 гг."
     },
     "cities": [],
     "description": "Предводитель выступления в Куфе под лозунгом мести за аль-Хусайна.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Убит в рамадане 67 г. х. Год рождения оставлен неустановленным: в проверенном рассказе приведён лишь спорный возраст при смерти.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=188"
+      },
+      {
+        "title": "Ибн Касир · «Аль-Бидая ва-н-нихая» · Гибель аль-Мухтара",
+        "url": "https://gcp.islamweb.net/ar/library/content/59/956/"
       }
     ]
   },
@@ -227,20 +295,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Мус‘аб ибн аз-Зубайр",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "71 г. х.",
+      "gregorian": "ок. 690–691 гг."
     },
     "cities": [],
     "description": "Брат Абдуллаха ибн аз-Зубайра; противник аль-Мухтара в Ираке.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель: 71 г. х. — выбранная версия; в том же источнике приведён 72 г. х. Возраст при смерти передаётся как 35, 40 или 45 лет, поэтому рождение из него не рассчитывается.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=188"
+      },
+      {
+        "title": "Ибн Касир · «Аль-Бидая ва-н-нихая» · Гибель Мус‘аба",
+        "url": "https://gcp.islamweb.net/ar/library/content/59/967/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Мус‘аб ибн аз-Зубайр",
+        "url": "https://www.islamweb.net/ar/library/content/60/491/"
       }
     ]
   },
@@ -249,20 +325,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Зухайр ибн Кайс аль-Балави",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 69 г. х.",
+      "gregorian": "ок. 688–689 гг."
     },
     "cities": [],
     "description": "Военачальник, вернувший Кайруан после победы над Кусайлой.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель: около 69 г. х. по «Аль-Камиль»; в основной энциклопедии указан 78 г. х. Датировка спорная. Год рождения в проверенных источниках не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=214"
+      },
+      {
+        "title": "Ибн аль-Асир · «Аль-Камиль» · Поход и гибель Зухайра",
+        "url": "https://www.islamweb.net/ar/library/content/126/610/"
       }
     ]
   },
@@ -271,16 +351,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Шабиб ибн Язид аш-Шайбани",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 26 г. х.",
+      "gregorian": "ок. 646–647 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "77 г. х.",
+      "gregorian": "ок. 696–697 гг."
     },
     "cities": [],
     "description": "Предводитель хариджитского выступления против войск аль-Хаджжаджа.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Смерть: 77 г. х. по «Сияр». Рождение около 26 г. х. приблизительно рассчитано из указанного возраста 51 год; это не непосредственно названный год рождения.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -297,16 +377,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Газаля",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 77 г. х.",
+      "gregorian": "ок. 696–697 гг."
     },
     "cities": [],
     "description": "Участница хариджитского выступления, жена Шабиба ибн Язида.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель во время заключительных сражений выступления Шабиба, около 77 г. х. Год рождения в проверенной биографии не указан.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -324,20 +404,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Хассан ибн ан-Ну‘ман",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Военачальник в Ифрикии, противник аль-Кахины.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Даты жизни спорны: в «Сияр» приведён 80 г. х. для смерти, но там же отставка связана с аль-Валидом, вступившим на престол в 86 г. х. Единую дату смерти не выбираем; год рождения не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=214"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Хассан ибн ан-Ну‘ман",
+        "url": "https://www.islamweb.net/ar/library/content/60/490/"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 213",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=215"
       }
     ]
   },
@@ -346,20 +434,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Кахина",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Берберская предводительница, противостоявшая войскам Хассана ибн ан-Ну‘мана.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "В проверенных рассказах описана гибель в борьбе с Хассаном, но хронология походов расходится. Единый год смерти и год рождения не установлены.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=215"
+      },
+      {
+        "title": "Ибн аль-Асир · «Аль-Камиль» · Хассан и аль-Кахина",
+        "url": "https://www.islamweb.com/ar/library/content/126/694/"
       }
     ],
     "gender": "female"
@@ -369,20 +461,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Абд ар-Рахман ибн Мухаммад ибн аль-Аш‘ас",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "85 г. х.",
+      "gregorian": "ок. 704–705 гг."
     },
     "cities": [],
     "description": "Военачальник, возглавивший восстание против аль-Хаджжаджа.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Смерть: 85 г. х. по «Аль-Мунтазам»; там же приведён 84 г. х. Год рождения в проверенном рассказе не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=188"
+      },
+      {
+        "title": "Ибн аль-Джаузи · «Аль-Мунтазам» · Смерть Ибн аль-Аш‘аса",
+        "url": "https://islamweb.net/ar/library/content/421/1031/"
       }
     ]
   },
@@ -391,20 +487,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Валид ибн Абд аль-Малик",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "50 г. х.",
+      "gregorian": "ок. 670–671 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "96 г. х.",
+      "gregorian": "ок. 714–715 гг."
     },
     "cities": [],
     "description": "Омейядский халиф времени крупных завоеваний и строительства мечетей.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 50 г. х.; смерть: 96 г. х. по биографическому разделу Islamweb. Период правления 86–96 г. х. не подменяет даты жизни.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=193"
+      },
+      {
+        "title": "Islamweb · Аль-Валид ибн Абд аль-Малик: рождение и смерть",
+        "url": "https://www.islamweb.net/ar/library/content/200/18474/"
       }
     ]
   },
@@ -413,20 +513,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Муса ибн Нусайр",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "19 г. х.",
+      "gregorian": "ок. 640–641 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "97 г. х.",
+      "gregorian": "ок. 715–716 гг."
     },
     "cities": [],
     "description": "Наместник Магриба и организатор походов в Андалусию.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 19 г. х., по приведённому в источнике сообщению. Смерть помещена в раздел 97 г. х. «Аль-Бидая ва-н-нихая».",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=215"
+      },
+      {
+        "title": "Ибн Касир · «Аль-Бидая ва-н-нихая» · Муса ибн Нусайр",
+        "url": "https://islamweb.net/ar/library/content/59/1040/"
       }
     ]
   },
@@ -435,20 +539,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Тарик ибн Зияд",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "50 г. х.",
+      "gregorian": "ок. 670–671 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "102 г. х.",
+      "gregorian": "ок. 720–721 гг."
     },
     "cities": [],
     "description": "Командовал войском, переправившимся в Андалусию.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Даты 50–102 г. х. приведены в биографической справке Islamweb; они приняты как выбранная версия, а не как бесспорная датировка всех источников.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=215"
+      },
+      {
+        "title": "Islamweb · Даты жизни Тарика ибн Зияда",
+        "url": "https://www.islamweb.net/ar/fatwa/43857/"
       }
     ]
   },
@@ -457,20 +565,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Кутайба ибн Муслим",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 48 г. х.",
+      "gregorian": "ок. 668–669 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "96 г. х.",
+      "gregorian": "ок. 714–715 гг."
     },
     "cities": [],
     "description": "Военачальник, руководивший походами в Мавераннахре.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель: зу-ль-хиджжа 96 г. х. Рождение около 48 г. х. приблизительно рассчитано по возрасту 48 лет, указанному в «Сияр».",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=229"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Кутайба ибн Муслим",
+        "url": "https://www.islamweb.net/ar/library/content/60/610/"
       }
     ]
   },
@@ -479,16 +591,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Тариф ибн Малик",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Возглавил разведывательный поход в Андалусию.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "В проверенном рассказе подтверждён разведывательный поход в рамадане 91 г. х., но годы рождения и смерти не приведены. Дата похода не используется как дата жизни.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -501,16 +613,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Родерих",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Вестготский король, противник Тарика в битве при Вади-Лакка.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рассказ связывает исчезновение правителя с битвой при Вади-Лакка. Годы рождения и смерти в проверенном фрагменте не установлены; год сражения не подставляется вместо смерти.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -523,20 +635,32 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Мухаммад ибн аль-Касим",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "72 г. х.",
+      "gregorian": "ок. 691–692 гг."
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Руководил походом в Синд при аль-Хаджжадже.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 72 г. х. по биографической статье Islamweb. Точный год смерти не выбран: статья указывает 95, но связывает конец жизни со сменой аль-Валида Сулейманом в 96 г. х. Год смерти требует устранения этого противоречия.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=234"
+      },
+      {
+        "title": "Islamweb · Биография Мухаммада ибн аль-Касима",
+        "url": "https://islamweb.net/ar/fanar/article/42307/"
+      },
+      {
+        "title": "Islamweb · Мухаммад ибн аль-Касим при аль-Валиде",
+        "url": "https://www.islamweb.net/ar/fatwa/17119/"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 194",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=196"
       }
     ]
   },
@@ -545,20 +669,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Дахир",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "93 г. х.",
+      "gregorian": "ок. 711–712 гг."
     },
     "cities": [],
     "description": "Правитель Синда, погибший в борьбе с войском Мухаммада ибн аль-Касима.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель в 93 г. х. — по датировке рассказа основной книги. В дополнительной статье Islamweb сражение отнесено к 92 г. х.; год рождения не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=234"
+      },
+      {
+        "title": "Islamweb · Дахир в рассказе о походе в Синд",
+        "url": "https://islamweb.net/ar/fanar/article/42307/"
       }
     ]
   },
@@ -567,20 +695,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Сулейман ибн Абд аль-Малик",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "54 г. х.",
+      "gregorian": "ок. 673–674 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "99 г. х.",
+      "gregorian": "ок. 717–718 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, назначивший преемником Умара ибн Абд аль-Азиза.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 54 г. х. по биографическому календарю Islamweb. Смерть: сафар 99 г. х.; сообщения о возрасте при смерти расходятся.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=195"
+      },
+      {
+        "title": "Islamweb · Даты Сулеймана ибн Абд аль-Малика",
+        "url": "https://www.islamweb.net/ar/article/2158/"
+      },
+      {
+        "title": "Islamweb · Смерть Сулеймана ибн Абд аль-Малика",
+        "url": "https://www.islamweb.net/ar/library/content/200/18493/"
       }
     ]
   },
@@ -589,20 +725,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Масляма ибн Абд аль-Малика",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "120 г. х.",
+      "gregorian": "ок. 737–738 гг."
     },
     "cities": [],
     "description": "Военачальник, возглавлявший осаду Константинополя и борьбу с Ибн аль-Мухаллабом.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Смерть: 120 г. х. по сообщению Халифы ибн Хайята в «Сияр». Год рождения в проверенной биографии не приведён.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=196"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Масляма",
+        "url": "https://islamweb.net/ar/library/index.php?ID=809&bk_no=60&flag=1&page=bookcontents"
       }
     ]
   },
@@ -611,20 +751,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Умар ибн Абд аль-Азиз",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "61 г. х.",
+      "gregorian": "ок. 680–681 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "101 г. х.",
+      "gregorian": "ок. 719–720 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, известный стремлением к справедливости и возвращению неправомерно присвоенного имущества.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 61 г. х. — выбранная версия; приведены также 59 и 63 г. х. Смерть: 101 г. х. Даты правления 99–101 не используются как годы жизни.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=198"
+      },
+      {
+        "title": "Islamweb · Умар ибн Абд аль-Азиз: рождение",
+        "url": "https://www.islamweb.net/ar/library/content/200/18510/"
+      },
+      {
+        "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 201",
+        "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=203"
       }
     ]
   },
@@ -633,20 +781,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Раджа ибн Хайва",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "112 г. х.",
+      "gregorian": "ок. 730–731 гг."
     },
     "cities": [],
     "description": "Учёный и советник Сулеймана, участвовавший в выборе Умара ибн Абд аль-Азиза преемником.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Смерть: 112 г. х. по сообщениям Абу Убайда и Халифы ибн Хайята в «Сияр». Год рождения в проверенной биографии не указан.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=197"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Раджа ибн Хайва",
+        "url": "https://www.islamweb.net/ar/library/content/60/670/"
       }
     ]
   },
@@ -655,20 +807,28 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Язид ибн Абд аль-Малика",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "71 г. х.",
+      "gregorian": "ок. 690–691 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "105 г. х.",
+      "gregorian": "ок. 723–724 гг."
     },
     "cities": [],
     "description": "Омейядский халиф после Умара ибн Абд аль-Азиза.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 71 г. х. по «Сияр». Смерть: 105 г. х.; сообщения о возрасте при смерти расходятся.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=203"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Язид ибн Абд аль-Малик",
+        "url": "https://www.islamweb.net/ar/library/content/60/759/"
+      },
+      {
+        "title": "Islamweb · Смерть Язида ибн Абд аль-Малика",
+        "url": "https://www.islamweb.net/ar/library/content/200/18551/"
       }
     ]
   },
@@ -677,20 +837,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Язид ибн аль-Мухаллаб",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "53 г. х.",
+      "gregorian": "ок. 672–673 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "102 г. х.",
+      "gregorian": "ок. 720–721 гг."
     },
     "cities": [],
     "description": "Военачальник и наместник, возглавивший выступление в Ираке.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 53 г. х.; гибель: сафар 102 г. х. по «Сияр».",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=204"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Язид ибн аль-Мухаллаб",
+        "url": "https://www.islamweb.net/ar/library/content/60/647/"
       }
     ]
   },
@@ -699,8 +863,8 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Хасан аль-Басри",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "21 г. х.",
+      "gregorian": "ок. 641–642 гг."
     },
     "death": {
       "hijri": "110 г. х.",
@@ -710,11 +874,15 @@ export const umayyadPeople: Record<string, Person> = {
       "Басра"
     ],
     "description": "Учёный поколения табиинов, передатчик хадисов и наставник в Басре.",
-    "dateNote": "Смерть в 110 г. х. по «Сияр»; рождение в этой работе не уточнялось.",
+    "dateNote": "Рождение: 21 г. х. в Медине. Смерть: раджаб 110 г. х. в Басре.",
     "sources": [
       {
         "title": "Сияр а‘лям ан-нубаля · Аль-Хасан аль-Басри",
         "url": "https://www.islamweb.net/ar/library/content/60/674/"
+      },
+      {
+        "title": "Islamweb · Рождение аль-Хасана аль-Басри",
+        "url": "https://islamweb.net/ar/print.php?id=176609"
       }
     ],
     "categories": [
@@ -726,8 +894,8 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Мухаммад ибн Сирин",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 33 г. х.",
+      "gregorian": "ок. 653–654 гг."
     },
     "death": {
       "hijri": "110 г. х.",
@@ -737,11 +905,19 @@ export const umayyadPeople: Record<string, Person> = {
       "Басра"
     ],
     "description": "Учёный поколения табиинов и передатчик хадисов в Басре.",
-    "dateNote": "Смерть в 110 г. х. по «Сияр»; рождение в этой работе не уточнялось.",
+    "dateNote": "Рождение около 33 г. х.: выбран рассказ о двух годах до конца правления Усмана, который аз-Захаби предпочитает версии о конце правления Умара. Смерть: шавваль 110 г. х.",
     "sources": [
       {
         "title": "Сияр а‘лям ан-нубаля · Аль-Хасан аль-Басри",
         "url": "https://www.islamweb.net/ar/library/content/60/674/"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Мухаммад ибн Сирин",
+        "url": "https://www.islamweb.net/ar/library/content/60/697/"
+      },
+      {
+        "title": "Islamweb · Разбор вариантов рождения Ибн Сирина",
+        "url": "https://audio.islamweb.net/audio/Fulltxt.php?audioid=204179"
       }
     ],
     "categories": [
@@ -753,20 +929,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Хишам ибн Абд аль-Малика",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 71 г. х.",
+      "gregorian": "ок. 690–691 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "125 г. х.",
+      "gregorian": "ок. 742–743 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, правивший около двадцати лет.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение около 71 г. х. рассчитано по возрасту 54 года при смерти в 125 г. х.; «Сияр» непосредственно говорит «после 70 г. х.». Смерть: раби‘ аль-ахир 125 г. х.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=205"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Хишам ибн Абд аль-Малик",
+        "url": "https://www.islamweb.net/ar/library/content/60/871/"
       }
     ]
   },
@@ -775,20 +955,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Абд ар-Рахман аль-Гафики",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "114 г. х.",
+      "gregorian": "ок. 732–733 гг."
     },
     "cities": [],
     "description": "Командовал мусульманским войском при Балат аш-Шухада.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель: 114 г. х. — выбранная версия, предпочтённая в тексте Islamweb; там же приведён 113 г. х. Год рождения не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=222"
+      },
+      {
+        "title": "Islamweb · Гибель Абд ар-Рахмана аль-Гафики",
+        "url": "https://www.islamweb.net/ar/library/content/200/18601/"
       }
     ]
   },
@@ -797,16 +981,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Карл Мартелл",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "cities": [],
     "description": "Франкский военачальник, противник аль-Гафики при Балат аш-Шухада.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "В проверенном разделе основной книги описано участие при Балат аш-Шухада, но годы жизни не приведены. Поле не означает, что даты неизвестны исторической науке; дополнительный биографический источник из согласованного круга не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -819,20 +1003,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Аль-Валид ибн Язид — аль-Валид II",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "90 г. х.",
+      "gregorian": "ок. 708–709 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "126 г. х.",
+      "gregorian": "ок. 743–744 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, свергнутый сторонниками Язида ибн аль-Валида.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 90 г. х. — выбранная версия; в «Сияр» приведён также 92 г. х. Гибель: 126 г. х.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=206"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Аль-Валид ибн Язид",
+        "url": "https://www.islamweb.net/ar/library/content/60/877/"
       }
     ]
   },
@@ -841,20 +1029,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Язид ибн аль-Валида — Язид III",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "90 г. х.",
+      "gregorian": "ок. 708–709 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "126 г. х.",
+      "gregorian": "ок. 743–744 гг."
     },
     "cities": [],
     "description": "Омейядский халиф, известный как ан-Накис.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 90 г. х. — выбранная версия; в источнике приведён также 96 г. х. Смерть: 126 г. х.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=206"
+      },
+      {
+        "title": "Islamweb · Язид ибн аль-Валид: рождение и смерть",
+        "url": "https://www.islamweb.net/ar/library/content/200/18687/"
       }
     ]
   },
@@ -863,20 +1055,24 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Марван ибн Мухаммад — Марван II",
     "honorific": "",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "72 г. х.",
+      "gregorian": "ок. 691–692 гг."
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "132 г. х.",
+      "gregorian": "ок. 749–750 гг."
     },
     "cities": [],
     "description": "Последний омейядский халиф в Дамаске.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Рождение: 72 г. х. по «Сияр». Гибель: 132 г. х. Годы правления 127–132 не подменяют годы жизни.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=207"
+      },
+      {
+        "title": "Аз-Захаби · «Сияр а‘лям ан-нубаля» · Марван ибн Мухаммад",
+        "url": "https://www.islamweb.net/ar/library/content/60/946/"
       }
     ]
   },
@@ -885,16 +1081,16 @@ export const umayyadPeople: Record<string, Person> = {
     "name": "Ад-Даххак ибн Кайс аш-Шайбани",
     "honorific": "",
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "128 г. х.",
+      "gregorian": "ок. 745–746 гг."
     },
     "cities": [],
     "description": "Предводитель хариджитов в последние годы Омейядского халифата.",
-    "dateNote": "Непроверенные даты жизни не заполняются по датам правления или участия в походах.",
+    "dateNote": "Гибель: 128 г. х. — выбранная версия; в источнике приведён также 129. Это ад-Даххак аш-Шайбани, не сподвижник ад-Даххак аль-Фихри и не Шабиб ибн Язид. Год рождения не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара фи-т-тарих аль-ислями",
@@ -903,6 +1099,10 @@ export const umayyadPeople: Record<string, Person> = {
       {
         "title": "Islamweb · Выступление ад-Даххака, 127 г. х.",
         "url": "https://islamweb.net/ar/library/content/200/18699/"
+      },
+      {
+        "title": "Islamweb · Гибель ад-Даххака аш-Шайбани",
+        "url": "https://www.islamweb.net/ar/library/content/200/18706/"
       }
     ]
   },
@@ -912,22 +1112,30 @@ export const umayyadPeople: Record<string, Person> = {
     "honorific": "Да будет доволен им Аллах",
     "isCompanion": true,
     "birth": {
-      "hijri": "—",
+      "hijri": "Не установлено",
       "gregorian": "—"
     },
     "death": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "52 г. х.",
+      "gregorian": "ок. 672–673 гг."
     },
     "cities": [
       "Медина"
     ],
     "description": "Сподвижник Пророка ﷺ, участвовавший в походе к Константинополю и похороненный у его стен.",
-    "dateNote": "Точный год смерти зависит от датировки похода; в этой работе не выбран.",
+    "dateNote": "Смерть: 52 г. х. — выбранная версия; в «Аль-Исти‘аб» приведены также 50 и 51 г. х. Год рождения в проверенной биографии не установлен.",
     "sources": [
       {
         "title": "Аль-Маусу‘а аль-муяссара · т. 1, с. 177",
         "url": "https://turkistanilibrary.com/sites/default/files/elmewsuetul-muyessere-fi-tarih-islami.pdf#page=179"
+      },
+      {
+        "title": "Ибн Абд аль-Барр · «Аль-Исти‘аб» · Абу Айюб",
+        "url": "https://www.islamweb.net/amp/ar/library/content/1080/640/"
+      },
+      {
+        "title": "Islamweb · Смерть Абу Айюба",
+        "url": "https://www.islamweb.net/ar/library/content/200/18226/"
       }
     ]
   }
