@@ -1,3 +1,4 @@
+import { umayyadPeople, umayyadPeriod } from "./umayyad";
 import { rashidunPeople } from "./rashidun";
 import type { Person, HistoricalPeriod, PersonCategory } from "@/types/chronology";
 
@@ -15,6 +16,7 @@ export const categoryLabels: Record<PersonCategory, string> = {
 
 export const people: Record<string, Person> = {
   ...rashidunPeople,
+  ...umayyadPeople,
   "muhammad": {
     "id": "muhammad",
     "name": "Мухаммад — Посланник Аллаха",
@@ -3681,13 +3683,14 @@ export const periods: HistoricalPeriod[] = [
       }
     ]
   },
+  umayyadPeriod,
   {
     "id": "early-schools",
-    "title": "Поздние Омейяды и ранние Аббасиды",
+    "title": "Ранние Аббасиды",
     "description": "Хронологический раздел: личности расположены по году смерти по хиджре. Название эпохи — ориентир; государства в разных регионах существовали параллельно.",
     "dates": {
-      "hijri": "41–199 г. х.",
-      "gregorian": "ок. 661–815 гг."
+      "hijri": "132–199 г. х.",
+      "gregorian": "ок. 750–815 гг."
     },
     "groups": [
       {

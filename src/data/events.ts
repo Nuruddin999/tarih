@@ -1,3 +1,4 @@
+import { umayyadEvents, boundaryScholarEvents } from "./umayyad";
 import { rashidunEvents } from "./rashidun";
 import type { HistoricalEvent } from "../types/chronology";
 
@@ -8,6 +9,8 @@ import type { HistoricalEvent } from "../types/chronology";
 // См. docs/prophetic-events-sources.md.
 export const events: HistoricalEvent[] = [
   ...rashidunEvents,
+  ...umayyadEvents,
+  ...boundaryScholarEvents,
   {
     "id": "arabia-before-islam",
     "title": "Арабы в эпоху джахилии",
