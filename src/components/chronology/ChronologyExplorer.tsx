@@ -14,25 +14,7 @@ const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b
 // Assign people before applying search/category filters, so their era stays stable.
 const periodsWithUniquePeople = uniquePeriodPeople(periods);
 
-const collectionTitles: Record<string, string> = { sira: "Сира Пророка ﷺ", scholars: "Учёные", battles: "Битвы", shafii: "Шафиитский мазхаб", hanafi: "Ханафитский мазхаб", maliki: "Маликитский мазхаб", historian: "Историки", muhaddith: "Хадисы · мухаддисы" };
-const battleIds = new Set(["badr", "uhud", "ahzab", "khaybar", "hunayn", "umrat-al-qada-mutah", "rashidun-yarmuk", "rashidun-ajnadayn", "rashidun-namariq", "rashidun-bridge", "rashidun-buwayb", "rashidun-qadisiya", "rashidun-nahavand", "rashidun-masts", "rashidun-camel", "rashidun-siffin"]);
-
 export function ChronologyExplorer() {
-  const [collection, setCollection] = useState("");
-  useEffect(() => {
-    const value = new URLSearchParams(window.location.search).get("collection") ?? "";
-    if (Object.hasOwn(collectionTitles, value)) setCollection(value);
-  }, []);
-  const collectionEvents = events.filter(event => collection === "sira" ? event.periodId === "prophetic-era" : collection === "battles" ? battleIds.has(event.id) : true);
-  const participantIds = new Set(collectionEvents.flatMap(event => event.participants.map(entry => entry.personId)));
-  const inCollection = (key: string) => {
-    const person = people[key];
-    if (!person) return false;
-    if (collection === "sira" || collection === "battles") return participantIds.has(key);
-    if (collection === "scholars") return Boolean(person.categories?.length);
-    if (collection in categoryLabels) return person.categories?.includes(collection as PersonCategory);
-    return true;
-  };
   const [category, setCategory] = useState<PersonCategory | "all">("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
@@ -68,11 +50,11 @@ export function ChronologyExplorer() {
   const normalized = query.trim().toLocaleLowerCase("ru").replaceAll("ё", "е");
   const matches = (key: string, filter: PersonCategory | "all" = category, search = normalized) => {
     const person = people[key];
-    return person && inCollection(key) && (filter === "all" || person.categories?.includes(filter)) &&
+    return person && (filter === "all" || person.categories?.includes(filter)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
-  const filterEvents = (filter = category, search = normalized) => collectionEvents.filter(event => {
-    const eligible = (filter === "all" && (collection === "" || collection === "sira" || collection === "battles")) || event.participants.some(entry => matches(entry.personId, filter, ""));
+  const filterEvents = (filter = category, search = normalized) => events.filter(event => {
+    const eligible = filter === "all" || event.participants.some(entry => matches(entry.personId, filter, ""));
     const text = [event.title, event.description ?? "", ...event.participants.flatMap(entry => {
       const person = people[entry.personId];
       return person ? [person.name, ...person.cities] : [];
@@ -80,7 +62,7 @@ export function ChronologyExplorer() {
     return eligible && text.includes(search);
   }).sort((a, b) => a.sortOrder - b.sortOrder);
   const visibleEvents = filterEvents();
-  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.filter(period => collection !== "sira" || period.id === "prophetic-era").map(period => ({ ...period, groups: period.groups
+  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
       .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
@@ -98,9 +80,7 @@ export function ChronologyExplorer() {
     setPendingPeriod(null);
   }, [pendingPeriod, category, query]);
   
-  return <>
-    {collection && <div className="collection-banner"><strong>{collectionTitles[collection]}</strong><a href="/chronology/">Вся хронология ↗</a></div>}
-    <div className="chronology-layout">
+  return <div className="chronology-layout">
     <MobileFilters category={category} query={query} selected={selected} onQueryChange={setQuery}
       getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
       onApply={(filter, search, person, periodId) => {
@@ -143,8 +123,8 @@ export function ChronologyExplorer() {
     </div>
 
     {category === "mufassir" && <p>Тафсир — разъяснение смысла Корана. Пророк ﷺ первым разъяснял откровение общине; далее представлены десять известных муфассиров разных поколений, без ранжирования по достоинству.</p>}
-    <div className="timeline">{visiblePeriods.map(period => <PeriodSection key={period.id + collection} initialView={collection && collection !== "sira" && collection !== "battles" ? "people" : undefined} period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} />)}</div>
+    <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
     {visiblePeriods.length === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
-  </div></>;
+  </div>;
 }
