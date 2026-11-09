@@ -5,6 +5,21 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://islamtarih.ru"),
   title: "Исламская хронология — люди и эпохи",
   description: "Наглядный путеводитель по исламской истории: пророк Мухаммад, его сподвижники, учёные и правители. Годы жизни, исторические эпохи и современники.",
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    url: "https://islamtarih.ru",
+    siteName: "Исламская хронология",
+    title: "Исламская хронология — люди и эпохи",
+    description: "Изучайте исламскую историю: события, личности и эпохи на одной хронологической ленте.",
+    images: [{ url: "/social-preview.png", width: 1200, height: 630, alt: "Исламская хронология — события, личности и эпохи" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Исламская хронология — люди и эпохи",
+    description: "События, личности и эпохи исламской истории на одной хронологической ленте.",
+    images: ["/social-preview.png"],
+  },
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
 };
