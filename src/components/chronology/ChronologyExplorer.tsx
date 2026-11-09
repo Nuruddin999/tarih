@@ -80,9 +80,24 @@ export function ChronologyExplorer() {
       setIsFiltering(false);
       setPendingPeriod(id);
     };
+    const onAnchorClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = event.target instanceof Element ? event.target.closest<HTMLAnchorElement>('a[href^="#"]') : null;
+      if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+      const id = link.hash.slice(1);
+      if (!periods.some(period => period.id === id)) return;
+      // One scroll owns the transition; native anchor scrolling would race with it.
+      event.preventDefault();
+      if (window.location.hash !== link.hash) window.history.pushState(window.history.state, "", link.hash);
+      followHash();
+    };
     followHash();
+    document.addEventListener("click", onAnchorClick, true);
     window.addEventListener("hashchange", followHash);
-    return () => window.removeEventListener("hashchange", followHash);
+    return () => {
+      document.removeEventListener("click", onAnchorClick, true);
+      window.removeEventListener("hashchange", followHash);
+    };
   }, []);
 
   useEffect(() => {
