@@ -96,7 +96,7 @@ export function ChronologyExplorer() {
         const offset = (navigation?.getBoundingClientRect().height ?? 0) + 12;
         window.scrollTo({
           top: Math.max(0, window.scrollY + target.getBoundingClientRect().top - offset),
-          behavior: "instant",
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
         });
       }
       setPendingPeriod(null);
