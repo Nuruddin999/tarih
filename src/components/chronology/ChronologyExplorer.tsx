@@ -67,17 +67,41 @@ export function ChronologyExplorer() {
       .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
   const count = new Set(visiblePeriods.flatMap(p => p.groups.flatMap(g => g.people.map(e => e.personId)))).size;
+  // Follow shared epoch URLs after hydration and on browser hash/history changes.
+  useEffect(() => {
+    const followHash = () => {
+      let id: string;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); }
+      catch { return; }
+      if (!periods.some(period => period.id === id)) return;
+      if (filterTimer.current !== null) clearTimeout(filterTimer.current);
+      setCategory("all");
+      setQuery("");
+      setIsFiltering(false);
+      setPendingPeriod(id);
+    };
+    followHash();
+    window.addEventListener("hashchange", followHash);
+    return () => window.removeEventListener("hashchange", followHash);
+  }, []);
+
   useEffect(() => {
     if (!pendingPeriod) return;
-    const target = document.getElementById(pendingPeriod);
-    if (target) {
-      target.querySelector("details")?.setAttribute("open", "");
-      target.scrollIntoView({
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
-        block: "start",
-      });
-    }
-    setPendingPeriod(null);
+    // Wait for cleared filters and hydrated content before correcting native anchor scrolling.
+    const frame = requestAnimationFrame(() => {
+      const target = document.getElementById(pendingPeriod);
+      if (target) {
+        target.querySelector("details")?.setAttribute("open", "");
+        const navigation = document.querySelector<HTMLElement>(".mobile-period-strip");
+        const offset = (navigation?.getBoundingClientRect().height ?? 0) + 12;
+        window.scrollTo({
+          top: Math.max(0, window.scrollY + target.getBoundingClientRect().top - offset),
+          behavior: "instant",
+        });
+      }
+      setPendingPeriod(null);
+    });
+    return () => cancelAnimationFrame(frame);
   }, [pendingPeriod, category, query]);
   
   return <div className="chronology-layout">
