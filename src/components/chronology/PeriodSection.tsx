@@ -8,11 +8,17 @@ import { DateLabel } from "./DateLabel";
 import { PersonCard } from "./PersonCard";
 import { EventCard } from "./EventCard";
 
-export function PeriodSection({ period, periodEvents = [] }: {
+export function PeriodSection({ period, periodEvents = [], standalone = false }: {
+  standalone?: boolean;
   period: HistoricalPeriod;
   periodEvents?: HistoricalEvent[];
 }) {
   const [view, setView] = useState<"events" | "people">(periodEvents.length > 0 ? "events" : "people");
+  useEffect(() => {
+    if (!standalone) return;
+    const requestedView = new URLSearchParams(window.location.search).get("view");
+    if (requestedView === "people" || requestedView === "events") setView(requestedView);
+  }, [standalone]);
   const [linkStatus, setLinkStatus] = useState("");
   useEffect(() => {
     if (!linkStatus) return;
@@ -35,8 +41,8 @@ export function PeriodSection({ period, periodEvents = [] }: {
 
   return <section id={period.id} className="timeline-period">
     <span className="timeline-period__marker" aria-hidden="true" />
-    <details className="period" open>
-      <summary className="period__summary">
+    <details className="period" open onToggle={event => { if (standalone) event.currentTarget.open = true; }}>
+      <summary className="period__summary" hidden={standalone}>
         <DateLabel date={period.dates} large />
         <div className="period__heading">
           <div className="period__heading-content">

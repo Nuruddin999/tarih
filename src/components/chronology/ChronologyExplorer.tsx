@@ -14,7 +14,10 @@ const everyone = Object.entries(people).sort((a, b) => a[1].name.localeCompare(b
 // Assign people before applying search/category filters, so their era stays stable.
 const periodsWithUniquePeople = uniquePeriodPeople(periods);
 
-export function ChronologyExplorer() {
+export function ChronologyExplorer({ periodId }: { periodId?: string }) {
+  useEffect(() => {
+    if (periodId) setQuery(new URLSearchParams(window.location.search).get("q") ?? "");
+  }, [periodId]);
   const [category, setCategory] = useState<PersonCategory | "all">("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
@@ -54,6 +57,7 @@ export function ChronologyExplorer() {
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
   const filterEvents = (filter = category, search = normalized) => events.filter(event => {
+    if (periodId && event.periodId !== periodId) return false;
     const eligible = filter === "all" || event.participants.some(entry => matches(entry.personId, filter, ""));
     const text = [event.title, event.description ?? "", ...event.participants.flatMap(entry => {
       const person = people[entry.personId];
@@ -62,7 +66,7 @@ export function ChronologyExplorer() {
     return eligible && text.includes(search);
   }).sort((a, b) => a.sortOrder - b.sortOrder);
   const visibleEvents = filterEvents();
-  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.map(period => ({ ...period, groups: period.groups
+  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.filter(period => !periodId || period.id === periodId).map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
       .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
@@ -119,7 +123,7 @@ export function ChronologyExplorer() {
     return () => cancelAnimationFrame(frame);
   }, [pendingPeriod, category, query]);
   
-  return <div className="chronology-layout">
+  return <div className={`chronology-layout ${periodId ? "epoch-explorer" : ""}`}>
     <MobileFilters category={category} query={query} selected={selected} onQueryChange={setQuery}
       getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
       onApply={(filter, search, person, periodId) => {
@@ -128,10 +132,10 @@ export function ChronologyExplorer() {
         setSelected(person);
         if (periodId) setPendingPeriod(periodId);
       }} />
-    <MobilePeriodNavigation periods={visiblePeriods} />
+    {!periodId && <MobilePeriodNavigation periods={visiblePeriods} />}
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
-    <h3 className="sidebar-block-title desktop-only">Учёные</h3>
+    <h3 className="sidebar-block-title desktop-only">По направлениям участников</h3>
     <section className="explorer" aria-label="Фильтры хронологии">
       <div className="filter-buttons" aria-label="Направление и мазхаб">
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
@@ -142,12 +146,12 @@ export function ChronologyExplorer() {
       <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
-    <h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
+    {!periodId && <><h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
     <section className="sidebar-periods desktop-only" aria-labelledby="sidebar-periods-title">
       <nav className="period-navigation" aria-label="Переход к периоду">
         {visiblePeriods.map(period => <a href={`#${period.id}`} key={period.id}>{period.title}</a>)}
       </nav>
-    </section>
+    </section></>}
 
     <ComparisonPanel idPrefix="desktop" category={category} query={query}
       selected={selected} onSelect={setSelected} />
@@ -162,7 +166,7 @@ export function ChronologyExplorer() {
     </div>
 
     {category === "mufassir" && <p>Тафсир — разъяснение смысла Корана. Пророк ﷺ первым разъяснял откровение общине; далее представлены десять известных муфассиров разных поколений, без ранжирования по достоинству.</p>}
-    <div className="timeline">{visiblePeriods.map(period => <PeriodSection period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
+    <div className="timeline">{visiblePeriods.map(period => <PeriodSection standalone={!!periodId} period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
     {visiblePeriods.length === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
   </div>;
