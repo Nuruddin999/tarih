@@ -1453,7 +1453,9 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 /* Keep artwork inside its own row, including tall minarets. */
 .home-page .epoch-card { display: grid; grid-template-rows: minmax(0, 1fr) auto; }
 .epoch-card__art { position: relative; width: 100%; height: 100%; min-height: 0; }
-.epoch-card__art img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 6px 26px; object-fit: contain; }
-.home-page .epoch-card h3 { min-height: 2.8em; display: flex; align-items: center; justify-content: center; }
-@media (max-width: 640px) { .epoch-card__art img { padding: 0 4px; } }
-.home-page .epoch-card { grid-template-columns: minmax(0, 1fr); justify-items: stretch; }
+.epoch-card__art img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; object-fit: contain; }
+.home-page .epoch-card h3 { min-height: 0; display: flex; align-items: center; justify-content: center; }
+
+.home-page .epoch-card { grid-template-columns: minmax(0, 1fr); justify-items: stretch; padding: 8px; gap: 4px; }
+.home-page .epoch-card h3 { margin: 0; }
+.home-page .epoch-card__body { padding: 0; }
