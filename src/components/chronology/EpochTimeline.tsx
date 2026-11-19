@@ -17,11 +17,8 @@ export function EpochTimeline({ period, events, view }: { period: HistoricalPeri
   const entries = [...new Map(period.groups.flatMap(group => group.people)
     .filter(entry => people[entry.personId]).map(entry => [entry.personId, entry])).values()]
     .sort((a, b) => (yearRange(people[a.personId].death.hijri)?.[0] ?? Infinity) - (yearRange(people[b.personId].death.hijri)?.[0] ?? Infinity));
-  const orderedEvents = [...events].sort((a, b) => {
-    const ay = a.start ? yearRange(a.start.hijri)?.[0] : undefined;
-    const by = b.start ? yearRange(b.start.hijri)?.[0] : undefined;
-    return (ay ?? Infinity) - (by ?? Infinity) || a.sortOrder - b.sortOrder;
-  });
+  // Editorial order also locates events whose exact date is unknown.
+  const orderedEvents = [...events].sort((a, b) => a.sortOrder - b.sortOrder);
   const count = view === "events" ? events.length : entries.length;
   if (!count) return <p className="period-empty" role="status">{view === "events" ? "События" : "Личности"} пока не добавлены или не найдены по текущим фильтрам.</p>;
 
