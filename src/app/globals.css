@@ -1459,3 +1459,19 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .home-page .epoch-card { grid-template-columns: minmax(0, 1fr); justify-items: stretch; padding: 8px; gap: 4px; }
 .home-page .epoch-card h3 { margin: 0; }
 .home-page .epoch-card__body { padding: 0; }
+
+/* Compact home tiles: four on desktop, three on tablet, two on mobile. */
+.home-page .epoch-grid, .collection-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.home-page .epoch-card, .collection-card { border-radius: 18px; }
+.collection-card { padding: 12px; gap: 8px; }
+.collection-card__symbol { width: 80px; height: 80px; padding: 14px; }
+.collection-card h3 { font-size: 16px; margin: 0; }
+@media (max-width: 900px) {
+ .home-page .epoch-grid, .collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+ .home-page .epoch-grid, .collection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+ .home-page .epoch-card, .collection-card { border-radius: 14px; }
+ .collection-card__symbol { width: 64px; height: 64px; padding: 12px; }
+ .collection-card h3 { font-size: 14px; }
+}
