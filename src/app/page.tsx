@@ -1,12 +1,44 @@
 import Image from "next/image";
+import Link from "next/link";
 import { EpochDirectory } from "@/components/chronology/EpochDirectory";
 
+const collections = [
+  { title: "Хроника учёных", description: "Поколения учёных на одной ленте времени — через века и границы эпох.", icon: "book", href: "/collections/scholars/", label: "Открыть хронику" },
+  { title: "Полководцы", description: "Люди, походы и сражения исламской истории.", icon: "compass" },
+  { title: "Правители", description: "Халифы, султаны и история их правления.", icon: "arch" },
+];
+
+function CollectionSymbol({ type }: { type: string }) {
+  return <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    {type === "book" ? <><path d="M24 12c-6-4-12-4-18-2v27c6-2 12-2 18 2 6-4 12-4 18-2V10c-6-2-12-2-18 2v27"/><path d="M12 17c2-1 4-1 6 0m-6 6c2-1 4-1 6 0m12-6c2-1 4-1 6 0m-6 6c2-1 4-1 6 0"/></> : type === "compass" ? <><circle cx="24" cy="24" r="17"/><path d="m30 17-3 10-10 4 4-11 9-3Z"/><path d="M24 3v4m0 34v4M3 24h4m34 0h4"/></> : <><path d="M9 40V14l15-8 15 8v26M5 40h38M17 40V26c0-5 7-9 7-9s7 4 7 9v14"/><path d="M14 14h20"/></>}
+  </svg>;
+}
+
 export default function HomePage() {
-  return <main className="chronology">
-    <header className="site-header"><a href="/" className="brand"><Image src="/icons/brand.webp" alt="" width={48} height={48} unoptimized /><span>Люди и эпохи</span></a><nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#about">О проекте</a></nav></header>
-    <section className="directory-intro" aria-labelledby="intro-title"><p className="eyebrow">Люди · события · связи</p><h1 id="intro-title">Исламская хронология</h1><p>Исследуйте историю через эпохи, события и людей, которые жили в одно время.</p><p className="directory-intro__hint">Выберите эпоху, чтобы открыть её события и личности, или найдите интересующее имя через поиск.</p></section>
+  return <main className="chronology home-page">
+    <header className="site-header home-header">
+      <Link href="/" className="brand"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /><span>Люди и эпохи<small>Исламская хронология</small></span></Link>
+      <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><a href="#about">О проекте</a></nav>
+    </header>
+    <section className="home-hero" aria-labelledby="intro-title">
+      <div className="home-hero__copy">
+        <p className="eyebrow">История в именах и событиях</p>
+        <h1 id="intro-title">Исламская<br />хронология</h1>
+        <p className="home-hero__tagline">У каждой эпохи — свои имена.<br />У каждого имени — своя история.</p>
+        <p className="home-hero__description">Исследуйте события исламской истории, знакомьтесь с учёными, правителями и полководцами. Выберите эпоху или тематическую подборку, чтобы начать.</p>
+        <a href="#epochs" className="home-hero__button">Выбрать эпоху <span aria-hidden="true">→</span></a>
+      </div>
+      <div className="home-hero__art"><Image src="/images/history-panorama.webp" alt="Панорама города: песочные здания, аркады, купола и пальмы" width={1536} height={1024} priority unoptimized /></div>
+    </section>
     <EpochDirectory />
-    <section id="about" className="directory-about"><h2>О проекте</h2><p>Путеводитель по исламской истории помогает увидеть последовательность событий и связи между людьми и эпохами.</p><details><summary>Как читать даты</summary><p>Основные даты указаны по хиджре — летоисчислению от переселения Пророка ﷺ из Мекки в Медину. Рядом приведены григорианские годы. «До х.» означает «до хиджры», «ок.» — приблизительную дату.</p></details></section>
-    <footer className="site-footer">Даты предварительные и требуют сверки с источниками.</footer>
+    <section id="collections" className="home-collections" aria-labelledby="collections-title">
+      <div className="directory-heading"><div><p className="eyebrow">Другой взгляд на историю</p><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
+      <div className="collection-grid">{collections.map(collection => {
+        const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}><CollectionSymbol type={collection.icon} /></span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
+        return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
+      })}</div>
+    </section>
+    <section id="about" className="home-about"><p className="eyebrow">О проекте</p><h2>Увидеть историю целиком</h2><p>«Исламская хронология» помогает увидеть последовательность событий, познакомиться с историческими личностями и узнать, кто жил в одно время.</p><details><summary>Как читать даты</summary><p>Основные даты указаны по хиджре — летоисчислению от переселения Пророка ﷺ из Мекки в Медину. Рядом приведены григорианские годы. «До х.» означает «до хиджры», «ок.» — приблизительную дату.</p></details></section>
+    <footer className="site-footer home-footer"><span>Исламская хронология · Люди и эпохи</span><span>Даты предварительные и требуют сверки с источниками.</span></footer>
   </main>;
 }
