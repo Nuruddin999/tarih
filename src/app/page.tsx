@@ -17,18 +17,20 @@ function CollectionSymbol({ type }: { type: string }) {
 export default function HomePage() {
   return <main className="chronology home-page">
     <header className="site-header home-header">
-      <Link href="/" className="brand"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /><span>Люди и эпохи<small>Исламская хронология</small></span></Link>
+      <Link href="/" className="brand" aria-label="На главную"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /></Link>
       <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><a href="#about">О проекте</a></nav>
     </header>
     <section className="home-hero" aria-labelledby="intro-title">
+      <h1 id="intro-title">Исламская хронология</h1>
+      <div className="home-hero__row">
       <div className="home-hero__copy">
         <p className="eyebrow">История в именах и событиях</p>
-        <h1 id="intro-title">Исламская<br />хронология</h1>
         <p className="home-hero__tagline">У каждой эпохи — свои имена.<br />У каждого имени — своя история.</p>
         <p className="home-hero__description">Исследуйте события исламской истории, знакомьтесь с учёными, правителями и полководцами. Выберите эпоху или тематическую подборку, чтобы начать.</p>
         <a href="#epochs" className="home-hero__button">Выбрать эпоху <span aria-hidden="true">→</span></a>
       </div>
       <div className="home-hero__art"><Image src="/images/history-panorama.webp" alt="Панорама города: песочные здания, аркады, купола и пальмы" width={1536} height={1024} priority unoptimized /></div>
+      </div>
     </section>
     <EpochDirectory />
     <section id="collections" className="home-collections" aria-labelledby="collections-title">
