@@ -7,6 +7,7 @@ import type { HistoricalEvent, HistoricalPeriod } from "@/types/chronology";
 import { DateLabel } from "./DateLabel";
 import { PersonCard } from "./PersonCard";
 import { EventCard } from "./EventCard";
+import { EpochTimeline } from "./EpochTimeline";
 
 export function PeriodSection({ period, periodEvents = [], standalone = false }: {
   standalone?: boolean;
@@ -83,7 +84,7 @@ export function PeriodSection({ period, periodEvents = [], standalone = false }:
           <button type="button" aria-pressed={view === "people"} aria-controls={panelId} onClick={() => setView("people")}>Личности <span>{peopleCount}</span></button>
         </div>
         <div id={panelId}>
-          {view === "events" ? (
+          {standalone ? <EpochTimeline period={period} events={periodEvents} view={view} /> : view === "events" ? (
             periodEvents.length > 0
               ? <div className="event-list">{periodEvents.map(event => <EventCard key={event.id} event={event} />)}</div>
               : <p className="period-empty" role="status">События пока не добавлены или не найдены по текущим фильтрам.</p>

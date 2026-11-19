@@ -6,7 +6,7 @@ import type { HistoricalEvent, Person } from "@/types/chronology";
 import { DateLabel } from "./DateLabel";
 import { PersonCard } from "./PersonCard";
 
-export function EventCard({ event }: { event: HistoricalEvent }) {
+export function EventCard({ event, timeline = false }: { event: HistoricalEvent; timeline?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const [person, setPerson] = useState<Person | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -19,10 +19,10 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
   }, [person]);
 
   return <article className="event-card">
-    {event.start ? <div className="event-card__dates">
+    {!timeline && (event.start ? <div className="event-card__dates">
       <DateLabel date={event.start} label={event.end ? "Начало" : undefined} />
       {event.end && <DateLabel date={event.end} label="Окончание" />}
-    </div> : <p className="event-card__undated">Дата не уточнена</p>}
+    </div> : <p className="event-card__undated">Дата не уточнена</p>)}
     <h3 className="event-card__heading">
       <button className="event-card__toggle" type="button" aria-expanded={expanded} aria-controls={detailsId}
         onClick={() => setExpanded(value => !value)}>
@@ -32,13 +32,14 @@ export function EventCard({ event }: { event: HistoricalEvent }) {
         </svg>
       </button>
     </h3>
-    {participants.length > 0 && <div className="event-card__participants">
+    {(!timeline || expanded) && participants.length > 0 && <div className="event-card__participants">
       <span className="event-card__label">Участники:</span>
       <ul>{participants.map(entry => <li key={entry.personId}>
         <button type="button" onClick={() => setPerson(people[entry.personId])}>{people[entry.personId].name}</button>
       </li>)}</ul>
     </div>}
     <div className="event-card__details" id={detailsId} hidden={!expanded}>
+      {timeline && event.end && <DateLabel date={event.end} label="Окончание" />}
       {event.description && <p>{event.description}</p>}
       {event.dateNote && <p className="event-card__note">{event.dateNote}</p>}
       {participants.some(entry => entry.role) && <div className="event-card__roles">
