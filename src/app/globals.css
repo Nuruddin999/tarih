@@ -1372,6 +1372,23 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 .search-results-intro .eyebrow { margin-bottom: 12px; }
 .search-results-intro h1 { font-size: clamp(30px, 5vw, 48px); letter-spacing: -1.5px; line-height: 1.15; }
 .search-results-intro > p:last-child { max-width: 680px; color: var(--muted); line-height: 1.7; }
+.global-people-timeline { --rail-color: #a26a43; max-width: 960px; margin: 0 auto 48px; }
+.global-people-timeline .epoch-timeline__list { padding-block: 12px; }
+.global-people-timeline .epoch-timeline__row { scroll-margin-block: 28px; padding-block: 8px; border-radius: 12px; transition: background .2s, box-shadow .2s; }
+.global-people-timeline .epoch-timeline__row.is-focused { background: #fff; box-shadow: 0 0 0 2px #a26a43, 0 8px 24px rgba(38,31,25,.08); }
+.global-people-timeline .epoch-timeline__row::before { left: 0; right: 12px; border-radius: 2px; }
+.global-people-timeline .epoch-timeline__entry::before { top: 24px; bottom: -24px; }
+.global-people-timeline .epoch-timeline__icon { color: #a26a43; }
+.global-people-timeline__era { display: inline-flex; margin-top: 4px; padding: 4px 9px; border-radius: 999px; background: #f4eee8; color: #795337; font-size: 11px; line-height: 1.4; }
+.global-people-timeline .epoch-timeline__person[open] .epoch-timeline__more span { transform: rotate(180deg); }
+@media (max-width: 640px) {
+  .global-people-timeline .epoch-timeline__row { grid-template-columns: 84px minmax(0, 1fr); }
+  .global-people-timeline .epoch-timeline__row::before { right: 0; }
+  .global-people-timeline .epoch-timeline__date { padding-right: 8px; }
+  .global-people-timeline .epoch-timeline__entry { padding-left: 48px; }
+  .global-people-timeline .epoch-timeline__entry::before { left: 18px; }
+  .global-people-timeline .epoch-timeline__icon { left: 0; }
+}
 .all-people-period { position: relative; margin: 10px 0 36px; padding: 0 0 12px 24px; border-left: 2px solid var(--border); }
 .all-people-period__heading { position: relative; margin: 0 0 20px; }
 .all-people-period__heading::before { position: absolute; top: 6px; left: -32px; width: 14px; height: 14px; border: 3px solid var(--background); border-radius: 50%; background: var(--accent); content: ""; }
