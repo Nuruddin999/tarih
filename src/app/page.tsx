@@ -24,7 +24,7 @@ export default function HomePage() {
       <h1 id="intro-title">Исламская хронология</h1>
       <div className="home-hero__row">
       <div className="home-hero__copy">
-        <p className="eyebrow">История в именах и событиях</p>
+        
         <p className="home-hero__tagline">У каждой эпохи — свои имена.<br />У каждого имени — своя история.</p>
         <p className="home-hero__description">Исследуйте события исламской истории, знакомьтесь с учёными, правителями и полководцами. Выберите эпоху или тематическую подборку, чтобы начать.</p>
         <a href="#epochs" className="home-hero__button">Выбрать эпоху <span aria-hidden="true">→</span></a>
@@ -34,7 +34,7 @@ export default function HomePage() {
     </section>
     <EpochDirectory />
     <section id="collections" className="home-collections" aria-labelledby="collections-title">
-      <div className="directory-heading"><div><p className="eyebrow">Другой взгляд на историю</p><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
+      <div className="directory-heading"><div><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
       <div className="collection-grid">{collections.map(collection => {
         const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}><CollectionSymbol type={collection.icon} /></span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
         return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
