@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { EpochDirectory } from "@/components/chronology/EpochDirectory";
+import { HeaderPersonSearch } from "@/components/chronology/HeaderPersonSearch";
 
 const collections = [
   { title: "Хроника учёных", description: "Поколения учёных на одной ленте времени — через века и границы эпох.", icon: "book", href: "/collections/scholars/", label: "Открыть хронику" },
@@ -19,6 +20,7 @@ export default function HomePage() {
     <header className="site-header home-header">
       <Link href="/" className="brand" aria-label="На главную"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /></Link>
       <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><a href="#about">О проекте</a></nav>
+      <HeaderPersonSearch />
     </header>
     <section className="home-hero" aria-labelledby="intro-title">
       <h1 id="intro-title">Исламская хронология</h1>
