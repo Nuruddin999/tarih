@@ -1375,7 +1375,8 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 .global-people-timeline { --rail-color: #a26a43; max-width: 960px; margin: 0 auto 48px; }
 .global-people-timeline .epoch-timeline__list { padding-block: 12px; }
 .global-people-timeline .epoch-timeline__row { scroll-margin-block: 28px; padding-block: 8px; border-radius: 12px; transition: background .2s, box-shadow .2s; }
-.global-people-timeline .epoch-timeline__row.is-focused { background: #fff; box-shadow: 0 0 0 2px #a26a43, 0 8px 24px rgba(38,31,25,.08); }
+.global-people-timeline .epoch-timeline__row.is-focused { border: 2px solid #3390ec; background: transparent; box-shadow: none; }
+.global-people-timeline .epoch-timeline__row.is-focused:focus { outline: none; }
 .global-people-timeline .epoch-timeline__row::before { left: 0; right: 12px; border-radius: 2px; }
 .global-people-timeline .epoch-timeline__entry::before { top: 24px; bottom: -24px; }
 .global-people-timeline .epoch-timeline__icon { color: #a26a43; }
@@ -1592,3 +1593,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   .home-hero__row { grid-template-columns: 1fr; gap: 20px; }
   .home-hero__row .home-hero__art { width: 100%; max-width: 420px; justify-self: center; }
 }
+
+
+/* Keep expanded biography cards clear of the vertical date rail. */
+.global-people-timeline .epoch-timeline__person > .person { position: relative; z-index: 1; margin-left: 0; }
