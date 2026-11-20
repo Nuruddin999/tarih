@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 14308)
+Total output lines: 1577
+
 :root {
     --background: #f4f5f7;
     --surface: #ffffff;
@@ -1063,174 +1066,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-s
 .period-navigation a { background: transparent; border-color: transparent; padding: 8px 10px; }
 .period-navigation a:hover { background: #eef6fd; border-color: transparent; color: var(--accent); }
 .timeline { padding-left: 0; }
-.timeline::before, .timeline-period__marker { display: none; }
-.period {
-    background: transparent;
-    border: 0;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: visible;
-}
-.period__summary { padding: 24px; }
-.period__summary > .historical-date { flex-direction: row; align-items: baseline; gap: 12px; }
-.historical-date--large .historical-date__hijri { font-size: 18px; letter-spacing: -.4px; color: var(--accent); font-weight: 650; }
-.historical-date--large .historical-date__gregorian { font-size: 13px; }
-.period__heading { margin-top: 12px; }
-.period__heading h2 { color: #0876ca; font-size: 24px; font-weight: 650; letter-spacing: -.6px; }
-.period__heading p { font-size: 13px; margin-top: 8px; }
-.period__toggle { width: 32px; height: 32px; background: #f4f6f8; border: 0; color: var(--muted); }
-.period__content { padding: 0 0 24px; }
-.person, .event-card {
-    box-shadow: 0 2px 3px rgb(23 34 51 / 5%), 0 4px 10px rgb(23 34 51 / 4%);
-}
-.person-group__title { text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 600; }
-.person-group__list { gap: 10px; }
-.person { border-color: #edf0f3; border-radius: 12px; padding: 16px; transition: border-color 150ms ease; }
-.person:hover { border-color: #c4dff4; }
-.person__name { font-size: 18px; font-weight: 600; letter-spacing: -.3px; }
-.person__honorific { font-size: 12px; }
-.person__description { color: var(--muted); }
-.person__location { font-size: 12px; font-weight: 500; }
-.person__location-label { text-transform: none; letter-spacing: 0; }
-.historical-date__label { text-transform: none; letter-spacing: 0; font-weight: 400; }
-.historical-date__hijri { font-size: 20px; font-weight: 600; }
-.person__contemporaries > summary { font-size: 12px; font-weight: 500; color: var(--accent); }
-.person__contemporary-count { background: #edf5fc; padding: 1px 6px; border-radius: 5px; }
-.person--featured { background: #f0f8ff; border-color: #d5e9fb; }
-.contemporaries h2, .chronology-sidebar .contemporaries h2 { font-size: 19px; font-weight: 600; letter-spacing: -.4px; }
-.contemporaries > p { font-size: 13px; color: var(--muted); }
-.site-footer { padding: 6px 0 32px; max-width: 800px; }
-@media (min-width: 1024px) { .chronology-layout { grid-template-columns: 260px minmax(0, 1fr); } }
-@media (max-width: 760px) {
- .chronology { width: calc(100% - 28px); }
- .site-header { min-height: 64px; }
- .brand { font-size: 17px; }
- .header-nav { gap: 14px; font-size: 12px; }
- .header-nav a:last-child { display: none; }
- .intro { padding-top: 30px; }
- .intro__description { font-size: 14px; }
- .intro__guide { font-size: 13px; }
- .atlas-stats { gap: 8px; margin-top: 22px; }
- .atlas-stat { padding: 14px 10px; border-radius: 14px; gap: 8px; flex-direction: column; align-items: flex-start; }
- .atlas-stat__icon { width: 30px; height: 30px; font-size: 16px; border-radius: 9px; }
- .atlas-stat strong { font-size: 20px; }
- .atlas-stat small { font-size: 11px; }
- .intro__legend { padding: 12px; font-size: 12px; }
- .period__summary { padding: 18px 16px; }
- .period__heading h2 { font-size: 21px; }
- .period__content { padding: 0 12px 12px; }
- .person { padding: 14px; }
- .person__name { font-size: 18px; }
- .historical-date__hijri { font-size: 19px; }
- .mobile-filter-toolbar__row input { border-radius: 24px; padding-inline: 18px; }
- .mobile-filter-toolbar__row button { background: var(--accent); border-color: var(--accent); color: white; border-radius: 24px; }
-}
-
-/* Mobile surfaces: open epoch sections and distinct biography cards. */
-@media (max-width: 1023px) {
- :root {
-  --background: #eceef1;
-  --border: #d3d8df;
-  --shadow: 0 2px 4px rgb(23 34 51 / 7%), 0 6px 18px rgb(23 34 51 / 6%);
- }
- .atlas-stat, .mobile-epochs, .comparison-toggle {
-  border: 1px solid #d3d8df;
-  box-shadow: var(--shadow);
- }
- .person {
-  background: #fff;
-  border-color: #d0d6de;
-  box-shadow: 0 2px 3px rgb(23 34 51 / 5%), 0 4px 10px rgb(23 34 51 / 4%);
- }
- .person--featured {
-  background: #edf6ff;
-  border-color: #afcfe9;
- }
- .period {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  overflow: visible;
- }
- .period__summary { padding: 20px 4px 18px; }
- .period__content { padding: 0 0 8px; }
- .timeline-period { margin-bottom: 32px; }
- .period__toggle { background: #e0e4e9; }
- .person-group__list { gap: 12px; }
- .mobile-filter-toolbar__row input {
-  border-color: #cbd2db;
-  box-shadow: 0 2px 5px rgb(23 34 51 / 5%);
- }
-}
-
-/* Per-epoch content switch and historical event cards. */
-.period-views { display: flex; gap: 0; padding: 0; margin-bottom: 18px; width: 100%; max-width: 100%; border: 0; border-radius: 20px; background: #eaf0f5; }
-.period-views button { flex: 1; min-width: 0; min-height: 52px; padding: 12px 16px; border: 0; border-radius: 20px; font: inherit; font-size: 16px; font-weight: 600; color: #141a24; background: transparent; cursor: pointer; }
-.period-views button[aria-pressed="true"] { color: #fff; background: #0d74ff; box-shadow: none; }
-.period-views button span { margin-left: 5px; font-size: 12px; font-variant-numeric: tabular-nums; }
-.event-list { display: grid; gap: 12px; }
-.event-card { min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow-wrap: anywhere; }
-.event-card__dates { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-bottom: 10px; }
-.event-card__dates .historical-date { gap: 3px; }
-.event-card__dates .historical-date__hijri { font-size: 15px; color: var(--accent); }
-.event-card__dates .historical-date__gregorian { font-size: 12px; }
-.event-card__undated, .event-card__note, .period-empty { color: var(--muted); font-size: 12px; line-height: 1.6; }
-.event-card__undated { margin: 0 0 8px; }
-.event-card__heading { margin: 0; }
-.event-card__toggle { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; min-height: 44px; padding: 4px 0; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 18px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px; text-align: left; cursor: pointer; }
-.event-card__toggle > span { min-width: 0; }
-.event-card__chevron { flex-shrink: 0; color: var(--muted); transition: transform 160ms ease; }
-.event-card__toggle[aria-expanded="true"] .event-card__chevron { transform: rotate(180deg); }
-.event-card__participants { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin-top: 2px; }
-.event-card__label { margin: 0; font-size: 12px; font-weight: 600; }
-.event-card__participants > ul { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; min-width: 0; list-style: none; margin: 0; padding: 0; }
-.event-card__participants li { display: flex; align-items: baseline; min-width: 0; max-width: 100%; }
-.event-card__participants li + li::before { content: "·"; margin-right: 6px; color: var(--muted); }
-.event-card__participants li button { min-height: 32px; padding: 4px 0; border: 0; background: transparent; color: #0876ca; font: inherit; font-size: 13px; line-height: 1.5; text-align: left; overflow-wrap: anywhere; cursor: pointer; }
-.event-card__details { margin-top: 12px; border-top: 1px solid var(--border); padding-top: 12px; }
-.event-card__details > p { margin: 0 0 8px; font-size: 13px; line-height: 1.65; }
-.event-card__roles > ul { margin: 8px 0 0; padding-left: 18px; font-size: 13px; line-height: 1.65; }
-.event-card__roles li + li { margin-top: 6px; }
-.event-card__note { margin: 6px 0 0; }
-.event-person-dialog { width: min(800px, calc(100% - 24px)); max-height: calc(100dvh - 32px); padding: 16px; border: 1px solid var(--border); border-radius: 18px; background: var(--surface); color: var(--ink); overflow-y: auto; overscroll-behavior: contain; }
-.event-person-dialog::backdrop { background: rgb(23 34 51 / 55%); }
-.event-person-dialog form { display: flex; justify-content: flex-end; margin-bottom: 12px; }
-.event-person-dialog form button { min-height: 44px; padding: 9px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--background); color: var(--ink); font: inherit; cursor: pointer; }
-html:has(.event-person-dialog[open]) { overflow: hidden; }
-@media (max-width: 1023px) {
- .event-card { border-color: #d0d6de; box-shadow: 0 2px 3px rgb(23 34 51 / 5%), 0 4px 10px rgb(23 34 51 / 4%); }
-}
-@media (max-width: 480px) {
- .period-views { width: 100%; }
- .period-views button { flex: 1; padding-inline: 8px; }
- .event-card { padding: 14px; }
- .event-person-dialog { padding: 12px; }
-}
-
-/* Distinction of the ten companions; separate from scholarly categories. */
-.person__categories .person__badge--paradise { color: #624000; background: linear-gradient(135deg, #fff0b0, #f3ce69); border: 1px solid #d5ac42; font-weight: 700; }
-.person__date-note { margin: 6px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-
-.intro__subtitle {
-  max-width: 740px;
-  margin: 16px auto 0;
-  font-size: clamp(16px, 1.5vw, 18px);
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-/* Full-color illustrations replace the statistics glyphs and their tiles. */
-.atlas-stat .atlas-stat__icon {
-    width: 64px;
-    height: 64px;
-    background: transparent;
-    border-radius: 0;
-}
-.atlas-stat__icon img {
-    display: block;
-    width: 100%;
-    height: 100%;
+.timeline::…2308 tokens truncated…ht: 100%;
     object-fit: contain;
 }
 @media (max-width: 760px) {
@@ -1356,10 +1192,12 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 
 /* Header name search and its result cards. */
 .home-header { position: relative; z-index: 20; }
-.header-person-search { position: relative; flex: 0 1 250px; min-width: 190px; color: #202124; }
-.header-person-search input { box-sizing: border-box; width: 100%; min-height: 42px; padding: 9px 14px 9px 38px; border: 1px solid #dadce0; border-radius: 12px; outline: none; background: #fff; color: inherit; font: inherit; font-size: 13px; }
-.header-person-search input:focus { border-color: #3390ec; box-shadow: 0 0 0 3px rgba(51,144,236,.14); }
-.header-person-search__icon { position: absolute; z-index: 1; top: 8px; left: 12px; color: #707579; font-size: 22px; line-height: 24px; pointer-events: none; }
+.header-person-search { position: relative; flex: 1 1 360px; max-width: 520px; min-width: 260px; margin-left: auto; color: #202124; }
+.header-person-search input { box-sizing: border-box; width: 100%; min-height: 56px; padding: 12px 20px 12px 56px; border: 1px solid transparent; border-radius: 30px; outline: none; background: #f4f4f5; color: inherit; font: inherit; font-size: 16px; text-align: left; transition: background .15s, border-color .15s, box-shadow .15s; }
+.header-person-search input::placeholder { color: #8b8d90; opacity: 1; }
+.header-person-search input:focus { border-color: #dadce0; background: #fff; box-shadow: 0 0 0 3px rgba(51,144,236,.1); }
+.header-person-search__icon { position: absolute; z-index: 1; top: 16px; left: 20px; display: grid; width: 24px; height: 24px; color: #85888c; pointer-events: none; }
+.header-person-search__icon svg { width: 100%; height: 100%; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .header-person-search__results { position: absolute; top: calc(100% + 8px); right: 0; z-index: 30; width: min(360px, calc(100vw - 40px)); max-height: min(70vh, 480px); overflow-y: auto; padding: 8px; border: 1px solid #dadce0; border-radius: 14px; background: #fff; box-shadow: 0 12px 36px rgba(25,32,40,.16); }
 .header-person-search__results > p { margin: 8px; padding: 10px; color: #707579; font-size: 13px; line-height: 1.5; }
 .header-person-result { display: grid; gap: 4px; padding: 12px; border-radius: 10px; color: inherit; text-decoration: none; }
@@ -1382,7 +1220,7 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 @media (max-width: 760px) {
   .home-header { flex-wrap: wrap; }
   .home-header .header-nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; }
-  .header-person-search { order: 2; flex: 1 1 220px; min-width: 0; }
+  .header-person-search { order: 2; flex: 1 1 280px; max-width: none; min-width: 0; }
   .header-person-search__results { left: 0; right: auto; }
 }
 
