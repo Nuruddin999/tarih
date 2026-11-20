@@ -2,22 +2,33 @@
 
 import { useEffect, useState } from "react";
 import { people, periods } from "@/data/chronology";
+import { yearRange } from "@/lib/contemporaries";
 import { uniquePeriodPeople } from "@/lib/uniquePeriodPeople";
+import { DateLabel } from "./DateLabel";
 import { PersonCard } from "./PersonCard";
 
-const timeline = uniquePeriodPeople(periods);
-const assignedPeople = new Set(timeline.flatMap(period => period.groups.flatMap(group => group.people.map(entry => entry.personId))));
-const unassignedPeople = Object.values(people).filter(person => !assignedPeople.has(person.id)).sort((a, b) => a.name.localeCompare(b.name, "ru"));
+const periodPeople = uniquePeriodPeople(periods);
+const personEntries = new Map(periodPeople.flatMap(period => period.groups.flatMap(group => group.people.map(entry => [entry.personId, {
+  entry,
+  periodTitle: period.title,
+}] as const))));
+const orderedPeople = Object.values(people).sort((a, b) => {
+  const aYear = yearRange(a.death.hijri)?.[0] ?? Infinity;
+  const bYear = yearRange(b.death.hijri)?.[0] ?? Infinity;
+  return aYear - bYear || a.name.localeCompare(b.name, "ru");
+});
+
+function PersonIcon() {
+  return <span className="epoch-timeline__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="8" r="4" /><path d="M4 21v-2a8 8 0 0 1 16 0v2" />
+  </svg></span>;
+}
 
 export function AllPeopleTimeline({ focusPersonId }: { focusPersonId?: string }) {
   const [activeFocusPersonId, setActiveFocusPersonId] = useState(focusPersonId);
 
   useEffect(() => {
-    if (focusPersonId) {
-      setActiveFocusPersonId(focusPersonId);
-      return;
-    }
-    setActiveFocusPersonId(new URLSearchParams(window.location.search).get("person") ?? undefined);
+    setActiveFocusPersonId(focusPersonId ?? new URLSearchParams(window.location.search).get("person") ?? undefined);
   }, [focusPersonId]);
 
   useEffect(() => {
@@ -35,24 +46,29 @@ export function AllPeopleTimeline({ focusPersonId }: { focusPersonId?: string })
     return () => window.cancelAnimationFrame(frame);
   }, [activeFocusPersonId]);
 
-  return <div className="all-people-timeline">
-    {timeline.map(period => <section className="all-people-period" key={period.id}>
-      <header className="all-people-period__heading"><p>{period.dates.hijri}{period.dates.gregorian && ` · ${period.dates.gregorian}`}</p><h2>{period.title}</h2></header>
-      {period.groups.map(group => <section className="all-people-group" key={group.id}>
-        {period.groups.length > 1 && <h3>{group.title}</h3>}
-        <div className="person-group__list">{group.people.map(entry => {
-          const person = people[entry.personId];
-          if (!person) return null;
-          const focused = person.id === activeFocusPersonId;
-          return <div id={`timeline-person-${person.id}`} className={`all-people-timeline__person${focused ? " is-focused" : ""}`} key={person.id}>
-            <PersonCard person={person} description={entry.description} featured={entry.featured} />
-          </div>;
-        })}</div>
-      </section>)}
-    </section>)}
-    {unassignedPeople.length > 0 && <section className="all-people-period all-people-period--unassigned">
-      <header className="all-people-period__heading"><h2>Личности без установленной эпохи</h2></header>
-      <div className="person-group__list">{unassignedPeople.map(person => <div id={`timeline-person-${person.id}`} className={`all-people-timeline__person${person.id === activeFocusPersonId ? " is-focused" : ""}`} key={person.id}><PersonCard person={person} /></div>)}</div>
-    </section>}
+  return <div className="epoch-timeline epoch-timeline--people global-people-timeline">
+    <p className="epoch-timeline__note">Личности расположены по годам смерти: от ранних поколений к поздним. Нажмите на имя, чтобы открыть биографию.</p>
+    <ol className="epoch-timeline__list">
+      {orderedPeople.map(person => {
+        const placement = personEntries.get(person.id);
+        const focused = person.id === activeFocusPersonId;
+        const description = placement?.entry.description ?? person.description;
+        const shortDescription = description && description.length > 180 ? `${description.slice(0, 177).trimEnd()}…` : description;
+        return <li id={`timeline-person-${person.id}`} className={`epoch-timeline__row global-people-timeline__row${focused ? " is-focused" : ""}`} key={person.id}>
+          <div className="epoch-timeline__date"><DateLabel date={person.death} label="Год смерти" /></div>
+          <div className="epoch-timeline__entry"><PersonIcon />
+            <details className="epoch-timeline__person" open={focused}>
+              <summary>
+                <h3>{person.name}</h3>
+                {shortDescription && <p>{shortDescription}</p>}
+                <span className="global-people-timeline__era">{placement?.periodTitle ?? "Эпоха не указана"}</span>
+                <span className="epoch-timeline__more">Биография <span aria-hidden="true">↓</span></span>
+              </summary>
+              <PersonCard person={person} description={placement?.entry.description} featured={placement?.entry.featured} />
+            </details>
+          </div>
+        </li>;
+      })}
+    </ol>
   </div>;
 }
