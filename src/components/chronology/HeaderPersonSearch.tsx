@@ -31,10 +31,9 @@ export function HeaderPersonSearch() {
   const isSearching = query.trim() !== debouncedQuery.trim();
 
   return <div className="header-person-search">
-    <label className="visually-hidden" htmlFor="header-person-search">Найти личность</label>
-    <span className="header-person-search__icon" aria-hidden="true">⌕</span>
+    <span className="header-person-search__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="6.8" /><path d="m16 16 4.4 4.4" /></svg></span>
     <input id="header-person-search" type="search" value={query} onChange={event => setQuery(event.target.value)}
-      placeholder="Найти личность" autoComplete="off" aria-expanded={!!query.trim()} aria-controls="header-person-search-results" />
+      placeholder="Найти личность" aria-label="Найти личность" autoComplete="off" aria-expanded={!!query.trim()} aria-controls="header-person-search-results" />
     {query.trim() && <div id="header-person-search-results" className="header-person-search__results" role="listbox" aria-label="Результаты поиска">
       {isSearching ? <p role="status">Ищем личностей…</p> : results.length ? results.map(person =>
         <Link key={person.id} href={`/search/?person=${encodeURIComponent(person.id)}`} className="header-person-result" role="option" aria-selected="false">
