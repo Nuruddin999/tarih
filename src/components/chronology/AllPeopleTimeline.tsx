@@ -57,7 +57,7 @@ export function AllPeopleTimeline({ focusPersonId }: { focusPersonId?: string })
         return <li id={`timeline-person-${person.id}`} className={`epoch-timeline__row global-people-timeline__row${focused ? " is-focused" : ""}`} key={person.id}>
           <div className="epoch-timeline__date"><DateLabel date={person.death} label="Год смерти" /></div>
           <div className="epoch-timeline__entry"><PersonIcon />
-            <details className="epoch-timeline__person" open={focused}>
+            <details className="epoch-timeline__person">
               <summary>
                 <h3>{person.name}</h3>
                 {shortDescription && <p>{shortDescription}</p>}
