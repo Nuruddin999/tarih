@@ -1375,7 +1375,8 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 .global-people-timeline { --rail-color: #a26a43; max-width: 960px; margin: 0 auto 48px; }
 .global-people-timeline .epoch-timeline__list { padding-block: 12px; }
 .global-people-timeline .epoch-timeline__row { scroll-margin-block: 28px; padding-block: 8px; border-radius: 12px; transition: background .2s, box-shadow .2s; }
-.global-people-timeline .epoch-timeline__row.is-focused { background: transparent; box-shadow: none; }
+.global-people-timeline .epoch-timeline__row.is-focused { border: 2px solid #3390ec; background: transparent; box-shadow: none; }
+.global-people-timeline .epoch-timeline__row.is-focused:focus { outline: none; }
 .global-people-timeline .epoch-timeline__row::before { left: 0; right: 12px; border-radius: 2px; }
 .global-people-timeline .epoch-timeline__entry::before { top: 24px; bottom: -24px; }
 .global-people-timeline .epoch-timeline__icon { color: #a26a43; }
@@ -1596,4 +1597,4 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 
 /* Keep expanded biography cards in the text column, clear of the date rail. */
 .global-people-timeline .epoch-timeline__person > .person { position: relative; z-index: 1; margin-left: 0; }
-.global-people-timeline .epoch-timeline__row.is-focused .person { border-color: #3390ec; box-shadow: 0 0 0 2px rgba(51,144,236,.16), 0 8px 24px rgba(38,31,25,.08); }
+
