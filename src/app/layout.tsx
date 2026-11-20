@@ -33,12 +33,12 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
          m[i].l=1*new Date();
          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-       })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114152951', 'ym');
-       ym(114152951, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+       })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114415020', 'ym');
+       ym(114415020, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
      ` }} />
    </head>
    <body>
-     <noscript><div><img src="https://mc.yandex.ru/watch/114152951" style={{ position: "absolute", left: "-9999px" }} alt="" /></div></noscript>
+     <noscript><div><img src="https://mc.yandex.ru/watch/114415020" style={{ position: "absolute", left: "-9999px" }} alt="" /></div></noscript>
      {children}
    </body>
  </html>;
