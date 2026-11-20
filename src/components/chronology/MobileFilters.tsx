@@ -8,6 +8,7 @@ import { ComparisonPanel } from "./ComparisonPanel";
 type Category = PersonCategory | "all";
 type Props = {
   category: Category;
+  showFiltersButton?: boolean;
   query: string;
   selected: string;
   onQueryChange: (query: string) => void;
@@ -15,7 +16,7 @@ type Props = {
   onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
 };
 
-export function MobileFilters({ category, query, selected, onQueryChange, getPeriods, onApply }: Props) {
+export function MobileFilters({ category, showFiltersButton = true, query, selected, onQueryChange, getPeriods, onApply }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState<Category>(category);
@@ -59,12 +60,12 @@ export function MobileFilters({ category, query, selected, onQueryChange, getPer
       <div className="mobile-filter-toolbar__row">
         <input id="mobile-person-search" type="search" value={query}
           onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />
-        <button type="button" onClick={openFilters} aria-haspopup="dialog">
+        {showFiltersButton && <button type="button" onClick={openFilters} aria-haspopup="dialog">
           Фильтры{category !== "all" && <span className="mobile-filter-badge" aria-label="1 активный фильтр">1</span>}
-        </button>
+        </button>}
       </div>
     </div>
-    <dialog ref={dialogRef} className="mobile-filter-dialog" aria-labelledby="mobile-filter-title"
+    {showFiltersButton && <dialog ref={dialogRef} className="mobile-filter-dialog" aria-labelledby="mobile-filter-title"
       onClose={() => setIsOpen(false)}>
       <div className="mobile-filter-dialog__panel">
         <header className="mobile-filter-dialog__header">
@@ -109,6 +110,6 @@ export function MobileFilters({ category, query, selected, onQueryChange, getPer
           </button>
         </footer>
       </div>
-    </dialog>
+    </dialog>}
   </>;
 }
