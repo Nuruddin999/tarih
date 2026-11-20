@@ -4,7 +4,7 @@ import { AllPeopleTimeline } from "@/components/chronology/AllPeopleTimeline";
 
 export const metadata: Metadata = {
   title: "Поиск личностей — Исламская хронология",
-  description: "Общий таймлайн личностей исламской истории по эпохам.",
+  description: "Вертикальная хронология личностей исламской истории, упорядоченная по годам смерти.",
   alternates: { canonical: "/search/" },
 };
 
@@ -17,8 +17,8 @@ export default function SearchPage() {
     <nav className="breadcrumbs" aria-label="Хлебные крошки"><Link href="/">Главная</Link><span aria-hidden="true"> / </span><span aria-current="page">Поиск личностей</span></nav>
     <section className="search-results-intro" aria-labelledby="search-results-title">
       <p className="eyebrow">Результаты поиска</p>
-      <h1 id="search-results-title">Все личности на общей временной шкале</h1>
-      <p>Личности собраны по эпохам. Выбранная в поиске карточка будет выделена и появится в области просмотра.</p>
+      <h1 id="search-results-title">Общая хронология личностей</h1>
+      <p>Лента объединяет личности из всех эпох и располагает их по годам смерти. Выбранная в поиске личность автоматически раскрывается на своей позиции.</p>
     </section>
     <AllPeopleTimeline />
     <footer className="site-footer"><Link href="/">Вернуться к эпохам</Link><span>Даты предварительные и требуют сверки с источниками.</span></footer>
