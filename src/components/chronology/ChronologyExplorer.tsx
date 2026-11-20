@@ -124,7 +124,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
   }, [pendingPeriod, category, query]);
   
   return <div className={`chronology-layout ${periodId ? "epoch-explorer" : ""}`}>
-    <MobileFilters category={category} query={query} selected={selected} onQueryChange={setQuery}
+    <MobileFilters category={category} showFiltersButton={!periodId} query={query} selected={selected} onQueryChange={setQuery}
       getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
       onApply={(filter, search, person, periodId) => {
         changeCategory(filter, false, false);
