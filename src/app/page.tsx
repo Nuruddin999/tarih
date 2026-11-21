@@ -20,13 +20,13 @@ export default function HomePage() {
   return <main className="chronology home-page">
     <header className="site-header home-header">
       <Link href="/" className="brand" aria-label="На главную"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /></Link>
-      <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><a href="#about">О проекте</a></nav>
+      <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><Link href="/about/">О проекте</Link></nav>
       <HeaderPersonSearch />
     </header>
     <section className={`home-hero ${styles.hero}`} aria-labelledby="intro-title">
+      <h1 id="intro-title" className={styles.title}>Исламская хронология</h1>
       <div className={`home-hero__row ${styles.row}`}>
         <div className={`home-hero__copy ${styles.copy}`}>
-          <h1 id="intro-title" className={styles.title}>Исламская хронология</h1>
           <p className={`home-hero__tagline ${styles.tagline}`}>
             <span>У каждой эпохи — свои имена.</span>
             <span>У каждого имени — своя история.</span>
@@ -45,7 +45,6 @@ export default function HomePage() {
         return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
       })}</div>
     </section>
-    <section id="about" className="home-about"><p className="eyebrow">О проекте</p><h2>Увидеть историю целиком</h2><p>«Исламская хронология» помогает увидеть последовательность событий, познакомиться с историческими личностями и узнать, кто жил в одно время.</p><details><summary>Как читать даты</summary><p>Основные даты указаны по хиджре — летоисчислению от переселения Пророка ﷺ из Мекки в Медину. Рядом приведены григорианские годы. «До х.» означает «до хиджры», «ок.» — приблизительную дату.</p></details></section>
-    <footer className="site-footer home-footer"><span>Исламская хронология · Люди и эпохи</span><span>Даты предварительные и требуют сверки с источниками.</span></footer>
+    <footer className="site-footer home-footer"><span>Исламская хронология · Люди и эпохи</span></footer>
   </main>;
 }
