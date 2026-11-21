@@ -2448,8 +2448,8 @@ export const people: Record<string, Person> = {
     "name": "Халид ибн аль-Валид",
     "honorific": "Да будет доволен им Аллах",
     "birth": {
-      "hijri": "—",
-      "gregorian": "—"
+      "hijri": "ок. 40 до х.",
+      "gregorian": "ок. 583 г."
     },
     "death": {
       "hijri": "21",
@@ -2457,7 +2457,7 @@ export const people: Record<string, Person> = {
     },
     "cities": [],
     "description": "Принял командование мусульманским войском при Муте.",
-    "dateNote": "Год смерти по «Сияр»; год рождения не установлен.",
+    "dateNote": "Смерть: 21 г. х. по «Сияр». Рождение около 40 г. до хиджры приблизительно рассчитано из сообщения, что он прожил 60 лет.",
     "isCompanion": true,
     "sources": [
       {
