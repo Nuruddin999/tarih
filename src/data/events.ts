@@ -1902,7 +1902,7 @@ export const events: HistoricalEvent[] = [
     "participants": [
       {
         "personId": "muhammad",
-        "role": "Совершил умру; лично в сражении при Муте не участвовал",
+        "role": "Совершил возмещённую умру",
         "sortOrder": 0,
         "sources": [
           {
