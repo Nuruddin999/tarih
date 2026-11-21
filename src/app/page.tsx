@@ -45,6 +45,5 @@ export default function HomePage() {
         return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
       })}</div>
     </section>
-    <footer className="site-footer home-footer"><span>Исламская хронология · Люди и эпохи</span></footer>
   </main>;
 }
