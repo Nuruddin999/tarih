@@ -15,17 +15,19 @@
 }
 
 .hero .title {
-  margin: 0 !important;
-  font-size: clamp(42px, 5.4vw, 66px) !important;
-  line-height: 1.04 !important;
-  letter-spacing: -0.055em !important;
+  margin: 0 0 clamp(16px, 2vw, 24px) !important;
+  text-align: center;
+  white-space: nowrap;
+  font-size: clamp(24px, 5vw, 56px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.05em !important;
   font-weight: 720 !important;
 }
 
 .hero .tagline {
   display: grid;
   gap: 2px;
-  margin: 14px 0 14px !important;
+  margin: 0 0 14px !important;
   color: #171a21;
   font-size: clamp(23px, 2.7vw, 34px) !important;
   font-weight: 680;
@@ -55,9 +57,63 @@
   height: auto;
 }
 
+.aboutContent {
+  max-width: 860px;
+  min-height: 48vh;
+  margin: 0 auto;
+  padding: clamp(40px, 7vw, 80px) 0;
+}
+
+.aboutEyebrow {
+  margin: 0 0 12px;
+  color: #707579;
+  font-size: 14px;
+}
+
+.aboutTitle {
+  margin: 0;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.aboutLead {
+  max-width: 760px;
+  margin: 22px 0 0;
+  color: #30343b;
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.7;
+}
+
+.aboutDetails {
+  max-width: 760px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #dadce0;
+  color: #707579;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.aboutDetails summary {
+  width: fit-content;
+  cursor: pointer;
+  color: #171a21;
+  font-weight: 600;
+}
+
+.aboutDetails p {
+  margin: 12px 0 0;
+}
+
 @media (max-width: 700px) {
   .hero {
     padding-block: 28px 36px !important;
+  }
+
+  .hero .title {
+    font-size: clamp(24px, 6vw, 40px) !important;
   }
 
   .hero .row {
@@ -65,13 +121,8 @@
     gap: 20px !important;
   }
 
-  .hero .title {
-    max-width: 560px;
-    font-size: clamp(38px, 9vw, 52px) !important;
-  }
-
   .hero .tagline {
-    margin-block: 12px !important;
+    margin-block: 0 12px !important;
     font-size: clamp(23px, 6vw, 30px) !important;
   }
 
