@@ -5,7 +5,7 @@ import { yearRange } from "@/lib/contemporaries";
 import type { HistoricalEvent, HistoricalPeriod } from "@/types/chronology";
 import { DateLabel } from "./DateLabel";
 import { EventCard } from "./EventCard";
-import { PersonCard } from "./PersonCard";
+import { PersonBiography } from "./PersonBiography";
 
 function TimelineIcon({ person = false }: { person?: boolean }) {
   return <span className="epoch-timeline__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
@@ -33,10 +33,7 @@ export function EpochTimeline({ period, events, view }: { period: HistoricalPeri
         return <li className="epoch-timeline__row" key={person.id}>
           <div className="epoch-timeline__date"><DateLabel date={person.death} label="Год смерти" /></div>
           <div className="epoch-timeline__entry"><TimelineIcon person />
-            <details className="epoch-timeline__person">
-              <summary><h3>{person.name}</h3>{(entry.description || person.description) && <p>{entry.description || person.description}</p>}<span className="epoch-timeline__more">Биография <span aria-hidden="true">↓</span></span></summary>
-              <PersonCard person={person} description={entry.description} featured={entry.featured} />
-            </details>
+            <PersonBiography person={person} description={entry.description} featured={entry.featured} />
           </div>
         </li>;
       })}
