@@ -9,17 +9,22 @@ import { PersonCard } from "./PersonCard";
 import { EventCard } from "./EventCard";
 import { EpochTimeline } from "./EpochTimeline";
 
-export function PeriodSection({ period, periodEvents = [], standalone = false }: {
+export function PeriodSection({ period, periodEvents = [], standalone = false, preferredView }: {
   standalone?: boolean;
+  preferredView?: "events" | "people";
   period: HistoricalPeriod;
   periodEvents?: HistoricalEvent[];
 }) {
-  const [view, setView] = useState<"events" | "people">(periodEvents.length > 0 ? "events" : "people");
+  const [view, setView] = useState<"events" | "people">(preferredView ?? (periodEvents.length > 0 ? "events" : "people"));
   useEffect(() => {
+    if (preferredView) {
+      setView(preferredView);
+      return;
+    }
     if (!standalone) return;
     const requestedView = new URLSearchParams(window.location.search).get("view");
     if (requestedView === "people" || requestedView === "events") setView(requestedView);
-  }, [standalone]);
+  }, [standalone, preferredView]);
   const [linkStatus, setLinkStatus] = useState("");
   useEffect(() => {
     if (!linkStatus) return;
