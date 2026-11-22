@@ -36,7 +36,7 @@ export function PersonCard({ person, description, featured = false }: Props) {
         
         {person.cities.length > 0 && (
           <p className="person__location">
-            <span className="person__location-label">Жил и работал</span>
+            <span className="person__location-label">Жил</span>
             <span>{person.cities.join(" · ")}</span>
           </p>
         )}
