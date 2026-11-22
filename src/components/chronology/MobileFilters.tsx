@@ -102,8 +102,8 @@ export function MobileFilters({ category, categoryOptions, showEpochNavigation, 
             {availablePeriods.length === 0 && <p role="status">По выбранным фильтрам эпохи не найдены.</p>}
           </section></>}
 
-          <ComparisonPanel idPrefix="mobile" category={draft} query={draftQuery}
-            selected={draftSelected} onSelect={setDraftSelected} />
+          {showEpochNavigation && <ComparisonPanel idPrefix="mobile" category={draft} query={draftQuery}
+            selected={draftSelected} onSelect={setDraftSelected} />}
         </div>
         <footer className="mobile-filter-dialog__footer">
           <button type="button" onClick={() => { setDraft("all"); setDraftQuery(""); setDraftSelected(""); }}>Сбросить</button>
