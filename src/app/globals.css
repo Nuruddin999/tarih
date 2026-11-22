@@ -1607,6 +1607,9 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .person-biography-dialog {
   position: fixed;
   inset: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
   width: 100vw;
   height: 100dvh;
   max-width: none;
@@ -1621,8 +1624,9 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .person-biography-dialog::backdrop { background: transparent; }
 .person-biography-dialog__backdrop {
   position: absolute;
+  z-index: 0;
   inset: 0;
-  background: rgb(24 31 42 / 42%);
+  background: rgb(24 31 42 / 58%);
   opacity: 0;
 }
 .person-biography-dialog__panel {
@@ -1630,9 +1634,11 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   z-index: 1;
   display: flex;
   flex-direction: column;
+  width: min(100%, 830px);
   height: 100%;
   min-height: 0;
   background: var(--background);
+  box-shadow: 0 0 36px rgb(0 0 0 / 16%);
 }
 .person-biography-dialog__header {
   position: relative;
@@ -1640,6 +1646,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex: 0 0 auto;
   gap: 16px;
   padding: max(14px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));
   border-bottom: 1px solid var(--border);
@@ -1675,6 +1682,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 }
 .person-biography-dialog__body > .person { width: min(100%, 900px); margin-inline: auto; }
 @media (max-width: 640px) {
+  .person-biography-dialog__panel { width: 100%; }
   .person-biography-dialog__header { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
   .person-biography-dialog__body { padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)); }
 }
