@@ -33,27 +33,23 @@ export default async function EpochPage({ params }: Props) {
     <section className="epoch-intro"><DateLabel date={period.dates} large /><h1>{period.title}</h1><p>{period.description}</p></section>
     <ChronologyExplorer periodId={id} />
     <nav className="epoch-pagination" aria-label="Соседние эпохи">
-      <div className="epoch-pagination__group epoch-pagination__group--previous">
-        <Link className="epoch-pagination__arrow" href={previousPeriod ? `/epochs/${previousPeriod.id}/` : "/#epochs"}
-          aria-label={previousPeriod ? `Предыдущая эпоха: ${previousPeriod.title}` : "Все эпохи"}>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg>
-        </Link>
-        {previousPeriod ? <Link className="epoch-pagination__card" href={`/epochs/${previousPeriod.id}/`}>
-          <span className="epoch-pagination__art"><Image src={`/images/eras/${previousPeriod.id}.webp`} alt="" width={1254} height={1254} unoptimized /></span>
-          <span className="epoch-pagination__title">{previousPeriod.title}</span>
-        </Link> : <span aria-hidden="true" />}
-      </div>
-      <div className="epoch-pagination__group epoch-pagination__group--next">
-        {nextPeriod ? <Link className="epoch-pagination__card" href={`/epochs/${nextPeriod.id}/`}>
-          <span className="epoch-pagination__art"><Image src={`/images/eras/${nextPeriod.id}.webp`} alt="" width={1254} height={1254} unoptimized /></span>
-          <span className="epoch-pagination__title">{nextPeriod.title}</span>
-        </Link> : <span aria-hidden="true" />}{!nextPeriod && <span className="epoch-pagination__arrow epoch-pagination__arrow--disabled" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
-        </span>}
-        {nextPeriod && <Link className="epoch-pagination__arrow" href={`/epochs/${nextPeriod.id}/`} aria-label={`Следующая эпоха: ${nextPeriod.title}`}>
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
-        </Link>}
-      </div>
+      <Link className="epoch-pagination__arrow" href={previousPeriod ? `/epochs/${previousPeriod.id}/` : "/#epochs"}
+        aria-label={previousPeriod ? `Предыдущая эпоха: ${previousPeriod.title}` : "Все эпохи"}>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" /></svg>
+      </Link>
+      {previousPeriod ? <Link className="epoch-pagination__card" href={`/epochs/${previousPeriod.id}/`}>
+        <span className="epoch-pagination__art"><Image src={`/images/eras/${previousPeriod.id}.webp`} alt="" width={1254} height={1254} unoptimized /></span>
+        <span className="epoch-pagination__title">{previousPeriod.title}</span>
+      </Link> : <span aria-hidden="true" />}
+      {nextPeriod ? <Link className="epoch-pagination__card" href={`/epochs/${nextPeriod.id}/`}>
+        <span className="epoch-pagination__art"><Image src={`/images/eras/${nextPeriod.id}.webp`} alt="" width={1254} height={1254} unoptimized /></span>
+        <span className="epoch-pagination__title">{nextPeriod.title}</span>
+      </Link> : <span aria-hidden="true" />}
+      {nextPeriod ? <Link className="epoch-pagination__arrow" href={`/epochs/${nextPeriod.id}/`} aria-label={`Следующая эпоха: ${nextPeriod.title}`}>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
+      </Link> : <span className="epoch-pagination__arrow epoch-pagination__arrow--disabled" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
+      </span>}
     </nav>
   </main>;
 }
