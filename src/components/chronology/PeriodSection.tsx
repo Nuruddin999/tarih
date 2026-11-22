@@ -15,13 +15,13 @@ export function PeriodSection({ period, periodEvents = [], standalone = false, p
   period: HistoricalPeriod;
   periodEvents?: HistoricalEvent[];
 }) {
-  const [view, setView] = useState<"events" | "people">(periodEvents.length > 0 ? "events" : "people");
+  const [view, setView] = useState<"events" | "people">(preferredView ?? (periodEvents.length > 0 ? "events" : "people"));
   useEffect(() => {
-    if (!standalone) return;
     if (preferredView) {
       setView(preferredView);
       return;
     }
+    if (!standalone) return;
     const requestedView = new URLSearchParams(window.location.search).get("view");
     if (requestedView === "people" || requestedView === "events") setView(requestedView);
   }, [standalone, preferredView]);
