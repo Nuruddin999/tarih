@@ -161,8 +161,8 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
       </nav>
     </section></>}
 
-    <ComparisonPanel idPrefix="desktop" category={category} query={query}
-      selected={selected} onSelect={setSelected} />
+    {!periodId && <ComparisonPanel idPrefix="desktop" category={category} query={query}
+      selected={selected} onSelect={setSelected} />}
     </aside>
     <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
