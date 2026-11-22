@@ -1563,8 +1563,31 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .epoch-timeline__person { padding-top: 12px; min-width: 0; }
 .epoch-timeline__person h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
 .epoch-timeline__person p { margin: 8px 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
-.epoch-timeline__more { display: inline-flex; align-items: center; border: 0; padding: 8px 0; background: transparent; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; }
-.epoch-timeline__more:hover { text-decoration: underline; text-underline-offset: 3px; }
+.epoch-timeline__more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin-top: 4px;
+  padding: 0 16px;
+  border: 1px solid #3390ec;
+  border-radius: 12px;
+  background: #3390ec;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgb(51 144 236 / 18%);
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+.epoch-timeline__more:hover {
+  background: #2782df;
+  border-color: #2782df;
+  box-shadow: 0 4px 12px rgb(51 144 236 / 24%);
+}
+.epoch-timeline__more:active { transform: translateY(1px); }
 @media (max-width: 640px) {
  .epoch-timeline__row { grid-template-columns: 84px minmax(0, 1fr); min-height: 132px; }
  .epoch-timeline__entry { padding-left: 48px; padding-bottom: 28px; }
