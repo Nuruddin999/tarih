@@ -74,8 +74,8 @@ export function PersonBiography({ person, description, featured = false }: Props
       aria-labelledby={`person-biography-title-${person.id}`}
       onCancel={event => { event.preventDefault(); closeBiography(); }}
     >
+      <div className="person-biography-dialog__backdrop" aria-hidden="true" />
       <div className="person-biography-dialog__panel">
-        <div className="person-biography-dialog__backdrop" aria-hidden="true" />
         <header className="person-biography-dialog__header">
           <h2 id={`person-biography-title-${person.id}`}>Биография</h2>
           <button className="person-biography-dialog__close" type="button" aria-label="Закрыть биографию" onClick={closeBiography}>
