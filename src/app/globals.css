@@ -1389,7 +1389,6 @@ html:has(.event-person-dialog[open]) { overflow: hidden; }
 .global-people-timeline .epoch-timeline__entry::before { top: 24px; bottom: -24px; }
 .global-people-timeline .epoch-timeline__icon { color: #a26a43; }
 .global-people-timeline__era { display: inline-flex; margin-top: 4px; padding: 4px 9px; border-radius: 999px; background: #f4eee8; color: #795337; font-size: 11px; line-height: 1.4; }
-.global-people-timeline .epoch-timeline__person[open] .epoch-timeline__more span { transform: rotate(180deg); }
 @media (max-width: 640px) {
   .global-people-timeline .epoch-timeline__row { grid-template-columns: 84px minmax(0, 1fr); }
   .global-people-timeline .epoch-timeline__row::before { right: 0; }
@@ -1561,13 +1560,11 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .epoch-timeline .event-card { padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
 .epoch-timeline .event-card__toggle { font-size: 18px; min-height: 50px; padding: 8px 0; }
 .epoch-timeline .event-card__details { margin-top: 12px; }
-.epoch-timeline__person > summary { list-style: none; cursor: pointer; padding-top: 12px; }
-.epoch-timeline__person > summary::-webkit-details-marker { display: none; }
-.epoch-timeline__person h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; }
-.epoch-timeline__person summary p { margin: 8px 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
-.epoch-timeline__more { display: inline-block; font-size: 12px; color: var(--accent); padding-block: 8px; }
-.epoch-timeline__person[open] .epoch-timeline__more span { display: inline-block; transform: rotate(180deg); }
-.epoch-timeline__person > .person { margin-top: 12px; }
+.epoch-timeline__person { padding-top: 12px; min-width: 0; }
+.epoch-timeline__person h3 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.epoch-timeline__person p { margin: 8px 0; font-size: 13px; line-height: 1.6; color: var(--muted); }
+.epoch-timeline__more { display: inline-flex; align-items: center; border: 0; padding: 8px 0; background: transparent; color: var(--accent); font: inherit; font-size: 13px; cursor: pointer; }
+.epoch-timeline__more:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) {
  .epoch-timeline__row { grid-template-columns: 84px minmax(0, 1fr); min-height: 132px; }
  .epoch-timeline__entry { padding-left: 48px; padding-bottom: 28px; }
@@ -1577,7 +1574,6 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
  .epoch-timeline__date .historical-date__hijri { font-size: 14px; }
  .epoch-timeline__date .historical-date__gregorian { font-size: 10px; }
  .epoch-timeline .event-card__toggle, .epoch-timeline__person h3 { font-size: 16px; }
- .epoch-timeline__person > .person { margin-left: -48px; }
 }
 
 
@@ -1606,3 +1602,74 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 
 /* Keep expanded biography cards clear of the vertical date rail. */
 .global-people-timeline .epoch-timeline__person > .person { position: relative; z-index: 1; margin-left: 0; }
+
+
+.person-biography-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  color: var(--ink);
+  background: var(--background);
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 260ms ease, transform 320ms ease;
+}
+.person-biography-dialog.is-visible { opacity: 1; transform: translateY(0); }
+.person-biography-dialog::backdrop {
+  background: rgb(24 31 42 / 42%);
+  opacity: 0;
+  transition: opacity 260ms ease;
+}
+.person-biography-dialog.is-visible::backdrop { opacity: 1; }
+.person-biography-dialog__panel { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.person-biography-dialog__header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: max(14px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.person-biography-dialog__header h2 { margin: 0; font-size: 18px; font-weight: 600; }
+.person-biography-dialog__close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--ink);
+  font: inherit;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+.person-biography-dialog__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px max(20px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+}
+.person-biography-dialog__body > .person { width: min(100%, 900px); margin-inline: auto; }
+.person-biography-dialog__sources { width: min(100%, 900px); margin: 16px auto 0; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+.person-biography-dialog__sources h3 { margin: 0 0 12px; font-size: 16px; }
+.person-biography-dialog__sources ul { margin: 0; padding-left: 20px; }
+.person-biography-dialog__sources li + li { margin-top: 10px; }
+.person-biography-dialog__sources a { margin-left: 8px; color: var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  .person-biography-dialog, .person-biography-dialog::backdrop { transition-duration: 1ms; }
+}
