@@ -18,69 +18,61 @@ export function PersonCard({ person, description, featured = false, contemporari
     const years = overlap(person, other);
     return years ? [{ person: other, years }] : [];
   }).sort((a, b) => a.years.start - b.years.start || a.person.name.localeCompare(b.person.name, "ru"));
-  
+
+  const contemporariesContent = (
+    <div className="person__contemporary-content">
+      {!hasDates ? <p>Недостаточно данных о годах жизни для сравнения.</p> : <>
+        <p className="person__contemporary-note">Из всей базы, независимо от фильтров. Пересечение по годам хиджры не означает личную встречу; приблизительные даты дают возможное совпадение.</p>
+        {contemporaries.length > 0 ? <ul className="person__contemporary-list">
+          {contemporaries.map(({ person: other, years }) => <li key={other.id}>
+            <strong>{other.name}</strong>
+            <span>{other.birth.hijri} — {other.death.hijri}</span>
+            <span className="person__contemporary-overlap">Возможное пересечение: {formatYear(years.start)}{years.start !== years.end && ` — ${formatYear(years.end)}`}</span>
+          </li>)}
+        </ul> : <p>В текущей базе современники с известными датами не найдены.</p>}
+      </>}
+    </div>
+  );
+
   return (
     <article className={`person ${featured ? "person--featured" : ""}`}>
       <div className="person__info">
         {((person.categories?.length ?? 0) > 0 || person.isCompanion || person.isPromisedParadise) && (
           <ul className="person__categories" aria-label="Категории и отличия личности">
-            {person.categories?.map((category) => (
-              <li key={category}>{categoryLabels[category]}</li>
-            ))}
+            {person.categories?.map(category => <li key={category}>{categoryLabels[category]}</li>)}
             {person.isCompanion && !person.categories?.length && <li>{person.gender === "female" ? "Сподвижница" : "Сподвижник"}</li>}
             {person.isPromisedParadise && <li className="person__badge--paradise">10 обрадованных Раем</li>}
           </ul>
         )}
-        
+
         <h4 className="person__name">{person.name}</h4>
         <p className="person__honorific">{person.honorific}</p>
-        
         {person.cities.length > 0 && (
           <p className="person__location">
             <span className="person__location-label">Жил</span>
             <span>{person.cities.join(" · ")}</span>
           </p>
         )}
-        
         {person.dateNote && <p className="person__date-note">{person.dateNote}</p>}
         {biography && <p className="person__description">{biography}</p>}
-      
-      
       </div>
-      
+
       <div className="person__dates">
         <DateLabel label="Рождение" date={person.birth} />
         <DateLabel label="Смерть" date={person.death} />
       </div>
-      {contemporariesAsContent ? <section className="person__contemporaries person__contemporaries--expanded">
-        <h5>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></h5>
-        <div className="person__contemporary-content">
-          {!hasDates ? <p>Недостаточно данных о годах жизни для сравнения.</p> : <>
-            <p className="person__contemporary-note">Из всей базы, независимо от фильтров. Пересечение по годам хиджры не означает личную встречу; приблизительные даты дают возможное совпадение.</p>
-            {contemporaries.length > 0 ? <ul className="person__contemporary-list">
-              {contemporaries.map(({ person: other, years }) => <li key={other.id}>
-                <strong>{other.name}</strong>
-                <span>{other.birth.hijri} — {other.death.hijri}</span>
-                <span className="person__contemporary-overlap">Возможное пересечение: {formatYear(years.start)}{years.start !== years.end && ` — ${formatYear(years.end)}`}</span>
-              </li>)}
-            </ul> : <p>В текущей базе современники с известными датами не найдены.</p>}
-          </>}
-        </div>
-      </section> : <details className="person__contemporaries">
-        <summary>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></summary>
-        <div className="person__contemporary-content">
-          {!hasDates ? <p>Недостаточно данных о годах жизни для сравнения.</p> : <>
-            <p className="person__contemporary-note">Из всей базы, независимо от фильтров. Пересечение по годам хиджры не означает личную встречу; приблизительные даты дают возможное совпадение.</p>
-            {contemporaries.length > 0 ? <ul className="person__contemporary-list">
-              {contemporaries.map(({ person: other, years }) => <li key={other.id}>
-                <strong>{other.name}</strong>
-                <span>{other.birth.hijri} — {other.death.hijri}</span>
-                <span className="person__contemporary-overlap">Возможное пересечение: {formatYear(years.start)}{years.start !== years.end && ` — ${formatYear(years.end)}`}</span>
-              </li>)}
-            </ul> : <p>В текущей базе современники с известными датами не найдены.</p>}
-          </>}
-        </div>
-      </details>}
+
+      {contemporariesAsContent ? (
+        <section className="person__contemporaries person__contemporaries--expanded">
+          <h5>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></h5>
+          {contemporariesContent}
+        </section>
+      ) : (
+        <details className="person__contemporaries">
+          <summary>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></summary>
+          {contemporariesContent}
+        </details>
+      )}
     </article>
   );
 }
