@@ -19,6 +19,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
     if (periodId) setQuery(new URLSearchParams(window.location.search).get("q") ?? "");
   }, [periodId]);
   const [category, setCategory] = useState<PersonCategory | "all">("all");
+  const [city, setCity] = useState("");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState("");
   const [isFiltering, setIsFiltering] = useState(false);
@@ -51,14 +52,24 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
   }
 
   const normalized = query.trim().toLocaleLowerCase("ru").replaceAll("ё", "е");
-  const matches = (key: string, filter: PersonCategory | "all" = category, search = normalized) => {
+  const periodPeopleIds = periodId
+    ? new Set(periodsWithUniquePeople.find(period => period.id === periodId)?.groups.flatMap(group => group.people.map(entry => entry.personId)) ?? [])
+    : null;
+  const categoryOptions = periodPeopleIds
+    ? [...new Set([...periodPeopleIds].flatMap(key => people[key]?.categories ?? []))].sort((a, b) => categoryLabels[a].localeCompare(categoryLabels[b], "ru"))
+    : (Object.keys(categoryLabels) as PersonCategory[]);
+  const cityOptions = periodPeopleIds
+    ? [...new Set([...periodPeopleIds].flatMap(key => people[key]?.cities ?? []))].sort((a, b) => a.localeCompare(b, "ru"))
+    : [];
+  const matches = (key: string, filter: PersonCategory | "all" = category, search = normalized, cityFilter = city) => {
     const person = people[key];
     return person && (filter === "all" || person.categories?.includes(filter)) &&
+      (!cityFilter || person.cities.includes(cityFilter)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
-  const filterEvents = (filter = category, search = normalized) => events.filter(event => {
+  const filterEvents = (filter = category, search = normalized, cityFilter = city) => events.filter(event => {
     if (periodId && event.periodId !== periodId) return false;
-    const eligible = filter === "all" || event.participants.some(entry => matches(entry.personId, filter, ""));
+    const eligible = (filter === "all" && !cityFilter) || event.participants.some(entry => matches(entry.personId, filter, "", cityFilter));
     const text = [event.title, event.description ?? "", ...event.participants.flatMap(entry => {
       const person = people[entry.personId];
       return person ? [person.name, ...person.cities] : [];
@@ -66,9 +77,9 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
     return eligible && text.includes(search);
   }).sort((a, b) => a.sortOrder - b.sortOrder);
   const visibleEvents = filterEvents();
-  const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.filter(period => !periodId || period.id === periodId).map(period => ({ ...period, groups: period.groups
-      .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
-      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
+  const filterPeriods = (filter = category, search = normalized, cityFilter = city) => periodsWithUniquePeople.filter(period => !periodId || period.id === periodId).map(period => ({ ...period, groups: period.groups
+      .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search, cityFilter)) }))
+      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search, cityFilter).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
   const count = new Set(visiblePeriods.flatMap(p => p.groups.flatMap(g => g.people.map(e => e.personId)))).size;
   // Follow shared epoch URLs after hydration and on browser hash/history changes.
@@ -124,10 +135,11 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
   }, [pendingPeriod, category, query]);
   
   return <div className={`chronology-layout ${periodId ? "epoch-explorer" : ""}`}>
-    <MobileFilters category={category} showFiltersButton={!periodId} query={query} selected={selected} onQueryChange={setQuery}
-      getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
-      onApply={(filter, search, person, periodId) => {
+    <MobileFilters category={category} categoryOptions={categoryOptions} city={city} cityOptions={cityOptions} showEpochNavigation={!periodId} query={query} selected={selected} onQueryChange={setQuery}
+      getPeriods={(filter, search, selectedCity) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"), selectedCity)}
+      onApply={(filter, search, person, periodId, selectedCity) => {
         changeCategory(filter, false, false);
+        setCity(selectedCity);
         setQuery(search);
         setSelected(person);
         if (periodId) setPendingPeriod(periodId);
@@ -135,15 +147,21 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
     {!periodId && <MobilePeriodNavigation periods={visiblePeriods} />}
     <aside className="chronology-sidebar" aria-label="Поиск и фильтры">
     <h2 className="sidebar-title desktop-only">Фильтры</h2>
-    <h3 className="sidebar-block-title desktop-only">По направлениям участников</h3>
+    <h3 className="sidebar-block-title desktop-only">Специальности участников</h3>
     <section className="explorer" aria-label="Фильтры хронологии">
-      <div className="filter-buttons" aria-label="Направление и мазхаб">
+      <div className="filter-buttons" aria-label="Специальности участников">
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
-        {(Object.keys(categoryLabels) as PersonCategory[]).map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
+        {categoryOptions.map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
       </div>
+      {periodId && cityOptions.length > 0 && <label className="explorer-label" htmlFor="epoch-city-filter">Город
+        <select id="epoch-city-filter" value={city} onChange={event => setCity(event.target.value)}>
+          <option value="">Все города</option>
+          {cityOptions.map(value => <option key={value} value={value}>{value}</option>)}
+        </select>
+      </label>}
       <label className="explorer-label" htmlFor="person-search">Поиск по имени, городу или событию</label>
       <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, Бадр или Багдад" />
-      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
+      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => { changeCategory("all", true); setCity(""); }}>Сбросить фильтры</button></div>
     </section>
     
     {!periodId && <><h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
@@ -161,7 +179,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
       <p role="status">
         {isFiltering
           ? "Обновляем список…"
-          : `${category === "all" ? "Все личности" : categoryLabels[category]} · найдено: ${count}; событий: ${visibleEvents.length}`}
+          : `${category === "all" ? "Все личности" : categoryLabels[category]}${city ? ` · ${city}` : ""} · найдено: ${count}; событий: ${visibleEvents.length}`}
       </p>
     </div>
 
