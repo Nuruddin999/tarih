@@ -139,7 +139,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
       getPeriods={(filter, search, selectedCity) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"), selectedCity)}
       onApply={(filter, search, person, periodId, selectedCity) => {
         changeCategory(filter, false, false);
-        setCity(selectedCity);
+        setCity(selectedCity ?? "");
         setQuery(search);
         setSelected(person);
         if (periodId) setPendingPeriod(periodId);
