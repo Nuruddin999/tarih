@@ -1877,3 +1877,19 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   .event-modal__roles,
   .event-modal__participants { font-size: 16px; }
 }
+
+
+/* Keep biography reading text comfortably legible on phone and desktop. */
+.person-biography-dialog .person__honorific,
+.person-biography-dialog .person__location,
+.person-biography-dialog .person__description {
+  font-size: 16px;
+  line-height: 1.65;
+}
+.person-biography-dialog .person__location-label { font-size: 14px; }
+.person-biography-dialog .person__date-note { font-size: 14px; line-height: 1.6; }
+.person-biography-dialog .person__contemporary-content { font-size: 16px; line-height: 1.65; }
+.person-biography-dialog .person__contemporary-note { font-size: 14px; line-height: 1.65; }
+.person-biography-dialog .person__contemporary-list { font-size: 15px; }
+.person-biography-dialog .person__contemporary-list strong { font-size: 16px; }
+.person-biography-dialog .person__contemporary-overlap { font-size: 14px; }
