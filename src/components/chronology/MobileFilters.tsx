@@ -10,6 +10,7 @@ type Props = {
   category: Category;
   categoryOptions: PersonCategory[];
   showEpochNavigation: boolean;
+  showSearch: boolean;
   query: string;
   selected: string;
   onQueryChange: (query: string) => void;
@@ -17,7 +18,7 @@ type Props = {
   onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
 };
 
-export function MobileFilters({ category, categoryOptions, showEpochNavigation, query, selected, onQueryChange, getPeriods, onApply }: Props) {
+export function MobileFilters({ category, categoryOptions, showEpochNavigation, showSearch, query, selected, onQueryChange, getPeriods, onApply }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState<Category>(category);
@@ -57,10 +58,10 @@ export function MobileFilters({ category, categoryOptions, showEpochNavigation, 
 
   return <>
     <div className="mobile-filter-toolbar">
-      <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени, городу или событию</label>
+      {showSearch && <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени, городу или событию</label>}
       <div className="mobile-filter-toolbar__row">
-        <input id="mobile-person-search" type="search" value={query}
-          onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />
+        {showSearch && <input id="mobile-person-search" type="search" value={query}
+          onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />}
         <button type="button" onClick={openFilters} aria-haspopup="dialog">
           Фильтры{category !== "all" && <span className="mobile-filter-badge" aria-label="1 активный фильтр">1</span>}
         </button>
@@ -85,12 +86,12 @@ export function MobileFilters({ category, categoryOptions, showEpochNavigation, 
             </div>
           </section>
 
-          <h3 id="mobile-search-title">Поиск</h3>
+          {showSearch && <><h3 id="mobile-search-title">Поиск</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-search-title">
             <label className="explorer-label" htmlFor="modal-person-search">Имя, город или событие</label>
             <input id="modal-person-search" type="search" value={draftQuery}
               onChange={event => setDraftQuery(event.target.value)} placeholder="Например, аш-Шафии или Багдад" />
-          </section>
+          </section></>}
 
           {showEpochNavigation && <><h3 id="mobile-epochs-title">Эпохи</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-epochs-title">
