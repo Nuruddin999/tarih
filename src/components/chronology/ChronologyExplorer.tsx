@@ -62,19 +62,18 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
     return person && (filter === "all" || person.categories?.includes(filter)) &&
       `${person.name} ${person.cities.join(" ")}`.toLocaleLowerCase("ru").replaceAll("ё", "е").includes(search);
   };
-  const filterEvents = (filter = category, search = normalized) => events.filter(event => {
+  const filterEvents = (search = normalized) => events.filter(event => {
     if (periodId && event.periodId !== periodId) return false;
-    const eligible = filter === "all" || event.participants.some(entry => matches(entry.personId, filter, ""));
     const text = [event.title, event.description ?? "", ...event.participants.flatMap(entry => {
       const person = people[entry.personId];
       return person ? [person.name, ...person.cities] : [];
     })].join(" ").toLocaleLowerCase("ru").replaceAll("ё", "е");
-    return eligible && text.includes(search);
+    return text.includes(search);
   }).sort((a, b) => a.sortOrder - b.sortOrder);
   const visibleEvents = filterEvents();
   const filterPeriods = (filter = category, search = normalized) => periodsWithUniquePeople.filter(period => !periodId || period.id === periodId).map(period => ({ ...period, groups: period.groups
       .map(group => ({ ...group, people: group.people.filter(entry => matches(entry.personId, filter, search)) }))
-      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(filter, search).some(event => event.periodId === period.id));
+      .filter(group => group.people.length > 0) })).filter(period => period.groups.length > 0 || filterEvents(search).some(event => event.periodId === period.id));
   const visiblePeriods = filterPeriods();
   const count = new Set(visiblePeriods.flatMap(p => p.groups.flatMap(g => g.people.map(e => e.personId)))).size;
   // Follow shared epoch URLs after hydration and on browser hash/history changes.
@@ -174,7 +173,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
     </div>
 
     {category === "mufassir" && <p>Тафсир — разъяснение смысла Корана. Пророк ﷺ первым разъяснял откровение общине; далее представлены десять известных муфассиров разных поколений, без ранжирования по достоинству.</p>}
-    <div className="timeline">{visiblePeriods.map(period => <PeriodSection standalone={!!periodId} period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
+    <div className="timeline">{visiblePeriods.map(period => <PeriodSection standalone={!!periodId} preferredView={category === "all" ? undefined : "people"} period={period} periodEvents={visibleEvents.filter(event => event.periodId === period.id)} key={period.id} />)}</div>
     {visiblePeriods.length === 0 && <p role="status">Ничего не найдено. Измени запрос или сбрось фильтры.</p>}
     </div>
   </div>;
