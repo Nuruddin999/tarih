@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import type { Person } from "@/types/chronology";
 import { PersonCard } from "./PersonCard";
 
@@ -12,37 +13,51 @@ type Props = {
 
 export function PersonBiography({ person, description, featured = false }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const closeTimer = useRef<number | null>(null);
+  const animationRef = useRef<gsap.core.Timeline | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (!isOpen) return;
     const dialog = dialogRef.current;
-    if (!dialog) return;
+    const backdrop = dialog?.querySelector<HTMLElement>(".person-biography-dialog__backdrop");
+    const panel = dialog?.querySelector<HTMLElement>(".person-biography-dialog__panel");
+    if (!dialog || !backdrop || !panel) return;
 
     dialog.showModal();
-    const frame = window.requestAnimationFrame(() => dialog.classList.add("is-visible"));
-    return () => window.cancelAnimationFrame(frame);
-  }, [isOpen]);
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const timeline = gsap.timeline({ paused: true });
+    timeline
+      .fromTo(backdrop, { opacity: 0 }, { opacity: 1, duration: reducedMotion ? 0.01 : 0.24, ease: "power1.out" }, 0)
+      .fromTo(panel, { y: reducedMotion ? 0 : 24, autoAlpha: 0 }, {
+        y: 0,
+        autoAlpha: 1,
+        duration: reducedMotion ? 0.01 : 0.36,
+        ease: "power3.out"
+      }, 0);
+    animationRef.current = timeline;
+    timeline.play();
 
-  useEffect(() => () => {
-    if (closeTimer.current !== null) window.clearTimeout(closeTimer.current);
-  }, []);
+    return () => {
+      timeline.kill();
+      animationRef.current = null;
+      if (dialog.open) dialog.close();
+    };
+  }, [isOpen]);
 
   function closeBiography() {
     const dialog = dialogRef.current;
-    if (!dialog?.open) {
+    const timeline = animationRef.current;
+    if (!dialog?.open || !timeline) {
       setIsOpen(false);
       return;
     }
 
-    if (closeTimer.current !== null) window.clearTimeout(closeTimer.current);
-    dialog.classList.remove("is-visible");
-    closeTimer.current = window.setTimeout(() => {
-      dialog.close();
+    timeline.eventCallback("onReverseComplete", () => {
+      if (dialog.open) dialog.close();
+      animationRef.current = null;
       setIsOpen(false);
-      closeTimer.current = null;
-    }, 320);
+    });
+    timeline.reverse();
   }
 
   return <>
@@ -59,22 +74,16 @@ export function PersonBiography({ person, description, featured = false }: Props
       aria-labelledby={`person-biography-title-${person.id}`}
       onCancel={event => { event.preventDefault(); closeBiography(); }}
     >
+      <div className="person-biography-dialog__backdrop" aria-hidden="true" />
       <div className="person-biography-dialog__panel">
         <header className="person-biography-dialog__header">
           <h2 id={`person-biography-title-${person.id}`}>Биография</h2>
           <button className="person-biography-dialog__close" type="button" aria-label="Закрыть биографию" onClick={closeBiography}>
-            ×
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
           </button>
         </header>
         <div className="person-biography-dialog__body">
-          <PersonCard person={person} description={description} featured={featured} />
-          {person.sources && person.sources.length > 0 && <section className="person-biography-dialog__sources" aria-label="Источники">
-            <h3>Источники</h3>
-            <ul>{person.sources.map((source, index) => <li key={`${source.url}-${index}`}>
-              <span>{source.title}</span>
-              {source.url && <a href={source.url} target="_blank" rel="noreferrer">Открыть источник</a>}
-            </li>)}</ul>
-          </section>}
+          <PersonCard person={person} description={description} featured={featured} contemporariesAsContent />
         </div>
       </div>
     </dialog>}
