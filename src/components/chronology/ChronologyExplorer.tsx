@@ -151,7 +151,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
         <label className="explorer-label" htmlFor="person-search">Поиск по имени, городу или событию</label>
         <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, Бадр или Багдад" />
       </>}
-      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)>Сбросить фильтры</button></div>
+      <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)}>Сбросить фильтры</button></div>
     </section>
     
     {!periodId && <><h3 id="sidebar-periods-title" className="sidebar-block-title desktop-only">Эпохи</h3>
@@ -161,8 +161,8 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
       </nav>
     </section></>}
 
-    <ComparisonPanel idPrefix="desktop" category={category} query={query}
-      selected={selected} onSelect={setSelected} />
+    {!periodId && <ComparisonPanel idPrefix="desktop" category={category} query={query}
+      selected={selected} onSelect={setSelected} />}
     </aside>
     <div className="chronology-results">
     <div ref={resultsRef} style={{ scrollMarginTop: 16 }}>
