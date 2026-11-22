@@ -9,24 +9,22 @@ type Category = PersonCategory | "all";
 type Props = {
   category: Category;
   categoryOptions: PersonCategory[];
-  city: string;
-  cityOptions: string[];
   showEpochNavigation: boolean;
+  showSearch: boolean;
   query: string;
   selected: string;
   onQueryChange: (query: string) => void;
-  getPeriods: (category: Category, query: string, city: string) => HistoricalPeriod[];
-  onApply: (category: Category, query: string, selected: string, periodId?: string, city?: string) => void;
+  getPeriods: (category: Category, query: string) => HistoricalPeriod[];
+  onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
 };
 
-export function MobileFilters({ category, categoryOptions, city, cityOptions, showEpochNavigation, query, selected, onQueryChange, getPeriods, onApply }: Props) {
+export function MobileFilters({ category, categoryOptions, showEpochNavigation, showSearch, query, selected, onQueryChange, getPeriods, onApply }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState<Category>(category);
-  const [draftCity, setDraftCity] = useState(city);
   const [draftQuery, setDraftQuery] = useState(query);
   const [draftSelected, setDraftSelected] = useState(selected);
-  const availablePeriods = getPeriods(draft, draftQuery, draftCity);
+  const availablePeriods = getPeriods(draft, draftQuery);
   const count = new Set(availablePeriods.flatMap(period =>
     period.groups.flatMap(group => group.people.map(entry => entry.personId)))).size;
 
@@ -47,7 +45,6 @@ export function MobileFilters({ category, categoryOptions, city, cityOptions, sh
 
   function openFilters() {
     setDraft(category);
-    setDraftCity(city);
     setDraftQuery(query);
     setDraftSelected(selected);
     dialogRef.current?.showModal();
@@ -55,18 +52,18 @@ export function MobileFilters({ category, categoryOptions, city, cityOptions, sh
   }
 
   function apply(periodId?: string) {
-    onApply(draft, draftQuery, draftSelected, periodId, draftCity);
+    onApply(draft, draftQuery, draftSelected, periodId);
     dialogRef.current?.close();
   }
 
   return <>
     <div className="mobile-filter-toolbar">
-      <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени, городу или событию</label>
+      {showSearch && <label className="explorer-label" htmlFor="mobile-person-search">Поиск по имени, городу или событию</label>}
       <div className="mobile-filter-toolbar__row">
-        <input id="mobile-person-search" type="search" value={query}
-          onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />
+        {showSearch && <input id="mobile-person-search" type="search" value={query}
+          onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />}
         <button type="button" onClick={openFilters} aria-haspopup="dialog">
-          Фильтры{(category !== "all" || city) && <span className="mobile-filter-badge" aria-label="Есть активные фильтры">{Number(category !== "all") + Number(!!city)}</span>}
+          Фильтры{category !== "all" && <span className="mobile-filter-badge" aria-label="1 активный фильтр">1</span>}
         </button>
       </div>
     </div>
@@ -89,18 +86,12 @@ export function MobileFilters({ category, categoryOptions, city, cityOptions, sh
             </div>
           </section>
 
-          <h3 id="mobile-search-title">Поиск</h3>
+          {showSearch && <><h3 id="mobile-search-title">Поиск</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-search-title">
-            {cityOptions.length > 0 && <label className="explorer-label" htmlFor="modal-city-filter">Город
-              <select id="modal-city-filter" value={draftCity} onChange={event => setDraftCity(event.target.value)}>
-                <option value="">Все города</option>
-                {cityOptions.map(value => <option key={value} value={value}>{value}</option>)}
-              </select>
-            </label>}
             <label className="explorer-label" htmlFor="modal-person-search">Имя, город или событие</label>
             <input id="modal-person-search" type="search" value={draftQuery}
               onChange={event => setDraftQuery(event.target.value)} placeholder="Например, аш-Шафии или Багдад" />
-          </section>
+          </section></>}
 
           {showEpochNavigation && <><h3 id="mobile-epochs-title">Эпохи</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-epochs-title">
@@ -115,7 +106,7 @@ export function MobileFilters({ category, categoryOptions, city, cityOptions, sh
             selected={draftSelected} onSelect={setDraftSelected} />
         </div>
         <footer className="mobile-filter-dialog__footer">
-          <button type="button" onClick={() => { setDraft("all"); setDraftCity(""); setDraftQuery(""); setDraftSelected(""); }}>Сбросить</button>
+          <button type="button" onClick={() => { setDraft("all"); setDraftQuery(""); setDraftSelected(""); }}>Сбросить</button>
           <button type="button" className="mobile-filter-apply" onClick={() => apply()}>
             Показать: {count}
           </button>
