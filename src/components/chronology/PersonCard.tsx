@@ -7,9 +7,10 @@ type Props = {
   person: Person;
   description?: string;
   featured?: boolean;
+  contemporariesAsContent?: boolean;
 };
 
-export function PersonCard({ person, description, featured = false }: Props) {
+export function PersonCard({ person, description, featured = false, contemporariesAsContent = false }: Props) {
   const biography = description ?? person.description;
   const hasDates = yearRange(person.birth.hijri) !== null && yearRange(person.death.hijri) !== null;
   const contemporaries = Object.values(people).flatMap(other => {
@@ -51,7 +52,21 @@ export function PersonCard({ person, description, featured = false }: Props) {
         <DateLabel label="Рождение" date={person.birth} />
         <DateLabel label="Смерть" date={person.death} />
       </div>
-      <details className="person__contemporaries">
+      {contemporariesAsContent ? <section className="person__contemporaries person__contemporaries--expanded">
+        <h5>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></h5>
+        <div className="person__contemporary-content">
+          {!hasDates ? <p>Недостаточно данных о годах жизни для сравнения.</p> : <>
+            <p className="person__contemporary-note">Из всей базы, независимо от фильтров. Пересечение по годам хиджры не означает личную встречу; приблизительные даты дают возможное совпадение.</p>
+            {contemporaries.length > 0 ? <ul className="person__contemporary-list">
+              {contemporaries.map(({ person: other, years }) => <li key={other.id}>
+                <strong>{other.name}</strong>
+                <span>{other.birth.hijri} — {other.death.hijri}</span>
+                <span className="person__contemporary-overlap">Возможное пересечение: {formatYear(years.start)}{years.start !== years.end && ` — ${formatYear(years.end)}`}</span>
+              </li>)}
+            </ul> : <p>В текущей базе современники с известными датами не найдены.</p>}
+          </>}
+        </div>
+      </section> : <details className="person__contemporaries">
         <summary>Современники <span className="person__contemporary-count">{hasDates ? contemporaries.length : "—"}</span></summary>
         <div className="person__contemporary-content">
           {!hasDates ? <p>Недостаточно данных о годах жизни для сравнения.</p> : <>
@@ -65,7 +80,7 @@ export function PersonCard({ person, description, featured = false }: Props) {
             </ul> : <p>В текущей базе современники с известными датами не найдены.</p>}
           </>}
         </div>
-      </details>
+      </details>}
     </article>
   );
 }
