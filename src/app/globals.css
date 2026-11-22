@@ -1677,28 +1677,27 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 
 /* Neighboring eras use the same square artwork as the home directory. */
 .epoch-pagination {
-  display: flex;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 164px) minmax(0, 164px) 44px;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center;
+  gap: clamp(12px, 3vw, 36px);
   padding: 40px 0 48px;
   border-top: 1px solid var(--border);
 }
-.epoch-pagination__group { display: flex; align-items: center; gap: 16px; flex: 1 1 0; min-width: 0; }
-.epoch-pagination__group--next { justify-content: flex-end; }
 .epoch-pagination__arrow {
   display: grid;
   place-items: center;
-  flex: 0 0 44px;
   width: 44px;
   height: 44px;
   border: 1px solid var(--border);
   border-radius: 50%;
   background: var(--surface);
   color: var(--ink);
+  text-decoration: none;
   transition: border-color .16s ease, background .16s ease, transform .16s ease;
 }
-.epoch-pagination__arrow:hover { border-color: var(--accent); background: var(--surface); transform: scale(1.04); }
+.epoch-pagination__arrow:hover { border-color: var(--accent); transform: scale(1.04); }
 .epoch-pagination__arrow svg { width: 20px; height: 20px; }
 .epoch-pagination__arrow path { stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .epoch-pagination__arrow--disabled { opacity: .35; }
@@ -1707,7 +1706,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: min(100%, 164px);
+  width: 100%;
   min-width: 0;
   color: var(--ink);
   text-align: center;
@@ -1721,20 +1720,27 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
-  box-shadow: var(--shadow);
+  box-shadow: 0 3px 12px rgb(25 32 40 / 8%);
   transition: border-color .16s ease, box-shadow .16s ease;
 }
 .epoch-pagination__art img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.epoch-pagination__card:hover .epoch-pagination__art { border-color: var(--accent); box-shadow: 0 5px 18px rgb(25 32 40 / 10%); }
+.epoch-pagination__card:hover .epoch-pagination__art { border-color: var(--accent); box-shadow: 0 5px 18px rgb(25 32 40 / 12%); }
 .epoch-pagination__title { max-width: 100%; font-size: 13px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
 @media (max-width: 640px) {
-  .epoch-pagination { gap: 8px; padding: 28px 0 36px; }
-  .epoch-pagination__group { gap: 7px; }
-  .epoch-pagination__arrow { flex-basis: 34px; width: 34px; height: 34px; }
+  .epoch-pagination {
+    grid-template-columns: 34px minmax(0, 1fr) minmax(0, 1fr) 34px;
+    gap: 8px;
+    padding: 28px 0 36px;
+  }
+  .epoch-pagination__arrow { width: 34px; height: 34px; }
   .epoch-pagination__arrow svg { width: 17px; height: 17px; }
-  .epoch-pagination__card { width: calc(100% - 41px); gap: 7px; }
+  .epoch-pagination__card { gap: 7px; }
   .epoch-pagination__art { border-radius: 10px; }
   .epoch-pagination__title { font-size: 11px; }
+}
+@media (max-width: 360px) {
+  .epoch-pagination { grid-template-columns: 30px minmax(0, 1fr) minmax(0, 1fr) 30px; gap: 5px; }
+  .epoch-pagination__arrow { width: 30px; height: 30px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .epoch-pagination__arrow, .epoch-pagination__art { transition: none; }
