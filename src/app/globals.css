@@ -1616,22 +1616,26 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   overflow: hidden;
   border: 0;
   color: var(--ink);
-  background: var(--background);
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 260ms ease, transform 320ms ease;
+  background: transparent;
 }
-.person-biography-dialog.is-visible { opacity: 1; transform: translateY(0); }
-.person-biography-dialog::backdrop {
+.person-biography-dialog::backdrop { background: transparent; }
+.person-biography-dialog__backdrop {
+  position: absolute;
+  inset: 0;
   background: rgb(24 31 42 / 42%);
   opacity: 0;
-  transition: opacity 260ms ease;
 }
-.person-biography-dialog.is-visible::backdrop { opacity: 1; }
-.person-biography-dialog__panel { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.person-biography-dialog__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  background: var(--background);
+}
 .person-biography-dialog__header {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -1648,15 +1652,20 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   flex: 0 0 44px;
   width: 44px;
   height: 44px;
-  border: 1px solid var(--border);
+  border: 1px solid #d7dce3;
   border-radius: 50%;
-  background: var(--background);
+  background: #f2f4f7;
   color: var(--ink);
-  font: inherit;
-  font-size: 25px;
-  line-height: 1;
   cursor: pointer;
+  transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
+.person-biography-dialog__close:hover {
+  background: #e8edf3;
+  border-color: #c6ced8;
+  transform: rotate(4deg);
+}
+.person-biography-dialog__close svg { display: block; width: 22px; height: 22px; }
+.person-biography-dialog__close path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 .person-biography-dialog__body {
   flex: 1;
   min-height: 0;
@@ -1665,15 +1674,46 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   padding: 24px max(20px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
 }
 .person-biography-dialog__body > .person { width: min(100%, 900px); margin-inline: auto; }
-.person-biography-dialog__sources { width: min(100%, 900px); margin: 16px auto 0; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
-.person-biography-dialog__sources h3 { margin: 0 0 12px; font-size: 16px; }
-.person-biography-dialog__sources ul { margin: 0; padding-left: 20px; }
-.person-biography-dialog__sources li + li { margin-top: 10px; }
-.person-biography-dialog__sources a { margin-left: 8px; color: var(--accent); }
+@media (max-width: 640px) {
+  .person-biography-dialog__header { padding-inline: max(16px, env(safe-area-inset-left)) max(16px, env(safe-area-inset-right)); }
+  .person-biography-dialog__body { padding-inline: max(14px, env(safe-area-inset-left)) max(14px, env(safe-area-inset-right)); }
+}
 @media (prefers-reduced-motion: reduce) {
-  .person-biography-dialog, .person-biography-dialog::backdrop { transition-duration: 1ms; }
+  .person-biography-dialog__close { transition: none; }
 }
 
+/* Keep long contemporary names readable in the full biography content. */
+.person__contemporaries--expanded {
+  grid-column: 1 / -1;
+  grid-row: auto;
+  min-width: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border);
+  border-left: 0;
+}
+.person__contemporaries--expanded > h5 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  font-weight: 650;
+}
+.person__contemporaries--expanded .person__contemporary-list {
+  max-height: none;
+  overflow: visible;
+  padding-right: 0;
+}
+.person__contemporaries--expanded .person__contemporary-list li { min-width: 0; }
+.person__contemporaries--expanded .person__contemporary-list strong {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  hyphens: manual;
+}
 
 /* Neighboring eras use the same square artwork as the home directory. */
 .epoch-pagination {
