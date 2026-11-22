@@ -8,21 +8,25 @@ import { ComparisonPanel } from "./ComparisonPanel";
 type Category = PersonCategory | "all";
 type Props = {
   category: Category;
-  showFiltersButton?: boolean;
+  categoryOptions: PersonCategory[];
+  city: string;
+  cityOptions: string[];
+  showEpochNavigation: boolean;
   query: string;
   selected: string;
   onQueryChange: (query: string) => void;
-  getPeriods: (category: Category, query: string) => HistoricalPeriod[];
-  onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
+  getPeriods: (category: Category, query: string, city: string) => HistoricalPeriod[];
+  onApply: (category: Category, query: string, selected: string, periodId?: string, city?: string) => void;
 };
 
-export function MobileFilters({ category, showFiltersButton = true, query, selected, onQueryChange, getPeriods, onApply }: Props) {
+export function MobileFilters({ category, categoryOptions, city, cityOptions, showEpochNavigation, query, selected, onQueryChange, getPeriods, onApply }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState<Category>(category);
+  const [draftCity, setDraftCity] = useState(city);
   const [draftQuery, setDraftQuery] = useState(query);
   const [draftSelected, setDraftSelected] = useState(selected);
-  const availablePeriods = getPeriods(draft, draftQuery);
+  const availablePeriods = getPeriods(draft, draftQuery, draftCity);
   const count = new Set(availablePeriods.flatMap(period =>
     period.groups.flatMap(group => group.people.map(entry => entry.personId)))).size;
 
@@ -43,6 +47,7 @@ export function MobileFilters({ category, showFiltersButton = true, query, selec
 
   function openFilters() {
     setDraft(category);
+    setDraftCity(city);
     setDraftQuery(query);
     setDraftSelected(selected);
     dialogRef.current?.showModal();
@@ -50,7 +55,7 @@ export function MobileFilters({ category, showFiltersButton = true, query, selec
   }
 
   function apply(periodId?: string) {
-    onApply(draft, draftQuery, draftSelected, periodId);
+    onApply(draft, draftQuery, draftSelected, periodId, draftCity);
     dialogRef.current?.close();
   }
 
@@ -60,12 +65,12 @@ export function MobileFilters({ category, showFiltersButton = true, query, selec
       <div className="mobile-filter-toolbar__row">
         <input id="mobile-person-search" type="search" value={query}
           onChange={event => onQueryChange(event.target.value)} placeholder="Имя, город или событие" />
-        {showFiltersButton && <button type="button" onClick={openFilters} aria-haspopup="dialog">
-          Фильтры{category !== "all" && <span className="mobile-filter-badge" aria-label="1 активный фильтр">1</span>}
-        </button>}
+        <button type="button" onClick={openFilters} aria-haspopup="dialog">
+          Фильтры{(category !== "all" || city) && <span className="mobile-filter-badge" aria-label="Есть активные фильтры">{Number(category !== "all") + Number(!!city)}</span>}
+        </button>
       </div>
     </div>
-    {showFiltersButton && <dialog ref={dialogRef} className="mobile-filter-dialog" aria-labelledby="mobile-filter-title"
+    <dialog ref={dialogRef} className="mobile-filter-dialog" aria-labelledby="mobile-filter-title"
       onClose={() => setIsOpen(false)}>
       <div className="mobile-filter-dialog__panel">
         <header className="mobile-filter-dialog__header">
@@ -73,11 +78,11 @@ export function MobileFilters({ category, showFiltersButton = true, query, selec
           <button type="button" aria-label="Закрыть фильтры" onClick={() => dialogRef.current?.close()}>✕</button>
         </header>
         <div className="mobile-filter-dialog__body">
-          <h3 id="mobile-categories-title">Учёные</h3>
+          <h3 id="mobile-categories-title">Специальности участников</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-categories-title">
             <div className="filter-buttons" role="group" aria-labelledby="mobile-categories-title">
               <button type="button" aria-pressed={draft === "all"} onClick={() => setDraft("all")}>Все</button>
-              {(Object.keys(categoryLabels) as PersonCategory[]).map(key =>
+              {categoryOptions.map(key =>
                 <button type="button" key={key} aria-pressed={draft === key} onClick={() => setDraft(key)}>
                   {categoryLabels[key]}
                 </button>)}
@@ -86,30 +91,36 @@ export function MobileFilters({ category, showFiltersButton = true, query, selec
 
           <h3 id="mobile-search-title">Поиск</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-search-title">
-            <label className="explorer-label" htmlFor="modal-person-search">Имя или город</label>
+            {cityOptions.length > 0 && <label className="explorer-label" htmlFor="modal-city-filter">Город
+              <select id="modal-city-filter" value={draftCity} onChange={event => setDraftCity(event.target.value)}>
+                <option value="">Все города</option>
+                {cityOptions.map(value => <option key={value} value={value}>{value}</option>)}
+              </select>
+            </label>}
+            <label className="explorer-label" htmlFor="modal-person-search">Имя, город или событие</label>
             <input id="modal-person-search" type="search" value={draftQuery}
               onChange={event => setDraftQuery(event.target.value)} placeholder="Например, аш-Шафии или Багдад" />
           </section>
 
-          <h3 id="mobile-epochs-title">Эпохи</h3>
+          {showEpochNavigation && <><h3 id="mobile-epochs-title">Эпохи</h3>
           <section className="mobile-filter-block" aria-labelledby="mobile-epochs-title">
             <nav className="period-navigation" aria-label="Переход к периоду">
               {availablePeriods.map(period => <a key={period.id} href={`#${period.id}`}
                 onClick={event => { event.preventDefault(); apply(period.id); }}>{period.title}</a>)}
             </nav>
             {availablePeriods.length === 0 && <p role="status">По выбранным фильтрам эпохи не найдены.</p>}
-          </section>
+          </section></>}
 
           <ComparisonPanel idPrefix="mobile" category={draft} query={draftQuery}
             selected={draftSelected} onSelect={setDraftSelected} />
         </div>
         <footer className="mobile-filter-dialog__footer">
-          <button type="button" onClick={() => { setDraft("all"); setDraftQuery(""); setDraftSelected(""); }}>Сбросить</button>
+          <button type="button" onClick={() => { setDraft("all"); setDraftCity(""); setDraftQuery(""); setDraftSelected(""); }}>Сбросить</button>
           <button type="button" className="mobile-filter-apply" onClick={() => apply()}>
             Показать: {count}
           </button>
         </footer>
       </div>
-    </dialog>}
+    </dialog>
   </>;
 }
