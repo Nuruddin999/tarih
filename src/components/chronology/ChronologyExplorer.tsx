@@ -16,7 +16,7 @@ const periodsWithUniquePeople = uniquePeriodPeople(periods);
 
 export function ChronologyExplorer({ periodId }: { periodId?: string }) {
   useEffect(() => {
-    if (periodId) setQuery(new URLSearchParams(window.location.search).get("q") ?? "");
+    if (periodId) setQuery("");
   }, [periodId]);
   const [category, setCategory] = useState<PersonCategory | "all">("all");
   const [query, setQuery] = useState("");
@@ -130,7 +130,7 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
   }, [pendingPeriod, category, query]);
   
   return <div className={`chronology-layout ${periodId ? "epoch-explorer" : ""}`}>
-    <MobileFilters category={category} categoryOptions={categoryOptions} showEpochNavigation={!periodId} query={query} selected={selected} onQueryChange={setQuery}
+    <MobileFilters category={category} categoryOptions={categoryOptions} showEpochNavigation={!periodId} showSearch={!periodId} query={query} selected={selected} onQueryChange={setQuery}
       getPeriods={(filter, search) => filterPeriods(filter, search.trim().toLocaleLowerCase("ru").replaceAll("ё", "е"))}
       onApply={(filter, search, person, periodId) => {
         changeCategory(filter, false, false);
@@ -147,8 +147,10 @@ export function ChronologyExplorer({ periodId }: { periodId?: string }) {
         <button type="button" aria-pressed={category === "all"} onClick={() => changeCategory("all")}>Все</button>
         {categoryOptions.map(key => <button type="button" key={key} aria-pressed={category === key} onClick={() => changeCategory(key)}>{categoryLabels[key]}</button>)}
       </div>
-      <label className="explorer-label" htmlFor="person-search">Поиск по имени, городу или событию</label>
-      <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, Бадр или Багдад" />
+      {!periodId && <>
+        <label className="explorer-label" htmlFor="person-search">Поиск по имени, городу или событию</label>
+        <input id="person-search" type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Например, Бадр или Багдад" />
+      </>}
       <div className="filter-status"><span role="status">{isFiltering ? "Обновляем список…" : `Найдено личностей: ${count}`}</span><button type="button" onClick={() => changeCategory("all", true)>Сбросить фильтры</button></div>
     </section>
     
