@@ -9,9 +9,10 @@ type Props = {
   person: Person;
   description?: string;
   featured?: boolean;
+  previewDescription?: string;
 };
 
-export function PersonBiography({ person, description, featured = false }: Props) {
+export function PersonBiography({ person, description, featured = false, previewDescription }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const animationRef = useRef<gsap.core.Timeline | null>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +64,7 @@ export function PersonBiography({ person, description, featured = false }: Props
   return <>
     <div className="epoch-timeline__person">
       <h3>{person.name}</h3>
-      {(description || person.description) && <p>{description || person.description}</p>}
+      {(previewDescription || description || person.description) && <p>{previewDescription || description || person.description}</p>}
       <button className="epoch-timeline__more" type="button" onClick={() => setIsOpen(true)}>
         Биография
       </button>
