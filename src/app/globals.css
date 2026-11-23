@@ -1963,7 +1963,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 }
 .collection-card--scholars .collection-card__symbol {
   position: absolute;
-  inset: 12px 10px 40px;
+  inset: 12px 14px 88px;
   width: auto;
   height: auto;
   align-self: auto;
@@ -1974,8 +1974,7 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   width: 100%;
   height: 100%;
   object-fit: contain;
-  transform: translateY(-16%) scale(1.15);
-  transform-origin: center;
+  transform: none;
 }
 .collection-card--scholars h3 {
   position: absolute;
@@ -1987,6 +1986,6 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
   text-align: center;
 }
 @media (max-width: 640px) {
-  .collection-card--scholars .collection-card__symbol { inset: 8px 8px 36px; }
+  .collection-card--scholars .collection-card__symbol { inset: 8px 8px 68px; }
   .collection-card--scholars h3 { bottom: 14px; }
 }
