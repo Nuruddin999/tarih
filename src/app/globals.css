@@ -1904,3 +1904,35 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .scholars-undated > h2 { margin: 0; font-size: 22px; line-height: 1.35; }
 .scholars-undated > p { color: var(--muted); font-size: 15px; line-height: 1.65; }
 .collection-card__symbol img { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* Give homepage illustrations most of each tile instead of a small inset icon. */
+.home-page .epoch-card { padding: 4px; gap: 2px; }
+.home-page .epoch-card__art img { transform: scale(1.14); transform-origin: center; }
+.home-page .epoch-card h3 { margin: 0 4px 4px; }
+
+.collection-card {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: stretch;
+  align-items: stretch;
+  padding: 6px;
+  gap: 2px;
+}
+.collection-card__symbol {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.collection-card__symbol img { transform: scale(1.04); transform-origin: center; }
+.collection-card h3 { margin: 0 2px 4px; }
+
+@media (max-width: 640px) {
+  .home-page .epoch-card, .collection-card { padding: 4px; gap: 2px; }
+  .home-page .epoch-card__art img { transform: scale(1.10); }
+  .collection-card__symbol { width: 100%; height: 100%; padding: 0; }
+}
