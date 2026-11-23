@@ -44,7 +44,7 @@ export default function HomePage() {
       <div className="directory-heading"><div><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
       <div className="collection-grid">{collections.map(collection => {
         const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}>{collection.icon === "scholars" ? <Image src="/images/eras/scholars.webp" alt="" width={512} height={512} unoptimized /> : <CollectionSymbol type={collection.icon} />}</span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
-        return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
+        return collection.href ? <Link key={collection.title} href={collection.href} className={`collection-card${collection.icon === "scholars" ? " collection-card--scholars" : ""}`}>{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
       })}</div>
     </section>
   </main>;
