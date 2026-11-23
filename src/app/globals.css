@@ -1464,10 +1464,6 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 .scholar-intro h1 { font-size: clamp(32px, 6vw, 52px); }
 .scholar-intro p { line-height: 1.8; }
 .scholar-intro__note { color: var(--muted); font-size: 13px; }
-.scholar-filters { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px; background: white; border: 1px solid var(--border); padding: 20px; border-radius: 14px; }
-.scholar-filters label { display: grid; flex: 1; min-width: 180px; gap: 8px; font-size: 13px; }
-.scholar-filters input, .scholar-filters select { width: 100%; min-height: 44px; font: inherit; border: 1px solid #bac7c1; background: #fff; padding: 10px; border-radius: 7px; }
-.scholar-filters button { min-height: 44px; padding: 10px 15px; border: 1px solid #bac7c1; border-radius: 7px; background: #f4f7f5; cursor: pointer; }
 .scholar-count { color: var(--muted); font-size: 13px; margin: 24px 0; }
 .scholar-timeline { list-style: none; padding: 0; margin: 0; }
 .scholar-timeline > li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; position: relative; padding: 0 0 28px 22px; border-left: 1px solid #bdcdc5; margin-left: 7px; }
@@ -1947,3 +1943,13 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 
 /* Leave breathing room after the last element on the home page. */
 .home-page { padding-bottom: 48px; }
+
+/* Center the scholars artwork and leave a clear gap before its title. */
+.collection-card__symbol {
+  height: calc(100% - 36px);
+  align-self: center;
+  padding-bottom: 0;
+}
+@media (max-width: 640px) {
+  .collection-card__symbol { height: calc(100% - 28px); padding-bottom: 0; }
+}

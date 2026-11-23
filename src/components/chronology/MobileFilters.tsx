@@ -18,7 +18,7 @@ type Props = {
   onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
 };
 
-export function MobileFilters({ category, categoryOptions, showEpochNavigation, showSearch, query, selected, onQueryChange, getPeriods, onApply }: Props) {
+export function MobileFilters({ category, categoryOptions, showEpochNavigation, showSearch, query, selected, onQueryChange, getPeriods, getResultCount, onApply }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [draft, setDraft] = useState<Category>(category);
