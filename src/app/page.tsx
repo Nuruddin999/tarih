@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { EpochDirectory } from "@/components/chronology/EpochDirectory";
 import { HeaderPersonSearch } from "@/components/chronology/HeaderPersonSearch";
+import { HomeGridMotion } from "@/components/chronology/HomeGridMotion";
 import styles from "./HomeHero.module.css";
 
 const collections = [
-  { title: "Хроника учёных", description: "Поколения учёных на одной ленте времени — через века и границы эпох.", icon: "book", href: "/collections/scholars/", label: "Открыть хронику" },
+  { title: "Хроника учёных", description: "Поколения учёных на одной ленте времени — через века и границы эпох.", icon: "scholars", href: "/collections/scholars/", label: "Открыть хронику" },
   { title: "Полководцы", description: "Люди, походы и сражения исламской истории.", icon: "compass" },
   { title: "Правители", description: "Халифы, султаны и история их правления.", icon: "arch" },
 ];
@@ -18,6 +19,7 @@ function CollectionSymbol({ type }: { type: string }) {
 
 export default function HomePage() {
   return <main className="chronology home-page">
+    <HomeGridMotion />
     <header className="site-header home-header">
       <Link href="/" className="brand" aria-label="На главную"><Image src="/icons/brand.webp" alt="" width={42} height={42} unoptimized /></Link>
       <nav className="header-nav" aria-label="Основная навигация"><a href="#epochs">Эпохи</a><a href="#collections">Подборки</a><Link href="/about/">О проекте</Link></nav>
@@ -41,7 +43,7 @@ export default function HomePage() {
     <section id="collections" className="home-collections" aria-labelledby="collections-title">
       <div className="directory-heading"><div><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
       <div className="collection-grid">{collections.map(collection => {
-        const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}><CollectionSymbol type={collection.icon} /></span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
+        const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}>{collection.icon === "scholars" ? <Image src="/images/eras/scholars.webp" alt="" width={512} height={512} unoptimized /> : <CollectionSymbol type={collection.icon} />}</span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
         return collection.href ? <Link key={collection.title} href={collection.href} className="collection-card">{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
       })}</div>
     </section>
