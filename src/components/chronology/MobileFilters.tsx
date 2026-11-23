@@ -15,6 +15,7 @@ type Props = {
   selected: string;
   onQueryChange: (query: string) => void;
   getPeriods: (category: Category, query: string) => HistoricalPeriod[];
+  getResultCount?: (category: Category, query: string) => number;
   onApply: (category: Category, query: string, selected: string, periodId?: string) => void;
 };
 
@@ -25,8 +26,10 @@ export function MobileFilters({ category, categoryOptions, showEpochNavigation, 
   const [draftQuery, setDraftQuery] = useState(query);
   const [draftSelected, setDraftSelected] = useState(selected);
   const availablePeriods = getPeriods(draft, draftQuery);
-  const count = new Set(availablePeriods.flatMap(period =>
-    period.groups.flatMap(group => group.people.map(entry => entry.personId)))).size;
+  const count = getResultCount
+    ? getResultCount(draft, draftQuery)
+    : new Set(availablePeriods.flatMap(period =>
+      period.groups.flatMap(group => group.people.map(entry => entry.personId)))).size;
 
   useEffect(() => {
     if (!isOpen) return;
