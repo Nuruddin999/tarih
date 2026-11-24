@@ -1892,6 +1892,8 @@ body:has(.home-page) { background: #f4f4f5; color: #000; font-family: ui-rounded
 
 
 /* Scholar collection now shares the editorial timeline and modal controls. */
+/* Avoid a horizontal rule crossing scholar names, dates, and biography controls. */
+.scholar-chronology .epoch-timeline__row::before { display: none; }
 .scholar-chronology .epoch-timeline__person { min-width: 0; }
 .scholar-chronology .epoch-timeline__person > h3 { margin: 0; font-size: 20px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
 .scholar-chronology .epoch-timeline__person > p { margin: 8px 0 12px; color: var(--muted); font-size: 16px; line-height: 1.65; }
