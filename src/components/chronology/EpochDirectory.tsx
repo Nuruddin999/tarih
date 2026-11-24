@@ -21,7 +21,7 @@ export function EpochDirectory() {
   }, []);
   return <>
     <section id="epochs" aria-labelledby="epochs-title">
-      <div className="directory-heading"><div><h2 id="epochs-title">Исторические эпохи</h2><p className="section-description">Выберите время, с которого начнётся ваше путешествие.</p></div><Link href="/chronology/">Полная лента →</Link></div>
+      <div className="directory-heading"><div><h2 id="epochs-title">Исторические эпохи</h2><p className="section-description">Выберите время, с которого начнётся ваше путешествие.</p></div></div>
       <div className="epoch-grid">{assignedPeriods.map(period => <Link className="epoch-card" href={`/epochs/${period.id}/`} key={period.id}>
         <div className="epoch-card__art"><Image src={`/images/eras/${period.id}.webp`} alt="" width={1254} height={1254} unoptimized /></div>
         <div className="epoch-card__body"><h3>{period.title}</h3></div>
