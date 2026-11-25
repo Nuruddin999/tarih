@@ -7,7 +7,7 @@ import styles from "./HomeHero.module.css";
 
 const collections = [
   { title: "Хроника учёных", description: "Поколения учёных на одной ленте времени — через века и границы эпох.", icon: "scholars", href: "/collections/scholars/", label: "Открыть хронику" },
-  { title: "Полководцы", description: "Люди, походы и сражения исламской истории.", icon: "compass" },
+  { title: "Полководцы", description: "Командующие сражений от эпохи Пророка ﷺ до ранних Аббасидов.", icon: "commanders", href: "/collections/commanders/", label: "Открыть хронику" },
   { title: "Правители", description: "Халифы, султаны и история их правления.", icon: "arch" },
 ];
 
@@ -43,8 +43,8 @@ export default function HomePage() {
     <section id="collections" className="home-collections" aria-labelledby="collections-title">
       <div className="directory-heading"><div><h2 id="collections-title">Тематические подборки</h2><p className="section-description">Следуйте за темой, которая вам интересна.</p></div></div>
       <div className="collection-grid">{collections.map(collection => {
-        const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}>{collection.icon === "scholars" ? <img src="/images/eras/scholars.webp" alt="" width={768} height={576} /> : <CollectionSymbol type={collection.icon} />}</span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
-        return collection.href ? <Link key={collection.title} href={collection.href} className={`collection-card${collection.icon === "scholars" ? " collection-card--scholars" : ""}`}>{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
+        const content = <><span className={`collection-card__symbol collection-card__symbol--${collection.icon}`}>{collection.icon === "scholars" ? <img src="/images/eras/scholars.webp" alt="" width={768} height={576} /> : collection.icon === "commanders" ? <img src="/images/collections/commanders.webp" alt="" width={768} height={768} /> : <CollectionSymbol type={collection.icon} />}</span><h3>{collection.title}</h3>{!collection.href && <span className="collection-card__status">Скоро</span>}</>;
+        return collection.href ? <Link key={collection.title} href={collection.href} className={`collection-card${collection.icon === "scholars" ? " collection-card--scholars" : collection.icon === "commanders" ? " collection-card--commanders" : ""}`}>{content}</Link> : <article key={collection.title} className="collection-card collection-card--upcoming" aria-label={`${collection.title} — скоро`}>{content}</article>;
       })}</div>
     </section>
   </main>;
