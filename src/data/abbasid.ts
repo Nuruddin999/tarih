@@ -132,16 +132,6 @@ export const abbasidPeriod: HistoricalPeriod = {
 
 export const abbasidEvents: HistoricalEvent[] = [
   {
-    id: "abbasid-dawa",
-    title: "Начало Аббасидского призыва в Хорасане",
-    description: "Мухаммад ибн Али организовал распространение призыва в Хорасане; в дальнейшем его возглавил Абу Муслим.",
-    periodId: "early-schools",
-    start: { hijri: "99 г. х.", gregorian: "717–718 гг." },
-    sortOrder: 10,
-    participants: [],
-    sources: [bookSource(241), bookSource(243)]
-  },
-  {
     id: "abbasid-caliphate",
     title: "Переход власти к Аббасидам",
     description: "После победы сторонников Аббасидов в 132 г. х. в Куфе был провозглашён халифом Абу аль-Аббас ас-Саффах.",
@@ -180,7 +170,7 @@ export const abbasidEvents: HistoricalEvent[] = [
     title: "Начало строительства Багдада",
     description: "Аль-Мансур начал строительство новой столицы Аббасидского халифата на берегах Тигра.",
     periodId: "early-schools",
-    start: { hijri: "145 г. х.", gregorian: "762–763 гг." },
+    start: { hijri: "146 г. х.", gregorian: "763–764 гг." },
     sortOrder: 40,
     participants: [
       {
@@ -230,7 +220,7 @@ export const abbasidEvents: HistoricalEvent[] = [
   {
     id: "harun-caliphate",
     title: "Правление Харуна ар-Рашида",
-    description: "После смерти аль-Хади власть перешла к Харуну ар-Рашиду. В 175 г. х. он закрепил порядок наследования между сыновьями.",
+    description: "После смерти аль-Хади власть перешла к Харуну ар-Рашиду. В 184 г. х. он назначил аль-Ма’муна следующим наследником после аль-Амина.",
     periodId: "early-schools",
     start: { hijri: "170 г. х.", gregorian: "786 г." },
     end: { hijri: "193 г. х.", gregorian: "809 г." },
@@ -251,7 +241,7 @@ export const abbasidEvents: HistoricalEvent[] = [
     title: "Назначение сыновей Харуна наследниками",
     description: "Аль-Амин был назначен первым наследником, аль-Ма’мун — следующим; для него была определена область Хорасан.",
     periodId: "early-schools",
-    start: { hijri: "175 г. х.", gregorian: "791–792 гг." },
+    start: { hijri: "184 г. х.", gregorian: "800 г." },
     sortOrder: 80,
     participants: [
       {
