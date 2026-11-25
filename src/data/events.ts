@@ -1,3 +1,4 @@
+import { abbasidEvents } from "./abbasid";
 import { umayyadEvents, boundaryScholarEvents } from "./umayyad";
 import { rashidunEvents } from "./rashidun";
 import type { HistoricalEvent } from "../types/chronology";
@@ -10,6 +11,7 @@ import type { HistoricalEvent } from "../types/chronology";
 export const events: HistoricalEvent[] = [
   ...rashidunEvents,
   ...umayyadEvents,
+  ...abbasidEvents,
   ...boundaryScholarEvents,
   {
     "id": "arabia-before-islam",
