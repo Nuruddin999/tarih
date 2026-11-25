@@ -10,6 +10,13 @@ const bookSource = (page: number) => ({
   url: `${pdf}#page=${page}`
 });
 
+const siyarAbuMuslim = {
+  title: "Аз-Захаби · «Сияр а‘лям ан-нубаля»",
+  chapter: "Указание года смерти Абу Муслима",
+  page: "10/572",
+  url: "https://shamela.ws/book/10906/6821"
+};
+
 export const abbasidPeople: Record<string, Person> = {
   "abbasSaffah": {
     id: "abbasSaffah",
@@ -21,6 +28,17 @@ export const abbasidPeople: Record<string, Person> = {
     description: "Первый халиф из династии Аббасидов.",
     dateNote: "Год рождения в использованной главе не указан.",
     sources: [bookSource(245)]
+  },
+  "abuMuslim": {
+    id: "abuMuslim",
+    name: "Абу Муслим аль-Хурасани",
+    honorific: "",
+    birth: { hijri: "Не установлено", gregorian: "—" },
+    death: { hijri: "137 г. х.", gregorian: "754–755 гг." },
+    cities: ["Хорасан"],
+    description: "Военачальник и один из ключевых деятелей установления власти Аббасидов.",
+    dateNote: "Аз-Захаби указывает 137 г. х. как год его гибели.",
+    sources: [bookSource(247), siyarAbuMuslim]
   },
   "abbasMansur": {
     id: "abbasMansur",
@@ -88,12 +106,23 @@ export const abbasidPeople: Record<string, Person> = {
     dateNote: "Период его правления выходит за границы этого раздела.",
     sources: [bookSource(271)]
   }
+  "muhammadNafsZakiyya": {
+    id: "muhammadNafsZakiyya",
+    name: "Мухаммад ан-Нафс аз-Закийя ибн Абдуллах",
+    honorific: "",
+    birth: { hijri: "Не установлено", gregorian: "—" },
+    death: { hijri: "145 г. х.", gregorian: "762–763 гг." },
+    cities: ["Медина"],
+    description: "Алидский претендент на власть, поднявший восстание в Медине против аль-Мансура.",
+    dateNote: "Восстание и гибель отнесены книгой к Рамадану 145 г. х.",
+    sources: [bookSource(249)]
+  }
 };
 
 export const abbasidPeriod: HistoricalPeriod = {
   id: "early-schools",
   title: "Ранние Аббасиды",
-  description: "Раздел охватывает ранний период Аббасидского халифата (132–199 гг. х.) и включает хронологию правителей и ранних поколений учёных.",
+  description: "Раздел охватывает ранний период Аббасидского халифата (132–199 гг. х.) и включает правителей, события и учёных, умерших в этот период.",
   dates: {
     hijri: "132–199 г. х.",
     gregorian: "750–815 гг."
@@ -116,9 +145,6 @@ export const abbasidPeriod: HistoricalPeriod = {
       id: "early-schools-scholars",
       title: "Учёные и авторы · по году смерти",
       people: [
-        { personId: "ibnAbbas" },
-        { personId: "saidIbnJubayr" },
-        { personId: "mujahid" },
         { personId: "abuHanifa" },
         { personId: "ibnIshaq" },
         { personId: "malik" },
@@ -160,10 +186,41 @@ export const abbasidEvents: HistoricalEvent[] = [
         personId: "abbasMansur",
         role: "Отдал распоряжение об устранении Абу Муслима",
         sortOrder: 0,
-        sources: [bookSource(247)]
+        sources: [bookSource(247), siyarAbuMuslim]
+      },
+      {
+        personId: "abuMuslim",
+        role: "Погиб по приказу аль-Мансура",
+        sortOrder: 10,
+        sources: [bookSource(247), siyarAbuMuslim]
       }
     ],
-    sources: [bookSource(247)]
+    sources: [bookSource(247), siyarAbuMuslim]
+  },
+  {
+    id: "muhammad-nafs-zakiyya-uprising",
+    title: "Восстание Мухаммада ан-Нафс аз-Закийи",
+    description: "В Медине началось восстание Мухаммада ибн Абдуллаха, известного как ан-Нафс аз-Закийя.",
+    periodId: "early-schools",
+    start: { hijri: "145 г. х.", gregorian: "762–763 гг." },
+    sortOrder: 35,
+    participants: [
+      { personId: "muhammadNafsZakiyya", role: "Предводитель восстания", sortOrder: 0, sources: [bookSource(249)] },
+      { personId: "abbasMansur", role: "Халиф, против которого выступили", sortOrder: 10, sources: [bookSource(249)] }
+    ],
+    sources: [bookSource(249)]
+  },
+  {
+    id: "muhammad-nafs-zakiyya-killed",
+    title: "Гибель Мухаммада ан-Нафс аз-Закийи",
+    description: "Мухаммад ибн Абдуллах был убит в Медине в Рамадан 145 г. х.",
+    periodId: "early-schools",
+    start: { hijri: "Рамадан 145 г. х.", gregorian: "762–763 гг." },
+    sortOrder: 36,
+    participants: [
+      { personId: "muhammadNafsZakiyya", role: "Погиб в ходе восстания", sortOrder: 0, sources: [bookSource(249)] }
+    ],
+    sources: [bookSource(249)]
   },
   {
     id: "baghdad-founded",
