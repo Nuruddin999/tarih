@@ -62,8 +62,8 @@ export function AllPeopleTimeline({ focusPersonId }: { focusPersonId?: string })
               description={placement?.entry.description}
               featured={placement?.entry.featured}
               previewDescription={shortDescription}
+              periodTitle={placement?.periodTitle ?? "Эпоха не указана"}
             />
-            <span className="global-people-timeline__era">{placement?.periodTitle ?? "Эпоха не указана"}</span>
           </div>
         </li>;
       })}
