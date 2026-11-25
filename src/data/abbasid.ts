@@ -295,7 +295,7 @@ export const abbasidEvents: HistoricalEvent[] = [
   {
     id: "harun-death",
     title: "Смерть Харуна ар-Рашида",
-    description: "После смерти Харуна ар-Рашида халифом в Багдаде стал его сын аль-Амин.",
+    description: "Харун ар-Рашид умер во время похода в Хорасан.",
     periodId: "early-schools",
     start: { hijri: "193 г. х.", gregorian: "809 г." },
     sortOrder: 110,
@@ -305,24 +305,35 @@ export const abbasidEvents: HistoricalEvent[] = [
         role: "Умер во время похода в Хорасан",
         sortOrder: 0,
         sources: [bookSource(271)]
-      },
+      }
+    ],
+    sources: [bookSource(271)]
+  },
+  {
+    id: "amin-caliphate",
+    title: "Правление аль-Амина",
+    description: "После смерти Харуна ар-Рашида халифом в Багдаде стал его сын аль-Амин.",
+    periodId: "early-schools",
+    start: { hijri: "193 г. х.", gregorian: "809 г." },
+    end: { hijri: "198 г. х.", gregorian: "813 г." },
+    sortOrder: 120,
+    participants: [
       {
         personId: "abbasAmin",
-        role: "Стал халифом после смерти отца",
-        sortOrder: 10,
+        role: "Халиф в Багдаде",
+        sortOrder: 0,
         sources: [bookSource(271)]
       }
     ],
     sources: [bookSource(271)]
   },
   {
-    id: "amin-mamun-civil-war",
+    id: "amin-mamun-conflict",
     title: "Противостояние аль-Амина и аль-Ма’муна",
-    description: "После смерти Харуна ар-Рашида борьба за власть между его сыновьями завершилась гибелью аль-Амина и переходом власти к аль-Ма’муну.",
+    description: "После смерти Харуна ар-Рашида между его сыновьями развернулась борьба за власть.",
     periodId: "early-schools",
-    start: { hijri: "195 г. х.", gregorian: "811 г." },
-    end: { hijri: "198 г. х.", gregorian: "813 г." },
-    sortOrder: 120,
+    dateNote: "В главе конфликт изложен в рассказе о начале правления аль-Ма’муна; отдельная дата начала противостояния здесь не указана.",
+    sortOrder: 130,
     participants: [
       {
         personId: "abbasAmin",
@@ -332,8 +343,42 @@ export const abbasidEvents: HistoricalEvent[] = [
       },
       {
         personId: "abbasMamun",
-        role: "Противник аль-Амина и преемник после его гибели",
+        role: "Противник аль-Амина",
         sortOrder: 10,
+        sources: [bookSource(271)]
+      }
+    ],
+    sources: [bookSource(271), bookSource(273)]
+  },
+  {
+    id: "amin-death",
+    title: "Гибель аль-Амина",
+    description: "Во время борьбы за власть аль-Амин был убит в Багдаде.",
+    periodId: "early-schools",
+    start: { hijri: "198 г. х.", gregorian: "813 г." },
+    sortOrder: 140,
+    participants: [
+      {
+        personId: "abbasAmin",
+        role: "Погиб в ходе борьбы за власть",
+        sortOrder: 0,
+        sources: [bookSource(271), bookSource(273)]
+      }
+    ],
+    sources: [bookSource(271), bookSource(273)]
+  },
+  {
+    id: "mamun-accession",
+    title: "Переход власти к аль-Ма’муну",
+    description: "После гибели аль-Амина халифом стал его брат Абдуллах аль-Ма’мун.",
+    periodId: "early-schools",
+    start: { hijri: "198 г. х.", gregorian: "813 г." },
+    sortOrder: 150,
+    participants: [
+      {
+        personId: "abbasMamun",
+        role: "Стал халифом после гибели аль-Амина",
+        sortOrder: 0,
         sources: [bookSource(271)]
       }
     ],
