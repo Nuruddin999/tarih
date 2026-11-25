@@ -1278,28 +1278,10 @@ export const umayyadPeriod: HistoricalPeriod = {
       "title": "Учёные и авторы",
       "people": [
         {
-          "personId": "saidIbnJubayr"
-        },
-        {
-          "personId": "mujahid"
-        },
-        {
           "personId": "hasanBasri"
         },
         {
           "personId": "ibnSirin"
-        },
-        {
-          "personId": "abuHanifa"
-        },
-        {
-          "personId": "ibnIshaq"
-        },
-        {
-          "personId": "malik"
-        },
-        {
-          "personId": "abuYusuf"
         }
       ]
     }
