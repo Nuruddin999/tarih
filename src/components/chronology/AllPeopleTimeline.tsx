@@ -5,7 +5,7 @@ import { people, periods } from "@/data/chronology";
 import { yearRange } from "@/lib/contemporaries";
 import { uniquePeriodPeople } from "@/lib/uniquePeriodPeople";
 import { DateLabel } from "./DateLabel";
-import { PersonCard } from "./PersonCard";
+import { PersonBiography } from "./PersonBiography";
 
 const periodPeople = uniquePeriodPeople(periods);
 const personEntries = new Map(periodPeople.flatMap(period => period.groups.flatMap(group => group.people.map(entry => [entry.personId, {
@@ -57,15 +57,13 @@ export function AllPeopleTimeline({ focusPersonId }: { focusPersonId?: string })
         return <li id={`timeline-person-${person.id}`} className={`epoch-timeline__row global-people-timeline__row${focused ? " is-focused" : ""}`} key={person.id}>
           <div className="epoch-timeline__date"><DateLabel date={person.death} label="Год смерти" /></div>
           <div className="epoch-timeline__entry"><PersonIcon />
-            <details className="epoch-timeline__person">
-              <summary>
-                <h3>{person.name}</h3>
-                {shortDescription && <p>{shortDescription}</p>}
-                <span className="global-people-timeline__era">{placement?.periodTitle ?? "Эпоха не указана"}</span>
-                <span className="epoch-timeline__more">Биография <span aria-hidden="true">↓</span></span>
-              </summary>
-              <PersonCard person={person} description={placement?.entry.description} featured={placement?.entry.featured} />
-            </details>
+            <PersonBiography
+              person={person}
+              description={placement?.entry.description}
+              featured={placement?.entry.featured}
+              previewDescription={shortDescription}
+            />
+            <span className="global-people-timeline__era">{placement?.periodTitle ?? "Эпоха не указана"}</span>
           </div>
         </li>;
       })}
