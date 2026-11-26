@@ -1,3 +1,4 @@
+import { abbasidPeople, abbasidPeriod } from "./abbasid";
 import { umayyadPeople, umayyadPeriod } from "./umayyad";
 import { rashidunPeople } from "./rashidun";
 import type { Person, HistoricalPeriod, PersonCategory } from "@/types/chronology";
@@ -17,6 +18,7 @@ export const categoryLabels: Record<PersonCategory, string> = {
 export const people: Record<string, Person> = {
   ...rashidunPeople,
   ...umayyadPeople,
+  ...abbasidPeople,
   "muhammad": {
     "id": "muhammad",
     "name": "Мухаммад — Посланник Аллаха",
@@ -3685,50 +3687,7 @@ export const periods: HistoricalPeriod[] = [
     ]
   },
   umayyadPeriod,
-  {
-    "id": "early-schools",
-    "title": "Ранние Аббасиды",
-    "description": "Хронологический раздел: личности расположены по году смерти по хиджре. Название эпохи — ориентир; государства в разных регионах существовали параллельно.",
-    "dates": {
-      "hijri": "132–199 г. х.",
-      "gregorian": "ок. 750–815 гг."
-    },
-    "groups": [
-      {
-        "id": "early-schools-scholars",
-        "title": "Учёные и авторы · по году смерти",
-        "people": [
-          {
-            "personId": "ibnAbbas"
-          },
-          {
-            "personId": "saidIbnJubayr"
-          },
-          {
-            "personId": "mujahid"
-          },
-          {
-            "personId": "abuHanifa"
-          },
-          {
-            "personId": "ibnIshaq"
-          },
-          {
-            "personId": "malik"
-          },
-          {
-            "personId": "abuYusuf"
-          },
-          {
-            "personId": "shaybani"
-          },
-          {
-            "personId": "ibnQasim"
-          }
-        ]
-      }
-    ]
-  },
+  abbasidPeriod,
   {
     "id": "abbasid-scholarship",
     "title": "Расцвет учёности при Аббасидах",

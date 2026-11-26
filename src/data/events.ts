@@ -1,8 +1,10 @@
+import { abbasidEvents } from "./abbasid";
 import { umayyadEvents, boundaryScholarEvents } from "./umayyad";
 import { rashidunEvents } from "./rashidun";
 import type { HistoricalEvent } from "../types/chronology";
 
-// Названия тем — по серии Набиля Авади; содержание и связи — по аль-Мубаракфури.
+// Для эпохи Пророка ﷺ названия тем взяты из серии Набиля Авади, содержание и связи сверены по аль-Мубаракфури.
+// Остальные эпохи используют источники, указанные в своих файлах данных.
 // sortOrder сохраняет последовательность уроков, а не заменяет историческую дату.
 // Участники: только подтверждённые связи с уже существующими people; список неполный.
 // Общие темы и спорные датировки намеренно не получают выдуманной точной даты.
@@ -10,6 +12,7 @@ import type { HistoricalEvent } from "../types/chronology";
 export const events: HistoricalEvent[] = [
   ...rashidunEvents,
   ...umayyadEvents,
+  ...abbasidEvents,
   ...boundaryScholarEvents,
   {
     "id": "arabia-before-islam",
